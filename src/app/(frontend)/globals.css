@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --theme-bg: #0f172a;
+  --theme-text: #ffffff;
+  --theme-primary: #2563eb;
+  --theme-secondary: #1e40af;
+}
+
+/* cor custom */
+@theme {
+  --color-dimmed: #9ca3af;
+}
+
+@layer base {
+  body {
+    @apply text-gray-600 bg-[var(--theme-bg)];
+  }
+}
+
+/* container custom */
+@layer utilities {
+  .container {
+    @apply mx-auto h-full max-w-6xl px-3;
+  }
+}
