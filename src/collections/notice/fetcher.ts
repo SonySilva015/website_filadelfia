@@ -1,5 +1,5 @@
+import 'server-only'
 import { getPayloadClient } from '@/lib/payload/client'
-
 
 
 export async function getNoticebySlug(slug: string) {
@@ -63,5 +63,19 @@ export async function getNoticebyDestaque3() {
     } catch (error) {
         console.error('Failed to fetch articles', error)
         return null
+    }
+}
+
+export async function GetNoticeLimit() {
+    const payload = await getPayloadClient()
+    try {
+        const { docs: notice } = await payload.find({
+            collection: 'noticias',
+            limit: 3,
+        })
+        return notice ?? []
+    } catch (error) {
+        console.error('Failed to fetch articles', error)
+        return []
     }
 }

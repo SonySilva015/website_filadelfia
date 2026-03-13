@@ -2,10 +2,11 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --theme-bg: #0f172a;
-  --theme-text: #ffffff;
-  --theme-primary: #2563eb;
-  --theme-secondary: #1e40af;
+  --theme-page-header-button-hover: #84389e;
+  --theme-page-header-nav-bg: #592569;
+  --theme-page-header-nav-bg2: #421c4f;
+  --theme-page-header-nav-open-bg: #592569;
+  --theme-page-header-nav-text-color: #ffffff;
 }
 
 /* cor custom */

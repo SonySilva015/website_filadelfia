@@ -169,112 +169,42 @@ export default function EbdInfantil() {
                 </div>
             </section>
 
-            {/* --- HORÁRIOS DESTAQUE --- */}
-            <section
-                className="relative p-20 h-120"
-                style={{
-                    backgroundImage: "url('/img/ebd1.jpeg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center"
-                }}
-            >
-                <div className='absolute inset-0 bg-black/70'></div>
-                <div className="absolute inset-0 px-6 z-100">
-                    <h3 className="text-3xl font-bold text-center 02mt-10">Horas de Estudo</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <p>Domingo as 7:30 min</p>
-                    </div>
+{/* --- HORÁRIOS DESTAQUE --- */}
+<section className="relative py-20 px-6 overflow-hidden">
+    {/* Background com Overlay */}
+    <div 
+        className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-500 hover:scale-105"
+        style={{ backgroundImage: "url('/img/ebd1.jpeg')" }}
+    />
+    <div className="absolute inset-0 bg-black/80 z-10"></div>
+
+    <div className="relative z-20 max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+            <h3 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+                Horários de <span className="text-blue-500">Estudo</span>
+            </h3>
+            <div className="h-1 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Card de Horário */}
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-white/20 transition-all group">
+                <div className="bg-blue-500 p-3 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="Refazer: M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                 </div>
-            </section>
+                <h4 className="text-white font-semibold text-xl mb-2">Domingo</h4>
+                <p className="text-gray-300 text-lg font-medium">07:30h</p>
+                <span className="text-xs text-blue-400 mt-2 uppercase tracking-widest font-bold">Escola Bíblica</span>
+            </div>
 
-            {/* --- TURMAS DETALHADAS --- */}
-            <section className="py-20 bg-gray-50 px-6">
-                <div className="max-w-7xl mx-auto">
-                    <h3 className="text-4xl font-black text-center text-gray-800 mb-4">Nossos Programas</h3>
-                    <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-                        Cada turma tem um currículo específico, preparado por pedagogos e teólogos
-                    </p>
+            {/* Você pode repetir o card acima para outros horários ou deixar o grid vazio por enquanto */}
+        </div>
+    </div>
+</section>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {turmas.map((turma, i) => (
-                            <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all">
-                                <div className="flex flex-col md:flex-row">
-                                    <div className="md:w-1/3">
-                                        <img src={turma.img} alt={turma.nome} className="w-full h-48 md:h-full object-cover" />
-                                    </div>
-                                    <div className="md:w-2/3 p-6">
-                                        <div className={`inline-block px-4 py-1 rounded-full text-white font-bold mb-3 ${turma.cor}`}>
-                                            {turma.idade}
-                                        </div>
-                                        <h4 className="text-2xl font-bold text-gray-800 mb-2">{turma.nome}</h4>
-
-                                        <div className="flex items-center gap-2 text-gray-600 mb-3">
-                                            <span className="font-semibold">🕐 {turma.horario}</span>
-                                            <span className="text-gray-300">|</span>
-                                            <span>📍 {turma.sala}</span>
-                                        </div>
-
-                                        <div className="mb-4">
-                                            <p className="font-semibold text-gray-700 mb-2">O que a criança aprende:</p>
-                                            <div className="flex flex-wrap gap-2">
-                                                {turma.aprendizado.map((item, idx) => (
-                                                    <span key={idx} className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
-                                                        {item}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        <button className="mt-2 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                                            Matricular criança
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* --- CURRÍCULO E APRENDIZADO --- */}
-            <section className="py-20 px-6">
-                <div className="max-w-6xl mx-auto">
-                    <h3 className="text-4xl font-black text-center text-gray-800 mb-4">O que ensinamos</h3>
-                    <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-                        Currículo anual organizado em módulos temáticos para aprendizado progressivo
-                    </p>
-
-                    {/* Tabs do currículo */}
-                    <div className="flex flex-wrap justify-center gap-2 mb-8">
-                        {curriculo.map((mod, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setActiveTab(index)}
-                                className={`px-6 py-3 rounded-full font-semibold transition-all ${activeTab === index
-                                    ? 'bg-orange-500 text-white shadow-lg'
-                                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                                    }`}
-                            >
-                                {mod.modulo}
-                            </button>
-                        ))}
-                    </div>
-
-                    <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-8">
-                        <h4 className="text-2xl font-bold text-gray-800 mb-6">{curriculo[activeTab].modulo}</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            {curriculo[activeTab].temas.map((tema, idx) => (
-                                <div key={idx} className="bg-white p-4 rounded-xl shadow-sm flex items-center gap-3">
-                                    <span className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
-                                        {idx + 1}
-                                    </span>
-                                    <span className="text-gray-700">{tema}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
 
             {/* --- SEÇÃO PROFESSORES (AMPLIADA) --- */}
             <section className="py-20 bg-gradient-to-b from-white to-orange-50 px-6">
@@ -288,7 +218,7 @@ export default function EbdInfantil() {
                         {professores.map((prof, i) => (
                             <div key={i} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all text-center group">
                                 <div className="relative mb-6 inline-block">
-                                    <div className="absolute -inset-2 bg-gradient-to-tr from-yellow-400 to-orange-500 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-300"></div>
+                                    <div className="absolute -inset-2 bg-gradient-to-tr from-purple-400 to-purple-950 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-300"></div>
                                     <img
                                         src={prof.img}
                                         alt={prof.nome}
@@ -313,7 +243,7 @@ export default function EbdInfantil() {
 
 
             {/* --- CHAMADA FINAL --- */}
-            <section className="py-20 px-6 bg-linear-to-r from-yellow-400 to-orange-500 text-white">
+            <section className="py-20 px-6 bg-linear-to-r from-purple-800 to-purple-950 text-white">
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-4xl font-bold mb-6">🌟 Faça parte dessa história!</h2>
                     <p className="text-xl mb-8 opacity-90">

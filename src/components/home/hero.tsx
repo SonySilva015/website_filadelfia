@@ -43,7 +43,7 @@ export default function HeroSwiper() {
             text: "Se alguém está em Cristo, é nova criatura; as coisas antigas já passaram.",
             ref: "2 Coríntios 5:17",
             img: m4,
-            what: "",
+            what: "Saber mais",
             link: ""
         }
     ]
@@ -80,7 +80,7 @@ export default function HeroSwiper() {
                 }
             `}</style>
 
-            <section className="relative w-full h-[550px] overflow-hidden flex items-center justify-center text-white">
+            <section className="relative w-full h-[450px] overflow-hidden flex items-center justify-center text-white">
 
                 <Swiper
                     modules={[Autoplay, EffectFade]}
@@ -108,19 +108,20 @@ export default function HeroSwiper() {
                                     priority
                                     className="object-cover slide-bg"
                                 />
-                                <div className="absolute inset-0 bg-black/60"></div>
+                               
+                                <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-900/50 to-gray-900/80"/>
                             </div>
 
                             {/* CONTEÚDO CENTRAL */}
                             <div className='p-2 '>
                                 <div
-                                    className="absolute z-20 max-w-6xl  bottom-10  md:bottom-10 md:left-40 slide-content bg-yellow-50/30 p-5 md:p-10  border-l-6 border-red-500"
+                                    className="absolute z-20 max-w-6xl  bottom-10 rounded-r-lg   md:left-40 slide-content md:bg-black/30 p-5 md:p-10 "
                                 >
-                                    <h1 className="text-3xl font-bold mb-6" >
+                                    <h1 className="text-xl md:text-3xl font-bold mb-6" >
                                         {item.title}
                                     </h1>
 
-                                    <p className="text-md  italic leading-relaxed mb-4">
+                                    <p className=" md:text-md  italic leading-relaxed mb-4">
                                         {item.text}
                                     </p>
 

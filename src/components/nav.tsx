@@ -53,20 +53,21 @@ const Navbar = () => {
             id: 'igreja',
             label: 'Igreja',
             dropdown: [
-                { name: 'Jovens', href: '/sobre' },
                 { name: 'Células', href: '/celulas' },
                 { name: 'EBD - Infantil', href: '/ebd-infantil' },
                 { name: 'Membros', href: '/membros' },
-                { name: 'Liderança', href: '/lideranca' },
+
             ],
         },
         {
-            id: 'Midia',
-            label: 'Mídia',
+            id: 'bib',
+            label: 'Biblioteca',
             dropdown: [
-                { name: 'Artigos', href: '/midia/jovens' },
-                { name: 'Livros', href: '/midia/mulheres' },
-                { name: 'Galeria', href: '/midia/homens' },
+                { name: 'Artigos', href: '/midia/artigos' },
+                { name: 'Escrituras', href: '/midia/mulheres' },
+                { name: 'Ajuda Para Vida', href: '/midia/vida' },
+                { name: 'Para Jovens', href: '/midia/jovens' },
+
 
             ],
         },
@@ -75,18 +76,19 @@ const Navbar = () => {
             label: 'Programações',
             dropdown: [
                 { name: 'Cultos', href: '/cultos' },
-                { name: 'Eventos', href: '/eventos' },
-                { name: 'Escola Bíblica', href: '/ebd' },
+                { name: 'Santa Ceia', href: '/santa-ceia' },
+                { name: 'Escola Bíblica', href: '/estudo-biblico' },
             ],
         },
         {
             id: 'sobre',
             label: 'Sobre Nós',
             dropdown: [
-                { name: 'Nossa história', href: '/contacto' },
-                { name: 'O que cremos', href: '/localizacao' },
-                { name: 'Sobre Igreja', href: '/localizacao' },
-                { name: 'Localização', href: '/localizacao' },
+                { name: 'Nossa história', href: '/nossa-historia' },
+                { name: 'O que cremos', href: '/nossa-crenca' },
+                { name: 'Sobre a Igreja', href: '/sobre' },
+                { name: 'Liderença', href: '/lideranca' },
+
             ],
         },
     ]
@@ -132,7 +134,7 @@ const Navbar = () => {
                                     IEIA - Filadélfia
                                 </p>
                                 <p className="text-[10px] md:text-xl text-gray-500">
-                                Igreja dos Irmãos em Angola
+                                    Igreja dos Irmãos em Angola
                                 </p>
                             </div>
                         </Link>

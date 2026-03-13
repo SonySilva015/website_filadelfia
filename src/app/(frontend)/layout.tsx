@@ -17,10 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="sans-serif " style={{ fontFamily: 'Poppins' }}>
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
-    </html>
+    </html >
   );
 }

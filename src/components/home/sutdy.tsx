@@ -8,7 +8,20 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { CldImage } from 'next-cloudinary';
 import Link from 'next/link';
+import damas from '@/public/img/damas.jpg'
+import damos from '@/public/img/jovensf.jpg'
+import ebd1 from '@/public/img/ebd1.jpeg'
+import ebd2 from '@/public/img/ebd2.jpeg'
+import ebd3 from '@/public/img/ebd3.jpeg'
+import ebd4 from '@/public/img/ebd4.jpeg'
+import ebd5 from '@/public/img/ebd5.jpeg'
+import ebd6 from '@/public/img/ebd6.jpeg'
+import divina from '@/public/img/divina.avif'
+import manacial from '@/public/img/manacial.avif'
+
+
 
 const grupos = [
 
@@ -18,7 +31,7 @@ const grupos = [
         description: "Grupo de jovens maculinos, compreedida dos 16 a 26 anos",
         horas: "todas as sexta feiras as 16h",
         link: "",
-        image: "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1200&q=80",
+        image: divina,
     },
     {
         id: 2,
@@ -26,7 +39,7 @@ const grupos = [
         description: "Grupo de jovens femininos, compredida dos 16 a 26 anos",
         horas: "todas as sexta feiras as 16h",
         link: "",
-        image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&q=80",
+        image: manacial,
     },
     {
         id: 3,
@@ -34,7 +47,7 @@ const grupos = [
         description: "Grupo de jovens femininos (casadas), compreedida dos 27 a 34 anos",
         horas: "todas as sexta feiras as 16h",
         link: "",
-        image: "/img/damas.jpg",
+        image: damas,
     },
     {
         id: 4,
@@ -42,34 +55,32 @@ const grupos = [
         description: "Grupo de jovens maculinos (Casados), compreedida dos 27 a 34 anos",
         horas: "todas as sexta feiras as 16h",
         link: "",
-        image: "/img/celulaFundo.jpeg",
+        image: damos,
     }
 ];
 
 const imagensInfantil = [
-    "/img/ebd1.jpeg",
-    "/img/ebd2.jpeg",
-    "/img/ebd3.jpeg",
-    "/img/ebd4.jpeg",
-    "/img/ebd5.jpeg",
-    "/img/ebd6.jpeg",
+    ebd1,
+    ebd2,
+    ebd3,
+    ebd4,
+    ebd5,
+    ebd6,
 ];
 
 const EstudosBiblicos = () => {
     return (
-        <>
-            {/* ===================== */}
-            {/* SEÇÃO GRUPOS */}
-            {/* ===================== */}
+        <div className='bg-white'>
+
             <section
                 className="relative py-24 px-6"
 
             >
-                <div className="absolute inset-0 bg-white/70"></div>
+                <div className="absolute inset-0"></div>
 
                 <div className="relative z-10 max-w-7xl mx-auto text-black text-center">
                     <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                        Conheça Nossos <span className="text-purple-900">Celulas</span>
+                        Conheça Nossas <span className="text-purple-900">Celulas</span>
                     </h2>
 
                     <p className="text-lg text-black mb-14 max-w-2xl mx-auto">
@@ -83,9 +94,9 @@ const EstudosBiblicos = () => {
                                 key={grupo.id}
                                 className="group relative h-105 rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:scale-105"
                             >
-                                <img
+                                <Image
                                     src={grupo.image}
-
+                                    fill
                                     alt={grupo.title}
                                     className="absolute inset-0 w-full h-full  object-cover"
                                 />
@@ -99,8 +110,8 @@ const EstudosBiblicos = () => {
                                         {grupo.description}
                                     </p>
 
-                                    <Link
-                                        href={grupo.link}
+                                    <p
+
                                         className={`inline-flex items-center  backdrop-blur-md justify-center gap-2 bg-linear-to-r w-[70%] border hover:text-red-600 px-6 py-3 mt-5 rounded-md text-sm font-semibold transition duration-300 shadow-lg`}
                                     >
                                         Saber mais
@@ -118,7 +129,7 @@ const EstudosBiblicos = () => {
                                             />
                                         </svg>
 
-                                    </Link>
+                                    </p>
 
                                 </div>
                                 <div className='bg-white/10 backdrop-blur-md z-10 absolute top-6 left-4 p-2 rounded-full'>
@@ -145,7 +156,7 @@ const EstudosBiblicos = () => {
             {/* ===================== */}
             {/* SEÇÃO INFANTIL COM CAROUSEL */}
             {/* ===================== */}
-            <section className="py-24 px-6 bg-linear-to-r from-purple-700 to-blue-900 text-white">
+            <section className="py-24 px-6 bg-linear-to-r from-purple-900 to-purple-950 text-white">
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 text-center">
                     Estudo Bíblico Dominical
                     <span className="text-yellow-400"> Infantil</span>
@@ -163,7 +174,7 @@ const EstudosBiblicos = () => {
                         >
                             {imagensInfantil.map((img, index) => (
                                 <SwiperSlide key={index}>
-                                    <img
+                                    <Image
                                         src={img}
                                         alt="Estudo Bíblico Infantil"
                                         className="w-full h-100 object-cover"
@@ -207,7 +218,7 @@ const EstudosBiblicos = () => {
                         <div className="flex flex-wrap gap-4">
                             <Link
                                 href="./ebd-infantil"
-                                className="bg-linear-to-r border  hover:from-rose-600 hover:to-red-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-yellow-300 transition duraction-2000"
+                                className="bg-linear-to-r border bg-white hover:text-white hover:bg-purple-500 text-purple-900 font-semibold px-6 py-3 rounded-lg shadow  transition-all duraction-3000"
                             >
                                 Ler mais
                             </Link>
@@ -219,7 +230,7 @@ const EstudosBiblicos = () => {
                 </div>
             </section>
 
-        </>
+        </div>
     );
 };
 

@@ -1,5 +1,4 @@
 
-
 import { useState } from "react";
 import {
     Calendar,
@@ -8,8 +7,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { getNoticebyDestaque1 } from "@/collections/notice/fetcher";
-import { relationIsObject } from '@/lib/payload/helpers/relation-is-object'
-import { notFound } from 'next/navigation'
 import Link from "next/link";
 
 

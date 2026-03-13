@@ -5,9 +5,7 @@ import {SearchX} from 'lucide-react'
 
 async function getNoticias() {
   try {
-    const res = await fetch("http://localhost:3000/api/noticias?limit=10", {
-      cache: "no-store",
-    })
+    const res = await fetch("http://localhost:3000/api/noticias?limit=10")
 
     if (!res.ok) {
       console.error("Erro ao buscar notícias:", res.statusText)
