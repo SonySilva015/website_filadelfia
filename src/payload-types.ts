@@ -69,8 +69,6 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    Artigos: Artigo;
-    Artigos_Autores: Artigos_Autore;
     noticias: Noticia;
     celulas: Celula;
     professores: Professore;
@@ -83,8 +81,6 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    Artigos: ArtigosSelect<false> | ArtigosSelect<true>;
-    Artigos_Autores: Artigos_AutoresSelect<false> | Artigos_AutoresSelect<true>;
     noticias: NoticiasSelect<false> | NoticiasSelect<true>;
     celulas: CelulasSelect<false> | CelulasSelect<true>;
     professores: ProfessoresSelect<false> | ProfessoresSelect<true>;
@@ -234,50 +230,6 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Artigos".
- */
-export interface Artigo {
-  id: number;
-  title: string;
-  slug: string;
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
-  contentSummary: string;
-  readTimeInMins?: number | null;
-  coverImage: number | Media;
-  author: number | Artigos_Autore;
-  status: 'Draft' | 'Published';
-  publishedAt?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Artigos_Autores".
- */
-export interface Artigos_Autore {
-  id: number;
-  name: string;
-  avatar: number | Media;
-  role: 'Staff Writer' | 'Guest Writer' | 'Flo Rida' | 'Contributor' | 'Editor';
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "noticias".
  */
 export interface Noticia {
@@ -415,14 +367,6 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'Artigos';
-        value: number | Artigo;
-      } | null)
-    | ({
-        relationTo: 'Artigos_Autores';
-        value: number | Artigos_Autore;
-      } | null)
-    | ({
         relationTo: 'noticias';
         value: number | Noticia;
       } | null)
@@ -536,34 +480,6 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Artigos_select".
- */
-export interface ArtigosSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  content?: T;
-  contentSummary?: T;
-  readTimeInMins?: T;
-  coverImage?: T;
-  author?: T;
-  status?: T;
-  publishedAt?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Artigos_Autores_select".
- */
-export interface Artigos_AutoresSelect<T extends boolean = true> {
-  name?: T;
-  avatar?: T;
-  role?: T;
-  updatedAt?: T;
-  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -9,8 +9,6 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media/config'
 import { env } from './lib/env'
-import { Articles } from './collections/article/config'
-import { ArticleAuthors } from './collections/ArticleAuthors/config'
 import { Celulas } from './collections/celulas/celulas'
 import { Professores } from './collections/professores'
 import { Noticias } from './collections/notice/noticias'
@@ -35,7 +33,7 @@ export default buildConfig({
             password: env.CMS_SEED_ADMIN_PASSWORD,
         },
     },
-    collections: [Users, Media, Articles, ArticleAuthors, Noticias, Celulas, Professores],
+    collections: [Users, Media, Noticias, Celulas, Professores],
     editor: lexicalEditor({
         features: ({ defaultFeatures }) => [...defaultFeatures, FixedToolbarFeature()],
     }),
