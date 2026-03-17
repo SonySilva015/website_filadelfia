@@ -50,12 +50,12 @@ const Navbar = () => {
         { id: 'noticia', label: 'Notćias', href: '/noticias' },
 
         {
-            id: 'igreja',
-            label: 'Igreja',
+            id: 'mini',
+            label: 'Ministérios',
             dropdown: [
                 { name: 'Células', href: '/celulas' },
                 { name: 'EBD - Infantil', href: '/ebd-infantil' },
-                { name: 'Membros', href: '/membros' },
+
 
             ],
         },

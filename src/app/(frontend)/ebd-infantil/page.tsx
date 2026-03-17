@@ -1,113 +1,37 @@
 'use client'
 import React from 'react';
-
-const turmas = [
-    {
-        nome: "Cordeirinhos",
-        idade: "0 a 3 anos",
-        cor: "bg-pink-400",
-        img: "/img/ebd1.jpeg",
-        horario: "9h às 10h30",
-        sala: "Sala 01 - Térreo",
-        aprendizado: [
-            "Primeiras histórias da Bíblia",
-            "Músicas gestuais",
-            "Afeto e acolhimento",
-            "Orações simples"
-        ]
-    },
-    {
-        nome: "Pequenos Discípulos",
-        idade: "4 a 6 anos",
-        cor: "bg-yellow-400",
-        img: "/img/ebd3.jpeg",
-        horario: "9h às 11h",
-        sala: "Sala 02 - Térreo",
-        aprendizado: [
-            "Histórias bíblicas ilustradas",
-            "Versículos com gestos",
-            "Atividades lúdicas",
-            "Oração em grupo"
-        ]
-    },
-    {
-        nome: "Soldados de Cristo",
-        idade: "7 a 9 anos",
-        cor: "bg-green-400",
-        img: "/img/ebd5.jpeg",
-        horario: "9h às 11h15",
-        sala: "Sala 03 - 1º Andar",
-        aprendizado: [
-            "Personagens bíblicos",
-            "Dinâmicas interativas",
-            "Oficinas de arte",
-            "Pequenos grupos"
-        ]
-    },
-    {
-        nome: "Embaixadores do Rei",
-        idade: "10 a 12 anos",
-        cor: "bg-blue-400",
-        img: "https://images.unsplash.com/photo-1551632432-c735e829942b?q=80&w=400",
-        horario: "9h às 11h30",
-        sala: "Sala 04 - 1º Andar",
-        aprendizado: [
-            "Estudos temáticos",
-            "Debates bíblicos",
-            "Projetos missionários",
-            "Liderança cristã"
-        ]
-    },
-];
+import hero from '@/public/img/hero.jpg'
+import Image from 'next/image'
 
 const professores = [
     {
         nome: "Joaquim Paulo",
-        cargo: "Coordenadora Geral",
-        bio: "Pedagoga com especialização em Educação Cristã. Há 12 anos transformando vidas através do ensino bíblico criativo.",
+        cargo: " ",
         img: "",
-        formacao: "Pedagogia - PUC",
-        especialidade: "Desenvolvimento infantil"
+
     },
     {
         nome: "Anita Alfredo",
-        cargo: "Professor - Soldados",
-        bio: "Especialista em dinâmicas interativas e contação de histórias. Criador do método 'Teatro Bíblico' que encanta as crianças.",
+        cargo: " ",
         img: "/img/anita_pro.jpeg",
-        formacao: "Teologia - UNASP",
-        especialidade: "Didática lúdica"
+
     },
     {
         nome: " Januario Justo",
-        cargo: "Professora - Cordeirinhos",
-        bio: "Especializada em primeira infância com abordagem Montessori. Traz acolhimento e cuidado no primeiro contato com a Palavra.",
+        cargo: " ",
         img: "/img/papy.jpg",
-        formacao: "Educação Infantil",
-        especialidade: "Psicomotricidade"
+
     },
     {
-        nome: "NataliaMarichi",
-        cargo: "Professor - Embaixadores",
-        bio: "Pastor e educador com foco em formação de jovens líderes. Prepara pré-adolescentes para os desafios da fé.",
+        nome: "Natalia Marichi",
+        cargo: "Professora - Coodernadora",
         img: "",
-        formacao: "Teologia e Filosofia",
-        especialidade: "Liderança juvenil"
+
     },
 ];
 
-const horarios = [
-    { dia: "Domingo", horario: "09h00 - 11h30", atividade: "Escola Bíblica Dominical" },
-    { dia: "Quarta-feira", horario: "19h00 - 20h30", atividade: "Classe Bíblica Kids" },
-    { dia: "Sábado", horario: "15h00 - 17h00", atividade: "Oficinas e Ensaios" },
-    { dia: "Último domingo do mês", horario: "09h00 - 12h00", atividade: "Culto Infantil Especial" },
-];
 
-const curriculo = [
-    { modulo: "Módulo 1: Quem é Deus", temas: ["A criação", "O amor de Deus", "Cuidado e proteção"] },
-    { modulo: "Módulo 2: Jesus, meu amigo", temas: ["Nascimento de Jesus", "Milagres", "Parábolas"] },
-    { modulo: "Módulo 3: A Bíblia", temas: ["Como ler a Bíblia", "Histórias de fé", "Versículos para memorizar"] },
-    { modulo: "Módulo 4: Frutos do Espírito", temas: ["Amor e alegria", "Paz e paciência", "Bondade e fé"] },
-];
+
 
 export default function EbdInfantil() {
     const [activeTab, setActiveTab] = React.useState(0);
@@ -118,9 +42,10 @@ export default function EbdInfantil() {
             {/* --- HERO EBD --- */}
             <section className="relative h-[400px] flex  overflow-hidden">
                 <div className="absolute inset-0">
-                    <img
-                        src="/img/hero.jpg"
+                    <Image
+                        src={hero}
                         alt="Crianças felizes"
+                        fill
                         className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/70"></div>
@@ -169,42 +94,42 @@ export default function EbdInfantil() {
                 </div>
             </section>
 
-{/* --- HORÁRIOS DESTAQUE --- */}
-<section className="relative py-20 px-6 overflow-hidden">
-    {/* Background com Overlay */}
-    <div 
-        className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-500 hover:scale-105"
-        style={{ backgroundImage: "url('/img/ebd1.jpeg')" }}
-    />
-    <div className="absolute inset-0 bg-black/80 z-10"></div>
+            {/* --- HORÁRIOS DESTAQUE --- */}
+            <section className="relative py-20 px-6 overflow-hidden">
+                {/* Background com Overlay */}
+                <div
+                    className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-500 hover:scale-105"
+                    style={{ backgroundImage: "url('/img/ebd1.jpeg')" }}
+                />
+                <div className="absolute inset-0 bg-black/80 z-10"></div>
 
-    <div className="relative z-20 max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-            <h3 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-                Horários de <span className="text-blue-500">Estudo</span>
-            </h3>
-            <div className="h-1 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></div>
-        </div>
+                <div className="relative z-20 max-w-6xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h3 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+                            Horários de <span className="text-blue-500">Estudo</span>
+                        </h3>
+                        <div className="h-1 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+                    </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card de Horário */}
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-white/20 transition-all group">
-                <div className="bg-blue-500 p-3 rounded-full mb-4 group-hover:scale-110 transition-transform">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="Refazer: M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {/* Card de Horário */}
+                        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl flex flex-col items-center text-center hover:bg-white/20 transition-all group">
+                            <div className="bg-blue-500 p-3 rounded-full mb-4 group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="Refazer: M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h4 className="text-white font-semibold text-xl mb-2">Domingo</h4>
+                            <p className="text-gray-300 text-lg font-medium">07:30h</p>
+                            <span className="text-xs text-blue-400 mt-2 uppercase tracking-widest font-bold">Escola Bíblica</span>
+                        </div>
+
+                        {/* Você pode repetir o card acima para outros horários ou deixar o grid vazio por enquanto */}
+                    </div>
                 </div>
-                <h4 className="text-white font-semibold text-xl mb-2">Domingo</h4>
-                <p className="text-gray-300 text-lg font-medium">07:30h</p>
-                <span className="text-xs text-blue-400 mt-2 uppercase tracking-widest font-bold">Escola Bíblica</span>
-            </div>
+            </section>
 
-            {/* Você pode repetir o card acima para outros horários ou deixar o grid vazio por enquanto */}
-        </div>
-    </div>
-</section>
 
-            
 
             {/* --- SEÇÃO PROFESSORES (AMPLIADA) --- */}
             <section className="py-20 bg-gradient-to-b from-white to-orange-50 px-6">
@@ -227,13 +152,7 @@ export default function EbdInfantil() {
                                 </div>
                                 <h4 className="text-2xl font-bold text-gray-800">{prof.nome}</h4>
                                 <p className="text-orange-500 font-bold text-sm uppercase mb-2">{prof.cargo}</p>
-                                <p className="text-sm font-semibold text-gray-500 mb-3">{prof.formacao}</p>
-                                <p className="text-gray-600 text-sm mb-4">{prof.bio}</p>
-                                <div className="border-t pt-4">
-                                    <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs">
-                                        {prof.especialidade}
-                                    </span>
-                                </div>
+
                             </div>
                         ))}
                     </div>
@@ -245,13 +164,13 @@ export default function EbdInfantil() {
             {/* --- CHAMADA FINAL --- */}
             <section className="py-20 px-6 bg-linear-to-r from-purple-800 to-purple-950 text-white">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="text-4xl font-bold mb-6">🌟 Faça parte dessa história!</h2>
+                    <h2 className="text-4xl font-bold mb-6"> Faça parte dessa história!</h2>
                     <p className="text-xl mb-8 opacity-90">
                         Traga seu filho para conhecer Jesus de maneira divertida e transformadora.
                         As matrículas estão abertas!
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="px-8 py-4 bg-white text-orange-600 font-bold rounded-full hover:bg-gray-100 transition-colors shadow-lg">
+                        <button className="px-8 py-4 bg-white text-black-600 font-bold rounded-full hover:bg-gray-100 transition-colors shadow-lg">
                             Matricular agora
                         </button>
                         <button className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-colors">

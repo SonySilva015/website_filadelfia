@@ -24,7 +24,7 @@ export default function Content() {
                                 Aqui você encontra amor, comunhão e propósito.
                             </p>
 
-                            <Link href={'/sobre'} className="mt-8 bg-white text-purple-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 mx-auto md:mx-0">
+                            <Link href={'/sobre'} className="mt-8 bg-white text-purple-900 font-semibold px-8 py-3 text-center rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 mx-auto md:mx-0">
                                 Conheça-nos
                             </Link>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Banner from '@/components/banner'
 import Navbar from "@/components/nav";
 import Footer from "@/components/footer";
 
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="sans-serif " style={{ fontFamily: 'Poppins' }}>
+
         <Navbar />
         {children}
         <Footer />

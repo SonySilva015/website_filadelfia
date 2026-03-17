@@ -24,13 +24,15 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import Image, { StaticImageData } from 'next/image'
+import jov from '@/public/img/jovensf.jpg'
+import doa from '@/public/img/doação.jpg.jpg'
 import ceia from '@/public/img/ceia.jpeg'
 import estudo from '@/public/img/esrudo.jpg'
 import geral from '@/public/img/culto.jpeg'
 import capa from '@/public/img/culto.jpeg'
-import img1 from '@/public/adora/culto1.jpg'
-import img2 from '@/public/adora/culto1.jpg'
-import img3 from '@/public/adora/culto1.jpg'
+import img1 from '@/public/adora/ado1.jpg'
+import img2 from '@/public/adora/ado2.jpg'
+import img3 from '@/public/adora/marta.jpg'
 
 // Types
 interface Culto {
@@ -61,9 +63,9 @@ const cultos = [
         dia: "Quinzenalmente",
         horarios: "",
         desc: "Todos Jovens Estão convidados a participar deste culto, sem restição a comunhão ou congregação",
-        img: img1,
+        img: jov,
         categoria: 'CUlto',
-        corDestaque: "from-stone-900/90 to-stone-800/80"
+        corDestaque: "from-slate-900/90 to-slate-800/80"
     },
     {
         id: 2,
@@ -71,9 +73,9 @@ const cultos = [
         dia: "Anualmente",
         horarios: '',
         desc: "Culto onde expressamos gratidão a Deus por tudo que tem feito por nós e por tudo que já fez",
-        img: img2,
+        img: doa,
         categoria: 'Culto',
-        corDestaque: "from-stone-900/90 to-stone-800/80"
+        corDestaque: "from-slate-900/90 to-slate-800/80"
     }
 ]
 
@@ -109,8 +111,8 @@ const HeroSection: React.FC = () => (
             priority
             quality={100}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/70 to-stone-950/50 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-slate-950/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent z-10" />
 
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -130,7 +132,7 @@ const HeroSection: React.FC = () => (
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-base sm:text-lg md:text-xl text-stone-200 max-w-xl"
+                className="text-base sm:text-lg md:text-xl text-slate-200 max-w-xl"
             >
                 Venha viver uma experiência de adoração, palavra e comunhão em nossa igreja.
             </motion.p>
@@ -154,7 +156,7 @@ const CultoCard: React.FC<{ culto: any; index: number }> = ({ culto, index }) =>
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-stone-900/90 via-stone-900/80 to-slate-900/90" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 to-slate-900/40" />
 
         <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 md:p-8 text-white">
             <div className="mb-2 sm:mb-3 md:mb-4">
@@ -165,13 +167,6 @@ const CultoCard: React.FC<{ culto: any; index: number }> = ({ culto, index }) =>
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 md:mb-3">{culto.nome}</h3>
             <p className="text-white/80 mb-4 md:mb-6 line-clamp-2 text-sm sm:text-base">{culto.desc}</p>
 
-            <motion.button
-                whileHover={{ x: 10 }}
-                className="flex items-center gap-2 text-white group-hover:gap-3 transition-all w-fit text-sm md:text-base"
-            >
-                <span>Saiba mais</span>
-                <ArrowRight size={16} />
-            </motion.button>
         </div>
     </motion.article>
 )
@@ -185,11 +180,11 @@ const CultosGrid: React.FC = () => (
             viewport={{ once: true }}
             className="text-center mb-10 md:mb-16"
         >
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-stone-800 mb-2 md:mb-4">
-                Nossa <span className="font-bold">Programação</span>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-slate-800 mb-2 md:mb-4">
+                Cultos <span className="font-bold">Especias</span>
             </h2>
-            <p className="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto px-4">
-                Conheça os diferentes momentos que preparamos para você adorar a Deus
+            <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto px-4">
+                Conheça outros nossos momentos especiais reservado para deus
             </p>
         </motion.div>
 
@@ -210,10 +205,10 @@ const IntroCultosSection: React.FC = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
             >
-                <h1 className="mb-4 md:mb-5 text-xl sm:text-2xl md:text-4xl text-stone-800 font-light">
+                <h1 className="mb-4 md:mb-5 text-xl sm:text-2xl md:text-4xl text-slate-800 font-light">
                     Conheça como são os nossos <span className="font-bold">Cultos</span>
                 </h1>
-                <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                     Conheça os nossos programas de adoração ao Senhor, momentos especiais
                     preparados para juntos louvar, agradecer e buscar a presença de Deus.
                     Em cada encontro vivemos tempos de oração, louvor e meditação na Palavra,
@@ -245,7 +240,7 @@ const SantaCeiaSection: React.FC = () => (
                 className="object-cover"
             />
         </div>
-        <div className="absolute inset-0 bg-linear-to-l from-stone-900/90 via-stone-800/80 to-stone-900/90 md:to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-l from-slate-900/90 via-slate-800/80 to-slate-900/90 md:to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
             <div className="grid md:grid-cols-2 gap-8 md:gap-16">
                 <div className="md:col-start-2">
@@ -285,9 +280,13 @@ const SantaCeiaSection: React.FC = () => (
                             ))}
                         </div>
 
-                        <div className="flex items-center gap-3 md:gap-4 md:mb-8">
-                            <Link href="/santa-ceia" className='border bg-white text-stone-800 w-28 rounded-md p-2 hover:text-white hover:bg-stone-800 transition-all duration-1000'>Ler sobre </Link>
-                        </div>
+                        <motion.button
+                            whileHover={{ x: 10 }}
+                            className="flex items-center gap-2 text-white group-hover:gap-3 hover:text-red-300 transition-all w-fit text-sm md:text-base md:mb-10 duration-500"
+                        >
+                            <Link href="/santa-ceia">Saiba mais</Link>
+                            <ArrowRight size={16} />
+                        </motion.button>
                     </motion.div>
                 </div>
             </div>
@@ -297,7 +296,7 @@ const SantaCeiaSection: React.FC = () => (
 
 // Estudo Dominical Section - Corrigida com imagem e texto separados
 const EstudoDominicalSection: React.FC = () => (
-    <section className="relative min-h-[60vh] md:h-screen flex items-center overflow-hidden py-16 md:py-0 md:bg-stone-800">
+    <section className="relative min-h-[60vh] md:h-screen flex items-center overflow-hidden py-16 md:py-0 md:bg-slate-800">
         {/* Imagem - visível apenas em md pra cima */}
         <div className="hidden md:block absolute inset-0 w-1/2 ml-auto right-0">
             <Image
@@ -316,7 +315,7 @@ const EstudoDominicalSection: React.FC = () => (
                 className="object-cover"
             />
         </div>
-        <div className="absolute inset-0 bg-linear-to-l from-stone-900/90 via-stone-800/80 to-stone-900/90 md:to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-l from-slate-900/90 via-slate-800/80 to-slate-900/90 md:to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
 
@@ -385,7 +384,7 @@ const CultoGeralSection: React.FC = () => (
                 className="object-cover"
             />
         </div>
-        <div className="absolute z-0 inset-0 bg-linear-to-l from-stone-900/90 via-stone-800/80 to-stone-900/90 md:to-transparent" />
+        <div className="absolute z-0 inset-0 bg-linear-to-l from-slate-900/90 via-slate-800/80 to-slate-900/90 md:to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
             <div className="grid md:grid-cols-2 gap-8 md:gap-16">
@@ -437,7 +436,7 @@ const CultoGeralSection: React.FC = () => (
 )
 // Adoração Section
 const AdoracaoSection: React.FC = () => (
-    <section className="relative py-16 md:py-28 bg-linear-to-br from-stone-900 to-stone-800 text-white overflow-hidden">
+    <section className="relative py-16 md:py-28 bg-linear-to-br from-slate-900 to-slate-800 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1635282937057-dd12c9421b87?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] opacity-10" />
         </div>
@@ -474,10 +473,10 @@ const OQueVestirSection: React.FC = () => (
                 className="text-center mb-10 md:mb-16"
             >
 
-                <h2 className="text-2xl sm:text-3xl md:text-5xl font-light mb-4 md:mb-6 text-stone-800">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-light mb-4 md:mb-6 text-slate-800">
                     O que <span className="font-bold">vestir?</span>
                 </h2>
-                <p className="text-sm sm:text-base text-stone-600 max-w-3xl mx-auto px-4">
+                <p className="text-sm sm:text-base text-slate-600 max-w-3xl mx-auto px-4">
                     Em nossa igreja, você é bem-vindo como é. Não temos roupa code rígido,
                     mas aqui vão algumas dicas para seu conforto:
                 </p>
@@ -502,10 +501,10 @@ const OQueVestirSection: React.FC = () => (
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="bg-stone-50 rounded-xl md:rounded-2xl p-6 md:p-8 text-center hover:shadow-md transition-shadow"
+                        className="bg-slate-50 rounded-xl md:rounded-2xl p-6 md:p-8 text-center hover:shadow-md transition-shadow"
                     >
-                        <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-stone-800">{item.titulo}</h3>
-                        <p className="text-sm md:text-base text-stone-600">{item.desc}</p>
+                        <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-slate-800">{item.titulo}</h3>
+                        <p className="text-sm md:text-base text-slate-600">{item.desc}</p>
                     </motion.div>
                 ))}
             </div>
@@ -520,18 +519,18 @@ const GaleriaSection: React.FC = () => {
     const imagens: StaticImageData[] = [img1, img2, img3]
 
     return (
-        <section className="py-16 md:py-28 bg-stone-50">
+        <section className="py-16 md:py-28 bg-slate-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-2xl sm:text-3xl md:text-5xl font-light text-center mb-8 md:mb-16 text-stone-800"
+                    className="text-2xl sm:text-3xl md:text-5xl font-light text-center mb-8 md:mb-16 text-slate-800"
                 >
                     Momentos de <span className="font-bold">Adoração</span>
                 </motion.h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 grayscale-60 ">
                     {imagens.map((img, index) => (
                         <motion.div
                             key={index}
@@ -539,7 +538,7 @@ const GaleriaSection: React.FC = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="relative h-60 sm:h-72 md:h-80 rounded-xl md:rounded-2xl overflow-hidden shadow-md group"
+                            className="relative h-60 sm:h-72 md:h-90 rounded-xl md:rounded-md overflow-hidden shadow-md group"
                         >
                             <Image
                                 src={img}
@@ -547,7 +546,7 @@ const GaleriaSection: React.FC = () => {
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-slate-950/90  group-hover:opacity-100 transition-opacity duration-300" />
                         </motion.div>
                     ))}
                 </div>
@@ -563,12 +562,12 @@ const CTASection: React.FC = () => (
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto bg-gradient-to-br from-stone-900 to-stone-800 rounded-2xl md:rounded-3xl p-8 md:p-16 text-center text-white"
+            className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl md:rounded-3xl p-8 md:p-16 text-center text-white"
         >
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-light mb-4 md:mb-6">
                 Planeja nos <span className="font-bold">visitar?</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-stone-300 mb-6 md:mb-10 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-slate-300 mb-6 md:mb-10 max-w-2xl mx-auto">
                 Será uma alegria receber você e sua família em nossa igreja.
                 Venha fazer parte desta família!
             </p>
