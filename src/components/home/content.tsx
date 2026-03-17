@@ -10,7 +10,7 @@ export default function Content() {
             <section className=" md:py-12 bg-white">
                 <div className="relative  mx-auto overflow-hidden shadow-2xl">
 
-                    <div className="flex flex-col md:flex-row min-h-[450px]">
+                    <div className="flex flex-col md:flex-row min-h-122">
 
                         {/* TEXTO */}
                         <div className="flex flex-col justify-center px-8 md:px-16 py-16 w-full md:w-1/2 bg-linear-to-br from-[#5c046b] to-[#380147] text-white text-center md:text-left">
@@ -49,7 +49,7 @@ export default function Content() {
                 </div>
             </section>
 
-            <section className="relative w-full min-h-[500px] flex items-center justify-center text-white">
+            <section className="relative w-full min-h-125 flex items-center justify-center text-white">
 
                 {/* Imagem fixa */}
                 <div
