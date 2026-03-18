@@ -1,28 +1,18 @@
 import Not from '@/components/notice/noticias'
 import Destaque from '@/components/notice/destaque'
-import go from '@/public/img/read_bible.jpg'
-import Image from 'next/image'
+
 
 
 export default function Notice() {
     return (
         <section>
 
-            <div className="relative h-80 flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src={go}
-                        alt="Hero Background"
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-black/70" />
-                </div>
+            <div className="relative h-60 flex items-center justify-center overflow-hidden bg-linear-to-t from-slate-950 to-slate-800">
+
 
                 <div className="relative z-10 text-white px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-                        hello world
+                        Home / Notícias
                     </h1>
                     <p className="text-lg sm:text-xl max-w-2xl mx-auto">
                         veja aqui as notícias

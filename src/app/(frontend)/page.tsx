@@ -8,12 +8,13 @@ import Teans from '@/components/home/teanSec'
 import NoticyHome from "@/components/home/noticias";
 
 export default async function Home() {
-  const Noticia = await GetNoticeLimit();
+  const noticia = await GetNoticeLimit();
+
   return (
     <div className="flex flex-col ">
       <Hero />
       <Content />
-      <NoticyHome noticia={Noticia} />
+      <NoticyHome noticias={noticia} />
       < Cultos />
       <Study />
       <Teans />

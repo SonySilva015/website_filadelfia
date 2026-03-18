@@ -30,7 +30,7 @@ const grupos = [
         title: "Mensagem Divina",
         description: "Grupo de jovens maculinos, compreedida dos 16 a 26 anos",
         horas: "todas as sexta feiras as 16h",
-        link: "",
+        link: "/celulas",
         image: divina,
     },
     {
@@ -38,7 +38,7 @@ const grupos = [
         title: "Manancial de Amor",
         description: "Grupo de jovens femininos, compredida dos 16 a 26 anos",
         horas: "todas as sexta feiras as 16h",
-        link: "",
+        link: "/celulas",
         image: manacial,
     },
     {
@@ -46,7 +46,7 @@ const grupos = [
         title: "Nova Aliança",
         description: "Grupo de jovens femininos (casadas), compreedida dos 27 a 34 anos",
         horas: "todas as sexta feiras as 16h",
-        link: "",
+        link: "/celulas",
         image: damas,
     },
     {
@@ -54,7 +54,7 @@ const grupos = [
         title: "Geração Eleita",
         description: "Grupo de jovens maculinos (Casados), compreedida dos 27 a 34 anos",
         horas: "todas as sexta feiras as 16h",
-        link: "",
+        link: "/celulas",
         image: damos,
     }
 ];
@@ -112,7 +112,7 @@ const EstudosBiblicos = () => {
 
                                     <p
 
-                                        className={`inline-flex items-center  backdrop-blur-md justify-center gap-2 bg-linear-to-r w-[70%] border hover:text-red-600 px-6 py-3 mt-5 rounded-md text-sm font-semibold transition duration-300 shadow-lg`}
+                                        className={`inline-flex items-center  text-white cursor-pointer justify-center gap-2 bg-linear-to-r w-[70%]  hover:text-red-600 px-6 py-3 mt-5 rounded-md text-sm font-semibold transition duration-300 shadow-lg`}
                                     >
                                         Saber mais
                                         <svg

@@ -18,7 +18,7 @@ const programacoes = [
             ceia,
         verse: 'Fazei isto em memória de mim',
         verseRef: 'Lucas 22:19',
-        link: '#santaceia',
+        link: '/santa-ceia',
         gradient: 'from-rose-500 to-red-600',
     },
     {
@@ -31,7 +31,7 @@ const programacoes = [
             estudo,
         verse: 'Examinais as Escrituras',
         verseRef: 'João 5:39',
-        link: '#estudo',
+        link: '/estudo-biblico',
         gradient: 'from-rose-500 to-red-600',
     },
     {
@@ -44,7 +44,7 @@ const programacoes = [
             culto,
         verse: 'Alegrei-me quando me disseram',
         verseRef: 'Salmos 122:1',
-        link: '#culto',
+        link: '/cultos',
         gradient: 'from-rose-500 to-red-600',
     },
 

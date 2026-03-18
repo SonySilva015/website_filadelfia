@@ -43,7 +43,7 @@ export default async function NoticiasPage({ searchParams }: any) {
   }
 
   return (
-    <main className="min-h-screen bg-linear-to-b from-slate-50 to-white">
+    <main className="h-suto bg-linear-to-b from-slate-50 to-white">
 
       {/* HEADER */}
       <div className="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-10">

@@ -55,7 +55,7 @@ export default function Content() {
                 <div
                     className="absolute inset-0 bg-fixed bg-center bg-cover"
                     style={{
-                        backgroundImage: "url('/src/public/img/altar_gemi.png')"
+                        backgroundImage: "url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=773&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
                     }}
                 />
 
