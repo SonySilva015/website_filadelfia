@@ -1,7 +1,7 @@
 import Not from '@/components/notice/noticias'
 import Destaque from '@/components/notice/destaque'
 
-
+export const dynamic = 'force-dynamic'
 
 export default function Notice() {
     return (

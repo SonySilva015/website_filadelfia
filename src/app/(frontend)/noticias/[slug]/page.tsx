@@ -8,6 +8,7 @@ import { relationIsObject } from "@/lib/payload/helpers/relation-is-object"
 import { getNoticebySlug } from "@/collections/notice/fetcher"
 import RichTextRenderer from "@/components/RichTextRenderer"
 
+export const dynamic = 'force-dynamic'
 export default async function NoticiaPage({
   params,
 }: {

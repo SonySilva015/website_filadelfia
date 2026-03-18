@@ -7,6 +7,7 @@ import Study from '@/components/home/sutdy'
 import Teans from '@/components/home/teanSec'
 import NoticyHome from "@/components/home/noticias";
 
+export const dynamic = 'force-dynamic'
 export default async function Home() {
   const noticia = await GetNoticeLimit();
 
