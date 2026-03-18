@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { GetNoticeLimit } from "@/collections/notice/fetcher"; // Importando o fetcher que configuramos
 import { Calendar, ArrowRight, Newspaper } from 'lucide-react';
-import { motion } from 'framer-motion';
+
 
 export default async function NoticiasPage() {
   // Usamos o fetcher direto do servidor para ser mais rápido e seguro

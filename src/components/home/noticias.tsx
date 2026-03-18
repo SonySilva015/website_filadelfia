@@ -6,7 +6,7 @@ import { Newspaper } from 'lucide-react'
 
 export default async function NoticyHome({ noticias }: any) {
 
-    if (!noticias) {
+    if (!noticias || noticias.length == 0) {
         return (
             <section className="p-4 bg-white" >
                 <div className="flex gap-5 flex-col lg:flex-row md:p-10">
