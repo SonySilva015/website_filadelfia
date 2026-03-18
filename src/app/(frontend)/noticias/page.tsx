@@ -12,7 +12,7 @@ export default function Notice() {
 
                 <div className="relative z-10 text-white px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-                        Home / Notícias
+                        Home / <span className='text-red-700'>Notícias</span>
                     </h1>
                     <p className="text-lg sm:text-xl max-w-2xl mx-auto">
                         veja aqui as notícias

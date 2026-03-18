@@ -28,10 +28,7 @@ export default buildConfig({
             titleSuffix: '- Filadelfia',
 
         },
-        autoLogin: {
-            email: env.CMS_SEED_ADMIN_EMAIL,
-            password: env.CMS_SEED_ADMIN_PASSWORD,
-        },
+
     },
     collections: [Users, Media, Noticias, Celulas, Professores],
     editor: lexicalEditor({
