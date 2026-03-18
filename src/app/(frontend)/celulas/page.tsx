@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+
 import {
     Clock,
     MapPin,
@@ -25,7 +25,7 @@ export default function CelulasPage() {
                         alt="Background"
                         className="w-full h-full object-cover opacity-30"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/60 to-slate-950" />
+                    <div className="absolute inset-0 bg-linear-to-b from-transparent via-slate-950/60 to-slate-950" />
                 </div>
 
                 <div className="relative z-10 text-center px-6 max-w-5xl">
@@ -79,7 +79,7 @@ export default function CelulasPage() {
                                     alt={celula.nome}
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60" />
+                                <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent opacity-60" />
 
                                 {/* Badge da tag */}
                                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider text-slate-800">

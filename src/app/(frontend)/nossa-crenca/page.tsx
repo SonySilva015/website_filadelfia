@@ -41,7 +41,7 @@ export default function NossaCrencaPage() {
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-800/90 to-purple-900/70" />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-800/90 to-purple-900/70" />
                 </div>
 
                 <motion.div
@@ -220,7 +220,7 @@ export default function NossaCrencaPage() {
                                 stiffness: 100,
                                 damping: 15
                             }}
-                            className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg"
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg"
                         >
                             <Image
                                 src={trindadeImage}
@@ -230,7 +230,7 @@ export default function NossaCrencaPage() {
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                                 priority
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90  to-slate-900/50" />
+                            <div className="absolute inset-0 bg-linear-to-t from-slate-900/90  to-slate-900/50" />
                         </motion.div>
 
                         {/* Conteúdo Trindade */}
@@ -299,7 +299,7 @@ export default function NossaCrencaPage() {
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -394,7 +394,7 @@ export default function NossaCrencaPage() {
                                 stiffness: 100,
                                 damping: 15
                             }}
-                            className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg order-1 md:order-2"
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg order-1 md:order-2"
                         >
                             <Image
                                 src={criacaoImage}
@@ -403,13 +403,13 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
                         </motion.div>
                     </div>
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -440,7 +440,7 @@ export default function NossaCrencaPage() {
                                 stiffness: 100,
                                 damping: 15
                             }}
-                            className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg"
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg"
                         >
                             <Image
                                 src={jesusImage}
@@ -449,7 +449,7 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
                         </motion.div>
 
                         {/* Conteúdo Jesus */}
@@ -520,7 +520,7 @@ export default function NossaCrencaPage() {
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -616,7 +616,7 @@ export default function NossaCrencaPage() {
                                 stiffness: 100,
                                 damping: 15
                             }}
-                            className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg order-1 md:order-2"
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg order-1 md:order-2"
                         >
                             <Image
                                 src={naturezaHomemImage}
@@ -625,13 +625,13 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
                         </motion.div>
                     </div>
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -662,7 +662,7 @@ export default function NossaCrencaPage() {
                                 stiffness: 100,
                                 damping: 15
                             }}
-                            className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg"
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg"
                         >
                             <Image
                                 src={segundaVindaImage}
@@ -671,7 +671,7 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
                         </motion.div>
 
                         {/* Conteúdo Segunda Vinda */}
@@ -741,7 +741,7 @@ export default function NossaCrencaPage() {
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -836,7 +836,7 @@ export default function NossaCrencaPage() {
                                 stiffness: 100,
                                 damping: 15
                             }}
-                            className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg order-1 md:order-2"
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg order-1 md:order-2"
                         >
                             <Image
                                 src={batismoImage}
@@ -845,13 +845,13 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
                         </motion.div>
                     </div>
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -882,7 +882,7 @@ export default function NossaCrencaPage() {
                                 stiffness: 100,
                                 damping: 15
                             }}
-                            className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg"
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg"
                         >
                             <Image
                                 src={santidadeImage}
@@ -891,7 +891,7 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
                         </motion.div>
 
                         {/* Conteúdo Santidade */}
@@ -958,7 +958,7 @@ export default function NossaCrencaPage() {
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -1054,7 +1054,7 @@ export default function NossaCrencaPage() {
                                 stiffness: 100,
                                 damping: 15
                             }}
-                            className="relative h-[300px] sm:h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-lg order-1 md:order-2"
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg order-1 md:order-2"
                         >
                             <Image
                                 src={familiaCasamentoImage}
@@ -1063,7 +1063,7 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
                         </motion.div>
                     </div>
 
@@ -1073,7 +1073,7 @@ export default function NossaCrencaPage() {
 
             {/* CALL TO ACTION */}
             <motion.section
-                className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-br from-purple-900 to-purple-800 text-white"
+                className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-linear-to-br from-purple-900 to-purple-800 text-white"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}

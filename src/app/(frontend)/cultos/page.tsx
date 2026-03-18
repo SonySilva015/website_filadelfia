@@ -111,8 +111,8 @@ const HeroSection: React.FC = () => (
             priority
             quality={100}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-slate-950/50 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent z-10" />
+        <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-950/70 to-slate-950/50 z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/50 to-transparent z-10" />
 
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -148,7 +148,7 @@ const CultoCard: React.FC<{ culto: any; index: number }> = ({ culto, index }) =>
         transition={{ delay: index * 0.1, duration: 0.5 }}
         viewport={{ once: true, margin: "-50px" }}
         whileHover={{ scale: 1.02 }}
-        className="group relative  sm:h-[450px] rounded-md overflow-hidden shadow-lg"
+        className="group relative  sm:h-112 rounded-md overflow-hidden shadow-lg"
     >
         <Image
             src={culto.img}
@@ -546,7 +546,7 @@ const GaleriaSection: React.FC = () => {
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-slate-950/90  group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 to-slate-950/90  group-hover:opacity-100 transition-opacity duration-300" />
                         </motion.div>
                     ))}
                 </div>
@@ -562,7 +562,7 @@ const CTASection: React.FC = () => (
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl md:rounded-3xl p-8 md:p-16 text-center text-white"
+            className="max-w-4xl mx-auto bg-linear-to-br from-slate-900 to-slate-800 rounded-2xl md:rounded-3xl p-8 md:p-16 text-center text-white"
         >
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-light mb-4 md:mb-6">
                 Planeja nos <span className="font-bold">visitar?</span>

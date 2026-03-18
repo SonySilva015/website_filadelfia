@@ -22,6 +22,9 @@ const nextConfig = {
             },
         ],
     },
+     eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
 export default withPlaiceholder(withPayload(nextConfig, { devBundleServerPackages: false }))

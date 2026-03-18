@@ -2,14 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import {
-    Info,
-    Users,
-    Heart,
-    History,
-    BookOpen,
-    CheckCircle2
-} from "lucide-react";
 import capa from '@/public/img/Capaceia.jpeg'
 import pa from '@/public/img/pao.jpeg'
 import ceJ from '@/public/img/ceiaJ.jpg'

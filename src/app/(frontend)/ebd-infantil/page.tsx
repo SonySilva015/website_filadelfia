@@ -40,7 +40,7 @@ export default function EbdInfantil() {
         <div className="bg-white font-sans">
 
             {/* --- HERO EBD --- */}
-            <section className="relative h-[400px] flex  overflow-hidden">
+            <section className="relative h-100 flex  overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
                         src={hero}
@@ -132,7 +132,7 @@ export default function EbdInfantil() {
 
 
             {/* --- SEÇÃO PROFESSORES (AMPLIADA) --- */}
-            <section className="py-20 bg-gradient-to-b from-white to-orange-50 px-6">
+            <section className="py-20 bg-linear-to-b from-white to-orange-50 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h3 className="text-5xl font-bold text-gray-800 mb-4">Nossos Professores</h3>
@@ -143,7 +143,7 @@ export default function EbdInfantil() {
                         {professores.map((prof, i) => (
                             <div key={i} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all text-center group">
                                 <div className="relative mb-6 inline-block">
-                                    <div className="absolute -inset-2 bg-gradient-to-tr from-purple-400 to-purple-950 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-300"></div>
+                                    <div className="absolute -inset-2 bg-linear-to-tr from-purple-400 to-purple-950 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-300"></div>
                                     <img
                                         src={prof.img}
                                         alt={prof.nome}

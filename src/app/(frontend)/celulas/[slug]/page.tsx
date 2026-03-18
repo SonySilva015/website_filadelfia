@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useParams, notFound } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -76,7 +75,7 @@ export default function CelulaDetalhePage() {
                         alt={celula.nome}
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/60 to-transparent" />
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
@@ -228,7 +227,7 @@ export default function CelulaDetalhePage() {
                                             alt={img.titulo}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                                         <p className="absolute bottom-2 left-2 text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                                             {img.titulo}
                                         </p>

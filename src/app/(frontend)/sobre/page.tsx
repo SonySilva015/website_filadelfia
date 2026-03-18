@@ -9,7 +9,6 @@ import {
     MapPin,
     Navigation,
     Compass,
-    Anchor,
     Award
 } from 'lucide-react';
 import Image from 'next/image';
@@ -49,8 +48,8 @@ export default function SobreIgrejaPage() {
                         className="object-cover opacity-40 grayscale hover:grayscale-0 transition-all duration-1000 scale-105"
                     />
                     {/* Gradientes para suavizar a imagem e focar no texto */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/30 to-transparent" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/10 via-slate-900/30 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-950/30 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/10 via-slate-900/30 to-transparent" />
                 </div>
 
 

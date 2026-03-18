@@ -58,7 +58,7 @@ export default function HistoriaPage() {
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-slate-950/40" />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/90 to-slate-950/40" />
                 </div>
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -116,7 +116,7 @@ export default function HistoriaPage() {
                         {/* PILARES DOUTRINÁRIOS - Grid responsivo com tema red */}
                         <section className="mb-12 sm:mb-14 md:mb-16">
                             <h2 className="text-xl sm:text-2xl font-serif text-red-900 mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-                                <span className="w-6 sm:w-8 h-[1px] bg-red-700"></span>
+                                <span className="w-6 sm:w-8 h-px bg-red-700"></span>
                                 Dos Fundamentos da Nossa Fé
                             </h2>
 
@@ -163,7 +163,7 @@ export default function HistoriaPage() {
                         {/* TIMELINE - Narrativa responsiva com tema red */}
                         <section className="mb-12 sm:mb-14 md:mb-16">
                             <h2 className="text-xl sm:text-2xl font-serif text-red-900 mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-                                <span className="w-6 sm:w-8 h-[1px] bg-red-700"></span>
+                                <span className="w-6 sm:w-8 h-px bg-red-700"></span>
                                 Da Narrativa dos Nossos Dias
                             </h2>
 
@@ -206,13 +206,13 @@ export default function HistoriaPage() {
                         {/* SEDE - Endereço responsivo com tema red */}
                         <section className="mb-12 sm:mb-14 md:mb-16">
                             <h2 className="text-xl sm:text-2xl font-serif text-red-900 mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-                                <span className="w-6 sm:w-8 h-[1px] bg-red-700"></span>
+                                <span className="w-6 sm:w-8 h-px bg-red-700"></span>
                                 Da Nossa Sede em Luanda
                             </h2>
 
                             <div className="bg-red-50 p-4 sm:p-6 md:p-8 border border-red-200">
                                 <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
-                                    <MapPin className="text-red-700 flex-shrink-0" size={24} />
+                                    <MapPin className="text-red-700 shrink-0" size={24} />
                                     <div className="flex-1">
                                         <p className="text-base sm:text-lg md:text-xl text-slate-800 mb-2">
                                             Bairro Cassenda, Luanda - Angola
@@ -239,7 +239,7 @@ export default function HistoriaPage() {
                                 social e espiritual de Angola, pregando o evangelho da reconciliação."
                             </p>
 
-                            <div className="w-12 sm:w-16 md:w-20 h-[2px] bg-red-700 mx-auto" />
+                            <div className="w-12 sm:w-16 md:w-20 h-2px bg-red-700 mx-auto" />
                         </section>
 
                         {/* Despedida e assinaturas - Responsivas */}
