@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 
 
 export const metadata: Metadata = {
-  title: "IEIA - Filadelfia",
+  title: "IEIA - Filadélfia",
   description: "Igreja Ieia Filadelfia",
 };
 

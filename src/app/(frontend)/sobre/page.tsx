@@ -26,16 +26,19 @@ import visaoImage from '@/public/img/ceiaJ.jpg';
 import valoresImage from '@/public/img/ceiaJ.jpg';
 import comunidadeImage from '@/public/img/ceiaJ.jpg';
 
-// Animações
-export const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.3, margin: "-50px" },
-    transition: {
-        duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1],
-        type: "tween"
-    }
+
+export const metadata = {
+    title: "Sobre a Igreja Filadélfia ",
+    description: "Saiba mais sobre nossa missão, visão e valores.",
+    keywords: ["Igreja", "IEIA", "Filadélfia", "Angola"],
+    authors: [{ name: "IEIA Filadélfia" }],
+    openGraph: {
+        title: "Filadélfia IEIA",
+        description: "Transformando vidas pelo Evangelho",
+        images: fundo,
+        url: "https://ieiafiladelfia.vercel.app/",
+        type: "website",
+    },
 };
 
 const valores = [
@@ -131,6 +134,7 @@ export default function SobreIgrejaPage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
                     >
                         <span className="relative inline-block">
                             Sobre Nós
@@ -146,8 +150,10 @@ export default function SobreIgrejaPage() {
 
                     <motion.p
                         className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed"
-                        {...fadeInUp}
-                        transition={{ delay: 0.4 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         A Igreja Filadélfia IEIA nasceu do desejo de ver vidas transformadas pelo poder do Evangelho.
                         Desde a nossa fundação, temos caminhado com o propósito de ser uma igreja relevante, que ama a Deus
@@ -221,14 +227,26 @@ export default function SobreIgrejaPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <motion.p
+                                    className="text-base sm:text-lg text-gray-600 mb-4"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2, duration: 0.6 }}
+                                >
                                     <strong className="text-gray-800">Glorificar a Deus</strong> através da proclamação do Evangelho
                                     e do discipulado transformador, formando discípulos que fazem discípulos.
-                                </p>
-                                <p className="text-base sm:text-lg text-gray-600">
+                                </motion.p>
+                                <motion.p
+                                    className="text-base sm:text-lg text-gray-600"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3, duration: 0.6 }}
+                                >
                                     Nosso objetivo é ser um reflexo do Reino de Deus em Angola, funcionando através de uma
                                     estrutura congregacional onde cada membro é incentivado a usar seus dons para o bem comum.
-                                </p>
+                                </motion.p>
                             </motion.div>
                         </motion.div>
                     </div>
@@ -292,7 +310,13 @@ export default function SobreIgrejaPage() {
                                 transition={{ delay: 0.4, duration: 0.5 }}
                                 className="space-y-6"
                             >
-                                <div className="flex items-start gap-3">
+                                <motion.div
+                                    className="flex items-start gap-3"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2, duration: 0.5 }}
+                                >
                                     <Compass className="text-purple-500 mt-1 shrink-0" size={20} />
                                     <div>
                                         <h4 className="font-semibold text-gray-800 mb-1">Visão de Futuro</h4>
@@ -301,8 +325,14 @@ export default function SobreIgrejaPage() {
                                             que sejam centros de esperança e desenvolvimento comunitário.
                                         </p>
                                     </div>
-                                </div>
-                                <div className="flex items-start gap-3">
+                                </motion.div>
+                                <motion.div
+                                    className="flex items-start gap-3"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3, duration: 0.5 }}
+                                >
                                     <Award className="text-purple-500 mt-1 shrink-0" size={20} />
                                     <div>
                                         <h4 className="font-semibold text-gray-800 mb-1">O que fazemos?</h4>
@@ -311,7 +341,7 @@ export default function SobreIgrejaPage() {
                                             e formação de liderança ética para a nação.
                                         </p>
                                     </div>
-                                </div>
+                                </motion.div>
                             </motion.div>
                         </motion.div>
 
@@ -345,10 +375,6 @@ export default function SobreIgrejaPage() {
                 </div>
             </motion.section>
 
-
-
-
-
             {/* --- SEÇÃO 3: NOSSOS VALORES (com imagem de fundo na seção) --- */}
             <motion.section
                 className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white relative overflow-hidden"
@@ -368,13 +394,22 @@ export default function SobreIgrejaPage() {
                 </div>
 
                 <div className="max-w-6xl mx-auto relative z-10">
-                    <motion.div className="text-center mb-16"
-                        variants={fadeInUp}
-                        initial="hidden"
+                    <motion.div
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6 }}
                     >
-                        <span className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block mb-3">
+                        <motion.span
+                            className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block mb-3"
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1, duration: 0.4 }}
+                        >
                             Nossos Pilares
-                        </span>
+                        </motion.span>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative inline-block">
                             <span className="relative inline-block">
                                 Valores que nos Definem
@@ -400,9 +435,15 @@ export default function SobreIgrejaPage() {
                                 transition={{ delay: i * 0.15 + 0.2, duration: 0.6 }}
                                 whileHover={{ y: -5 }}
                             >
-                                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-6">
+                                <motion.div
+                                    className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-6"
+                                    initial={{ scale: 0.8, opacity: 0 }}
+                                    whileInView={{ scale: 1, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.15 + 0.3, duration: 0.4 }}
+                                >
                                     {v.icon}
-                                </div>
+                                </motion.div>
                                 <h3 className="text-xl font-bold text-gray-800 mb-3 relative inline-block">
                                     <span className="relative">
                                         {v.titulo}
@@ -415,7 +456,15 @@ export default function SobreIgrejaPage() {
                                         />
                                     </span>
                                 </h3>
-                                <p className="text-gray-600 leading-relaxed">{v.desc}</p>
+                                <motion.p
+                                    className="text-gray-600 leading-relaxed"
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.15 + 0.6, duration: 0.5 }}
+                                >
+                                    {v.desc}
+                                </motion.p>
                             </motion.div>
                         ))}
                     </div>
@@ -430,10 +479,6 @@ export default function SobreIgrejaPage() {
                     />
                 </div>
             </motion.section>
-
-
-
-
 
             {/* --- SEÇÃO 4: NOSSA COMUNIDADE --- */}
             <motion.section
@@ -501,19 +546,36 @@ export default function SobreIgrejaPage() {
                                 transition={{ delay: 0.4, duration: 0.5 }}
                                 className="space-y-4"
                             >
-                                <p className="text-base sm:text-lg text-gray-600">
+                                <motion.p
+                                    className="text-base sm:text-lg text-gray-600"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2, duration: 0.6 }}
+                                >
                                     Somos uma família de fé acolhedora, onde cada pessoa é valorizada e incentivada
                                     a desenvolver seus dons e talentos para a glória de Deus.
-                                </p>
-                                <div className="flex items-center gap-3 text-gray-700">
+                                </motion.p>
+                                <motion.div
+                                    className="flex items-center gap-3 text-gray-700"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3, duration: 0.5 }}
+                                >
                                     <Users size={20} className="text-purple-500" />
                                     <span>80+ membros ativos</span>
-                                </div>
-
-                                <div className="flex items-center gap-3 text-gray-700">
+                                </motion.div>
+                                <motion.div
+                                    className="flex items-center gap-3 text-gray-700"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.4, duration: 0.5 }}
+                                >
                                     <Calendar size={20} className="text-purple-500" />
                                     <span>7+ anos de história</span>
-                                </div>
+                                </motion.div>
                             </motion.div>
                         </motion.div>
                     </div>
@@ -529,12 +591,7 @@ export default function SobreIgrejaPage() {
                 </div>
             </motion.section>
 
-
-
-
-
-
-            {/* --- SEÇÃO 5: LOCALIZAÇÃO E CONTATO (ATUALIZADA) --- */}
+            {/* --- SEÇÃO 5: LOCALIZAÇÃO E CONTATO --- */}
             <motion.section
                 className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white"
                 initial={{ opacity: 0 }}
@@ -543,9 +600,13 @@ export default function SobreIgrejaPage() {
                 transition={{ duration: 0.8 }}
             >
                 <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-16">
-
-
+                    <motion.div
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6 }}
+                    >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative inline-block">
                             <span className="relative inline-block">
                                 Localização e Contato
@@ -558,7 +619,7 @@ export default function SobreIgrejaPage() {
                                 />
                             </span>
                         </h2>
-                    </div>
+                    </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                         {/* Coluna da Localização */}
@@ -570,7 +631,13 @@ export default function SobreIgrejaPage() {
                             className="space-y-6"
                         >
                             <div className="bg-purple-50/50 p-8 rounded-2xl">
-                                <div className="flex items-start gap-4 mb-6">
+                                <motion.div
+                                    className="flex items-start gap-4 mb-6"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2, duration: 0.5 }}
+                                >
                                     <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
                                         <MapPin size={24} />
                                     </div>
@@ -582,9 +649,15 @@ export default function SobreIgrejaPage() {
                                             Entre a casa da cultura e centralidade
                                         </p>
                                     </div>
-                                </div>
+                                </motion.div>
 
-                                <div className="flex items-start gap-4">
+                                <motion.div
+                                    className="flex items-start gap-4"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3, duration: 0.5 }}
+                                >
                                     <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
                                         <Navigation size={24} />
                                     </div>
@@ -595,7 +668,7 @@ export default function SobreIgrejaPage() {
                                             Próximo à Casa da Cultura e à Centralidade.
                                         </p>
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
                         </motion.div>
 
@@ -608,10 +681,24 @@ export default function SobreIgrejaPage() {
                             className="space-y-6"
                         >
                             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                                <h3 className="text-2xl font-bold text-gray-800 mb-6">Informações de Contato</h3>
+                                <motion.h3
+                                    className="text-2xl font-bold text-gray-800 mb-6"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.1, duration: 0.5 }}
+                                >
+                                    Informações de Contato
+                                </motion.h3>
 
                                 {/* Telefone */}
-                                <div className="flex items-start gap-4 mb-6">
+                                <motion.div
+                                    className="flex items-start gap-4 mb-6"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2, duration: 0.5 }}
+                                >
                                     <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
                                         <Phone size={24} />
                                     </div>
@@ -620,31 +707,41 @@ export default function SobreIgrejaPage() {
                                         <p className="text-gray-600 mb-1">+244 xxx xxx xxx</p>
                                         <p className="text-gray-600">+244 xxx xxx xxx</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Email */}
-                                <div className="flex items-start gap-4 mb-6">
+                                <motion.div
+                                    className="flex items-start gap-4 mb-6"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3, duration: 0.5 }}
+                                >
                                     <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
                                         <Mail size={24} />
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
                                         <p className="text-gray-600 mb-1">contato@filadelfiaieia.com</p>
-
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {/* Horário */}
-                                <div className="flex items-start gap-4 mb-6">
+                                <motion.div
+                                    className="flex items-start gap-4 mb-6"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.4, duration: 0.5 }}
+                                >
                                     <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
                                         <Clock size={24} />
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-800 mb-1">Horário de Cultos</h4>
                                         <p className="text-gray-600 mb-1">Domingo: 09h:30min</p>
-
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
                         </motion.div>
                     </div>
@@ -671,16 +768,20 @@ export default function SobreIgrejaPage() {
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.h2
                         className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8"
-                        variants={fadeInUp}
-                        initial="hidden"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6 }}
                     >
                         Faça Parte Desta Família
                     </motion.h2>
 
                     <motion.p
                         className="text-base sm:text-lg md:text-xl text-purple-100 mb-8 sm:mb-10 md:mb-12 leading-relaxed"
-                        {...fadeInUp}
-                        transition={{ delay: 0.1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
                     >
                         Venha nos conhecer, crescer na fé e servir ao próximo conosco.
                         Há um lugar especial para você na Igreja Filadélfia IEIA.
@@ -688,8 +789,10 @@ export default function SobreIgrejaPage() {
 
                     <motion.div
                         className="flex flex-wrap gap-4 justify-center"
-                        {...fadeInUp}
-                        transition={{ delay: 0.2 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <motion.button
                             className="px-8 py-4 bg-white text-purple-900 rounded-full font-semibold hover:bg-purple-50 transition-colors shadow-lg"
@@ -698,7 +801,6 @@ export default function SobreIgrejaPage() {
                         >
                             Conheça Nossos Cultos
                         </motion.button>
-
                     </motion.div>
                 </div>
             </motion.section>
