@@ -6,12 +6,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, Users, Anchor, Globe, Heart, MapPin, Quote as QuoteIcon, Award, Scroll, Mail, PenTool, Stamp } from 'lucide-react';
 import capa from '@/public/img/altar_gemi.png'
 
-/**
- * CARTA HISTÓRICA DA IGREJA EVANGÉLICA DOS IRMÃOS EM ANGOLA
- * Documento oficial dirigido às congregações e futuras gerações
- * 
- * "Aos santos e fiéis irmãos em Angola, graça e paz"
- */
+
 
 const marcos = [
     {
@@ -244,43 +239,20 @@ export default function HistoriaPage() {
 
                         {/* Despedida e assinaturas - Responsivas */}
                         <div className="mt-8 sm:mt-12 md:mt-16 pt-4 sm:pt-6 md:pt-8 border-t border-slate-200">
-                            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 sm:gap-8">
+                            <div className="flex flex-col sm:flex-row justify-center items-center sm:items-end gap-6 sm:gap-8">
                                 <div className="w-full sm:w-2/3">
                                     <p className="text-sm sm:text-base text-slate-600 italic mb-3 sm:mb-4">
                                         Que a graça do Senhor Jesus Cristo, e o amor de Deus,
                                         e a comunhão do Espírito Santo sejam com todos vós.
                                     </p>
-                                    <p className="text-xs sm:text-sm text-slate-500">
-                                        Escrita em Luanda, aos {new Date().getDate()} de {new Date().toLocaleString('pt-AO', { month: 'long' })} de {new Date().getFullYear()}
-                                    </p>
+
                                 </div>
 
-                                <div className="w-full sm:w-1/3 text-left sm:text-right">
-                                    <div className="flex items-center gap-2 sm:justify-end mb-2">
-                                        <Stamp size={16} className="text-red-700" />
-                                        <PenTool size={16} className="text-red-700" />
-                                    </div>
-                                    <div className="font-serif">
-                                        <p className="text-base sm:text-lg text-slate-800">Pelos presbíteros da IEIA</p>
-                                        <p className="text-xs text-slate-400 mt-1 sm:mt-2">(Selo oficial)</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
-                        {/* Pós-escrito - Responsivo */}
-                        <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-slate-50 text-xs sm:text-sm text-slate-600 italic border border-slate-200">
-                            <p className="flex items-start gap-2">
-                                <span className="font-bold text-red-700">P.S.</span>
-                                <span>Esta carta deve ser lida em todas as congregações e arquivada como documento histórico da Igreja Evangélica dos Irmãos em Angola.</span>
-                            </p>
-                        </div>
 
-                        {/* Número de registro - Responsivo */}
-                        <div className="mt-4 sm:mt-6 text-center text-slate-400 text-[10px] sm:text-xs">
-                            <Scroll size={12} className="inline mr-1" />
-                            Registro Histórico IEIA • Nº 001/2024 • Para memória eterna
-                        </div>
+
                     </div>
                 </div>
             </main>

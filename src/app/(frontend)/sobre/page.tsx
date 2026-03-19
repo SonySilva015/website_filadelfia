@@ -6,13 +6,37 @@ import {
     Globe,
     ShieldCheck,
     Heart,
-    MapPin,
-    Navigation,
     Compass,
-    Award
+    Award,
+    Users,
+    Church,
+    Calendar,
+    MapPin,
+    Phone,
+    Mail,
+    Clock,
+    Navigation
 } from 'lucide-react';
 import Image from 'next/image';
 import fundo from '@/public/img/IMG-20250831-WA0043.jpg'
+
+// Imagens para as seções (ajuste os caminhos conforme seus arquivos)
+import missaoImage from '@/public/img/Filme De Jesus Cristo.jpeg';
+import visaoImage from '@/public/img/ceiaJ.jpg';
+import valoresImage from '@/public/img/ceiaJ.jpg';
+import comunidadeImage from '@/public/img/ceiaJ.jpg';
+
+// Animações
+export const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.3, margin: "-50px" },
+    transition: {
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1],
+        type: "tween"
+    }
+};
 
 const valores = [
     {
@@ -34,153 +58,650 @@ const valores = [
 
 export default function SobreIgrejaPage() {
     return (
-        <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-100">
+        <div className="min-h-screen bg-white text-slate-900 selection:bg-purple-200">
 
-            {/* --- HERO: IDENTIDADE --- */}
             <header className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden bg-slate-950">
                 {/* --- FUNDO COM IMAGEM --- */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src={fundo} // Caminho da sua imagem
+                        src={fundo}
                         alt="Fundo Institucional IEIA"
                         fill
                         priority
                         className="object-cover opacity-40 grayscale hover:grayscale-0 transition-all duration-1000 scale-105"
                     />
-                    {/* Gradientes para suavizar a imagem e focar no texto */}
                     <div className="absolute inset-0 bg-linear-to-r from-slate-950 via-slate-950/30 to-transparent" />
                     <div className="absolute inset-0 bg-linear-to-t from-slate-950/10 via-slate-900/30 to-transparent" />
                 </div>
 
-
-
                 {/* --- CONTEÚDO PRINCIPAL --- */}
-                <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+                <div className="max-w-7xl mx-auto px-6 relative z-10 w-full ">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1 }}
                         className="max-w-4xl"
                     >
-
-
                         <h1 className="text-5xl md:text-7xl lg:text-9xl font-serif text-white leading-[1.1] mb-10 tracking-tight">
-                            Filadélfia <br />
-                            <span className="text-slate-400 font-light italic font-sans">IEIA</span>
+                            {/* Aplicando o efeito de sublinhado no primeiro título */}
+                            <motion.span
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3, duration: 0.7 }}
+                                className="relative inline-block"
+                            >
+                                Filadélfia
+                                <motion.span
+                                    className="absolute -bottom-4 left-0 w-full h-1 sm:h-2 bg-purple-400 rounded-full"
+                                    initial={{ width: 0 }}
+                                    animate={{ width: "100%" }}
+                                    transition={{
+                                        delay: 1.0,
+                                        duration: 0.8,
+                                        ease: "easeInOut"
+                                    }}
+                                />
+                            </motion.span>
+                            <br />
+                            <span className="text-slate-100 ">IEIA</span>
                         </h1>
+                        <motion.p
+                            className="text-base sm:text-lg md:text-xl lg:text-2xl text-purple-100 font-light leading-relaxed max-w-3xl mx-auto px-2"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.8, duration: 0.8 }}
+                        >
+                            Uma família de fé comprometida com o Evangelho, a comunidade e o desenvolvimento integral de Angola.
+                        </motion.p>
+                    </motion.div>
+                </div>
+            </header>
 
+            {/* --- SEÇÃO INTRODUTÓRIA: NOSSA HISTÓRIA --- */}
+            <motion.section
+                className="py-10 px-4 sm:px-6 bg-gray-100"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7 }}
+            >
+                <div className="max-w-4xl mx-auto text-center">
+                    <motion.h2
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-5 relative"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        <span className="relative inline-block">
+                            Sobre Nós
+                            <motion.div
+                                className="w-16 sm:w-20 md:w-24 h-1 bg-purple-600 mx-auto mb-6 sm:mb-8"
+                                initial={{ width: 0, opacity: 0 }}
+                                whileInView={{ width: 180, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.9, delay: 0.3 }}
+                            />
+                        </span>
+                    </motion.h2>
+
+                    <motion.p
+                        className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed"
+                        {...fadeInUp}
+                        transition={{ delay: 0.4 }}
+                    >
+                        A Igreja Filadélfia IEIA nasceu do desejo de ver vidas transformadas pelo poder do Evangelho.
+                        Desde a nossa fundação, temos caminhado com o propósito de ser uma igreja relevante, que ama a Deus
+                        e serve ao próximo com excelência e compromisso.
+                    </motion.p>
+                </div>
+            </motion.section>
+
+            {/* --- SEÇÃO 1: MISSÃO (com imagem) --- */}
+            <motion.section
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8 }}
+            >
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+                        {/* Imagem Missão */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.7, type: "spring" }}
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg"
+                        >
+                            <Image
+                                src={missaoImage}
+                                alt="Nossa Missão"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/60 via-purple-900/30 to-transparent" />
+                        </motion.div>
+
+                        {/* Conteúdo Missão */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.7, type: "spring" }}
+                            className="space-y-4 sm:space-y-5 md:space-y-6"
+                        >
+                            <motion.span
+                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1, duration: 0.4 }}
+                            >
+                                Nosso Propósito
+                            </motion.span>
+
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                                <span className="relative inline-block">
+                                    Nossa Missão
+                                    <motion.span
+                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        initial={{ width: 0 }}
+                                        whileInView={{ width: "33.33%" }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.3, duration: 0.6 }}
+                                    />
+                                </span>
+                            </h2>
+
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.4, duration: 0.5 }}
+                            >
+                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                    <strong className="text-gray-800">Glorificar a Deus</strong> através da proclamação do Evangelho
+                                    e do discipulado transformador, formando discípulos que fazem discípulos.
+                                </p>
+                                <p className="text-base sm:text-lg text-gray-600">
+                                    Nosso objetivo é ser um reflexo do Reino de Deus em Angola, funcionando através de uma
+                                    estrutura congregacional onde cada membro é incentivado a usar seus dons para o bem comum.
+                                </p>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+
+                    {/* Div separadora */}
+                    <motion.div
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        initial={{ scaleX: 0, opacity: 0 }}
+                        whileInView={{ scaleX: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    />
+                </div>
+            </motion.section>
+
+            {/* --- SEÇÃO 2: VISÃO E OBJETIVOS (com imagem) --- */}
+            <motion.section
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-purple-50/50"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8 }}
+            >
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+                        {/* Conteúdo Visão (primeiro no mobile, segundo no desktop) */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.7, type: "spring" }}
+                            className="space-y-4 sm:space-y-5 md:space-y-6 order-2 md:order-1"
+                        >
+                            <motion.span
+                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1, duration: 0.4 }}
+                            >
+                                Nossa Direção
+                            </motion.span>
+
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                                <span className="relative inline-block">
+                                    Visão e Objetivos
+                                    <motion.span
+                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        initial={{ width: 0 }}
+                                        whileInView={{ width: "33.33%" }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.3, duration: 0.6 }}
+                                    />
+                                </span>
+                            </h2>
+
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.4, duration: 0.5 }}
+                                className="space-y-6"
+                            >
+                                <div className="flex items-start gap-3">
+                                    <Compass className="text-purple-500 mt-1 shrink-0" size={20} />
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800 mb-1">Visão de Futuro</h4>
+                                        <p className="text-gray-600">
+                                            Expandir nossa presença em todas as províncias, plantando igrejas saudáveis
+                                            que sejam centros de esperança e desenvolvimento comunitário.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <Award className="text-purple-500 mt-1 shrink-0" size={20} />
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800 mb-1">O que fazemos?</h4>
+                                        <p className="text-gray-600">
+                                            Além dos cultos, promovemos alfabetização, assistência médica em áreas remotas
+                                            e formação de liderança ética para a nação.
+                                        </p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+
+                        {/* Imagem Visão */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.7, type: "spring" }}
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg order-1 md:order-2"
+                        >
+                            <Image
+                                src={visaoImage}
+                                alt="Visão e Objetivos"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/60 via-purple-900/30 to-transparent" />
+                        </motion.div>
+                    </div>
+
+                    {/* Div separadora */}
+                    <motion.div
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        initial={{ scaleX: 0, opacity: 0 }}
+                        whileInView={{ scaleX: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    />
+                </div>
+            </motion.section>
+
+
+
+
+
+            {/* --- SEÇÃO 3: NOSSOS VALORES (com imagem de fundo na seção) --- */}
+            <motion.section
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white relative overflow-hidden"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8 }}
+            >
+                {/* Imagem de fundo sutil */}
+                <div className="absolute inset-0 z-0 opacity-5">
+                    <Image
+                        src={valoresImage}
+                        alt="Background Valores"
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+
+                <div className="max-w-6xl mx-auto relative z-10">
+                    <motion.div className="text-center mb-16"
+                        variants={fadeInUp}
+                        initial="hidden"
+                    >
+                        <span className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block mb-3">
+                            Nossos Pilares
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative inline-block">
+                            <span className="relative inline-block">
+                                Valores que nos Definem
+                                <motion.span
+                                    className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: "33.33%" }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3, duration: 0.6 }}
+                                />
+                            </span>
+                        </h2>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                        {valores.map((v, i) => (
+                            <motion.div
+                                key={i}
+                                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.15 + 0.2, duration: 0.6 }}
+                                whileHover={{ y: -5 }}
+                            >
+                                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-6">
+                                    {v.icon}
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-800 mb-3 relative inline-block">
+                                    <span className="relative">
+                                        {v.titulo}
+                                        <motion.span
+                                            className="absolute -bottom-1 left-0 h-0.5 bg-purple-400 rounded-full"
+                                            initial={{ width: 0 }}
+                                            whileInView={{ width: "50%" }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: i * 0.15 + 0.5, duration: 0.5 }}
+                                        />
+                                    </span>
+                                </h3>
+                                <p className="text-gray-600 leading-relaxed">{v.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Div separadora */}
+                    <motion.div
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        initial={{ scaleX: 0, opacity: 0 }}
+                        whileInView={{ scaleX: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    />
+                </div>
+            </motion.section>
+
+
+
+
+
+            {/* --- SEÇÃO 4: NOSSA COMUNIDADE --- */}
+            <motion.section
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-purple-50/50"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8 }}
+            >
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+                        {/* Imagem Comunidade */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.7, type: "spring" }}
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg"
+                        >
+                            <Image
+                                src={comunidadeImage}
+                                alt="Nossa Comunidade"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/60 via-purple-900/30 to-transparent" />
+                        </motion.div>
+
+                        {/* Conteúdo Comunidade */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.7, type: "spring" }}
+                            className="space-y-4 sm:space-y-5 md:space-y-6"
+                        >
+                            <motion.span
+                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1, duration: 0.4 }}
+                            >
+                                Vida em Comunhão
+                            </motion.span>
+
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                                <span className="relative inline-block">
+                                    Nossa Comunidade
+                                    <motion.span
+                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        initial={{ width: 0 }}
+                                        whileInView={{ width: "33.33%" }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.3, duration: 0.6 }}
+                                    />
+                                </span>
+                            </h2>
+
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.4, duration: 0.5 }}
+                                className="space-y-4"
+                            >
+                                <p className="text-base sm:text-lg text-gray-600">
+                                    Somos uma família de fé acolhedora, onde cada pessoa é valorizada e incentivada
+                                    a desenvolver seus dons e talentos para a glória de Deus.
+                                </p>
+                                <div className="flex items-center gap-3 text-gray-700">
+                                    <Users size={20} className="text-purple-500" />
+                                    <span>80+ membros ativos</span>
+                                </div>
+
+                                <div className="flex items-center gap-3 text-gray-700">
+                                    <Calendar size={20} className="text-purple-500" />
+                                    <span>7+ anos de história</span>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+
+                    {/* Div separadora */}
+                    <motion.div
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        initial={{ scaleX: 0, opacity: 0 }}
+                        whileInView={{ scaleX: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    />
+                </div>
+            </motion.section>
+
+
+
+
+
+
+            {/* --- SEÇÃO 5: LOCALIZAÇÃO E CONTATO (ATUALIZADA) --- */}
+            <motion.section
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8 }}
+            >
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+
+
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative inline-block">
+                            <span className="relative inline-block">
+                                Localização e Contato
+                                <motion.span
+                                    className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: "33.33%" }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.3, duration: 0.6 }}
+                                />
+                            </span>
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                        {/* Coluna da Localização */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.7, type: "spring" }}
+                            className="space-y-6"
+                        >
+                            <div className="bg-purple-50/50 p-8 rounded-2xl">
+                                <div className="flex items-start gap-4 mb-6">
+                                    <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
+                                        <MapPin size={24} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-gray-800 mb-2">Endereço Principal</h3>
+                                        <p className="text-gray-600">
+                                            Luena, Moxico<br />
+                                            Bairro Social da Juventude<br />
+                                            Entre a casa da cultura e centralidade
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
+                                        <Navigation size={24} />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-xl font-bold text-gray-800 mb-2">Como Chegar</h3>
+                                        <p className="text-gray-600">
+                                            Localização central no Luena, fácil acesso por transporte público.
+                                            Próximo à Casa da Cultura e à Centralidade.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Coluna dos Contatos */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.7, type: "spring" }}
+                            className="space-y-6"
+                        >
+                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                                <h3 className="text-2xl font-bold text-gray-800 mb-6">Informações de Contato</h3>
+
+                                {/* Telefone */}
+                                <div className="flex items-start gap-4 mb-6">
+                                    <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
+                                        <Phone size={24} />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800 mb-1">Telefone</h4>
+                                        <p className="text-gray-600 mb-1">+244 xxx xxx xxx</p>
+                                        <p className="text-gray-600">+244 xxx xxx xxx</p>
+                                    </div>
+                                </div>
+
+                                {/* Email */}
+                                <div className="flex items-start gap-4 mb-6">
+                                    <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
+                                        <Mail size={24} />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
+                                        <p className="text-gray-600 mb-1">contato@filadelfiaieia.com</p>
+
+                                    </div>
+                                </div>
+
+                                {/* Horário */}
+                                <div className="flex items-start gap-4 mb-6">
+                                    <div className="bg-purple-100 p-3 rounded-lg text-purple-600">
+                                        <Clock size={24} />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800 mb-1">Horário de Cultos</h4>
+                                        <p className="text-gray-600 mb-1">Domingo: 09h:30min</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Div separadora */}
+                    <motion.div
+                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        initial={{ scaleX: 0, opacity: 0 }}
+                        whileInView={{ scaleX: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    />
+                </div>
+            </motion.section>
+
+            {/* --- CALL TO ACTION --- */}
+            <motion.section
+                className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-linear-to-br from-purple-900 to-purple-800 text-white"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8 }}
+            >
+                <div className="max-w-4xl mx-auto text-center">
+                    <motion.h2
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8"
+                        variants={fadeInUp}
+                        initial="hidden"
+                    >
+                        Faça Parte Desta Família
+                    </motion.h2>
+
+                    <motion.p
+                        className="text-base sm:text-lg md:text-xl text-purple-100 mb-8 sm:mb-10 md:mb-12 leading-relaxed"
+                        {...fadeInUp}
+                        transition={{ delay: 0.1 }}
+                    >
+                        Venha nos conhecer, crescer na fé e servir ao próximo conosco.
+                        Há um lugar especial para você na Igreja Filadélfia IEIA.
+                    </motion.p>
+
+                    <motion.div
+                        className="flex flex-wrap gap-4 justify-center"
+                        {...fadeInUp}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <motion.button
+                            className="px-8 py-4 bg-white text-purple-900 rounded-full font-semibold hover:bg-purple-50 transition-colors shadow-lg"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Conheça Nossos Cultos
+                        </motion.button>
 
                     </motion.div>
                 </div>
-
-                {/* --- INDICADOR DE SCROLL --- */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5 }}
-                    className="absolute bottom-10 left-6 z-10 hidden md:flex items-center gap-4 rotate-90 origin-left"
-                >
-                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">Scroll para explorar</span>
-                    <div className="w-12 h-px bg-slate-800" />
-                </motion.div>
-            </header>
-
-            {/* --- MISSÃO E OBJECTIVOS --- */}
-            <section className="py-32 px-6 max-w-5xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
-                    <div>
-                        <h2 className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-8">Nossa Missão</h2>
-                        <h3 className="text-3xl font-light leading-snug mb-6">
-                            Glorificar a Deus através da <span className="font-medium">proclamação do Evangelho</span> e do discipulado transformador.
-                        </h3>
-                        <p className="text-slate-500 font-light leading-relaxed">
-                            Nosso objetivo na terra é ser um reflexo do Reino de Deus em Angola. Funcionamos através de uma estrutura congregacional onde cada membro é incentivado a usar seus dons para o bem comum, focando na maturidade espiritual e na justiça social.
-                        </p>
-                    </div>
-
-                    <div className="space-y-12">
-                        <div>
-                            <h4 className="text-sm font-bold mb-2 flex items-center gap-2">
-                                <Compass size={18} className="text-slate-400" />
-                                Visão de Futuro
-                            </h4>
-                            <p className="text-sm text-slate-500 leading-relaxed font-light">
-                                Expandir nossa presença em todas as províncias, plantando igrejas saudáveis que sejam centros de esperança e desenvolvimento comunitário.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="text-sm font-bold mb-2 flex items-center gap-2">
-                                <Award size={18} className="text-slate-400" />
-                                O que fazemos?
-                            </h4>
-                            <p className="text-sm text-slate-500 leading-relaxed font-light">
-                                Além dos cultos, promovemos alfabetização, assistência médica em áreas remotas e formação de liderança ética para a nação.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* --- VALORES (GRID MÍNIMO) --- */}
-            <section className="py-24 bg-slate-900 text-white rounded-[4rem] mx-4 md:mx-10 relative overflow-hidden">
-                <div className="max-w-5xl mx-auto px-6 relative z-10">
-                    <h2 className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500 mb-20 text-center">
-                        Nossos Pilares
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-                        {valores.map((v, i) => (
-                            <div key={i} className="text-center md:text-left">
-                                <div className="text-blue-400 mb-6 flex justify-center md:justify-start">{v.icon}</div>
-                                <h4 className="text-lg font-medium mb-4">{v.titulo}</h4>
-                                <p className="text-slate-400 text-sm font-light leading-relaxed">{v.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* --- LOCALIZAÇÃO E EXPANSÃO --- */}
-            <section className="py-32 px-6 max-w-5xl mx-auto">
-                <div className="flex flex-col md:flex-row gap-20 items-center">
-                    <div className="flex-1">
-                        <h2 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">Presença Nacional</h2>
-                        <h3 className="text-4xl font-light mb-8 tracking-tight">Estamos em todo o <span className="font-medium underline decoration-blue-500 underline-offset-8">território angolano.</span></h3>
-                        <div className="space-y-6">
-                            <div className="flex items-start gap-4">
-                                <MapPin size={20} className="text-blue-600 mt-1" />
-                                <div>
-                                    <p className="font-bold text-sm">Sede Administrativa</p>
-                                    <p className="text-slate-500 text-sm font-light">Luanda, Angola. Rua das Missões, Bairro Central.</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <Navigation size={20} className="text-blue-600 mt-1" />
-                                <div>
-                                    <p className="font-bold text-sm">Campos Missionários</p>
-                                    <p className="text-slate-500 text-sm font-light">Forte presença no Huambo, Bié, Benguela e Uíge.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="w-full md:w-96 aspect-square bg-slate-100 rounded-full flex items-center justify-center border border-slate-200 relative">
-                        <div className="text-center">
-                            <span className="text-6xl font-thin text-slate-300 italic">IEIA</span>
-                        </div>
-                        {/* Pontos pulsantes representando províncias */}
-                        <div className="absolute top-1/4 right-1/3 w-3 h-3 bg-blue-500 rounded-full animate-ping" />
-                        <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping delay-300" />
-                        <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-blue-600 rounded-full animate-pulse" />
-                    </div>
-                </div>
-            </section>
-
-            {/* --- FOOTER SIMPLES --- */}
-            <footer className="py-20 border-t border-slate-100 text-center">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                    Igreja Evangélica dos Irmãos em Angola © 2026
-                </p>
-            </footer>
+            </motion.section>
         </div>
     );
 }
