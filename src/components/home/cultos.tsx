@@ -1,11 +1,9 @@
-
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import ceia from '@/public/img/ceiat.jpg'
 import estudo from '@/public/img/estudo.jpeg'
 import culto from '@/public/img/culto.jpeg'
-import CldImage from 'next-cloudinary'
 
 const programacoes = [
     {
@@ -14,12 +12,10 @@ const programacoes = [
         time: '',
         description:
             'Celebração da nova aliança e memorial do sacrifício de Cristo.',
-        image:
-            ceia,
+        image: ceia,
         verse: 'Fazei isto em memória de mim',
         verseRef: 'Lucas 22:19',
         link: '/santa-ceia',
-        gradient: 'from-rose-500 to-red-600',
     },
     {
         id: 2,
@@ -27,12 +23,10 @@ const programacoes = [
         time: 'Domingos às 09:00h',
         description:
             'Aprofunde seu conhecimento da Palavra com ensino contextualizado e crescimento espiritual.',
-        image:
-            estudo,
+        image: estudo,
         verse: 'Examinais as Escrituras',
         verseRef: 'João 5:39',
         link: '/estudo-biblico',
-        gradient: 'from-rose-500 to-red-600',
     },
     {
         id: 3,
@@ -40,31 +34,24 @@ const programacoes = [
         time: 'Domingos às 10:30h',
         description:
             'Momento de adoração, comunhão e ministração da Palavra que transforma vidas.',
-        image:
-            culto,
+        image: culto,
         verse: 'Alegrei-me quando me disseram',
         verseRef: 'Salmos 122:1',
         link: '/cultos',
-        gradient: 'from-rose-500 to-red-600',
     },
-
 ]
 
 const Culto = () => {
     return (
-        <div className='bg-white'>
-            < section
-                id="cultos"
-                className="bg-linear-to-b from-wihte to-white/60 y-10"
-            >
+        <div className="bg-slate-100">
+            <section id="cultos" className="bg-linear-to-b from-white to-gray-400/60 py-10">
                 <div className="max-w-7xl mx-auto px-6">
-
                     {/* Cabeçalho */}
                     <div className="text-center mb-10">
-                        <h2 className="text-2xl md:text-4xl  font-bold text-gray-900 mb-6">
+                        <h2 className="text-2xl md:text-4xl font-bold text-title mb-6">
                             Nosso Programa
                         </h2>
-                        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                        <p className="text-lg text-body max-w-2xl mx-auto">
                             Momentos especiais preparados para fortalecer sua fé e comunhão.
                         </p>
                     </div>
@@ -90,12 +77,11 @@ const Culto = () => {
 
                                 {/* Conteúdo */}
                                 <div className="absolute bg-linear-to-t from-black via-black/70 to-transparent inset-0 flex flex-col justify-end p-8 text-white">
-
                                     <h3 className="text-2xl font-bold mb-2">
                                         {item.title}
                                     </h3>
 
-                                    <p className="text-sm font-semibold text-blue-300 mb-3">
+                                    <p className="text-sm font-semibold text-secondary-light mb-3">
                                         {item.time}
                                     </p>
 
@@ -114,7 +100,7 @@ const Culto = () => {
                                     {/* Botão */}
                                     <Link
                                         href={item.link}
-                                        className={`inline-flex items-center justify-center gap-2 bg-linear-to-r ${item.gradient} hover:opacity-90 px-6 py-3 rounded-xl text-sm font-semibold transition duration-300 shadow-lg`}
+                                        className="button-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition duration-300 shadow-lg hover:opacity-90"
                                     >
                                         Saber mais
                                         <svg
@@ -135,9 +121,8 @@ const Culto = () => {
                             </div>
                         ))}
                     </div>
-
                 </div>
-            </section >
+            </section>
         </div>
     )
 }

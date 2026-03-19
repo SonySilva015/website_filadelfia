@@ -135,8 +135,8 @@ export default function EstudoBiblicoPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                     <div>
 
-                        <h3 className="text-2xl mb-6">Como Estudamos ??</h3>
-                        <div className="space-y-6 text-slate-500 font-light leading-relaxed">
+                        <h3 className="text-3xl mb-6">Como Estudamos ??</h3>
+                        <div className="space-y-6 text-slate-500 font-light text-xl">
                             <p>
                                 O estudo é conduzido por um orientador e um  coorientador, dividida por turmas de acordo os livros e feito por encontros semanal, as carateristicas dos estudos são: explicações, debates, duvidas, avalições e provas.
                             </p>
@@ -157,7 +157,7 @@ export default function EstudoBiblicoPage() {
             </section>
 
             {/* --- OBJETIVOS (CARDS MINIMALISTAS) --- */}
-            <section className="py-24 bg-slate-50/50">
+            <section className="py-10 bg-slate-50/50">
                 <div className="max-w-4xl mx-auto px-6">
                     <h2 className="text-3xl font-bold uppercase tracking-widest text-slate-950 mb-16 text-center">
                         Nossos Objetivos

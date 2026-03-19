@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Imagens para a seção
 import capa from '@/public/img/capa_cre.jpg'
@@ -29,9 +30,9 @@ const fadeInUp = {
 
 export default function NossaCrencaPage() {
     return (
-        <div className="min-h-screen bg-white text-gray-900 selection:bg-purple-200 selection:text-gray-900">
+        <div className="min-h-screen bg-tertiary text-body selection:bg-blue/10 selection:text-blue">
             {/* HERO SECTION */}
-            <header className="relative  h-130 flex items-center justify-center overflow-hidden">
+            <header className="relative h-130 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src={capa}
@@ -41,7 +42,7 @@ export default function NossaCrencaPage() {
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-800/90 to-purple-900/70" />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/90 via-slate-800/60 to-blue-100/40" />
                 </div>
 
                 <motion.div
@@ -55,24 +56,10 @@ export default function NossaCrencaPage() {
                         type: "tween"
                     }}
                 >
-                    <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{
-                            delay: 0.3,
-                            duration: 0.6,
-                            type: "spring",
-                            stiffness: 120,
-                            damping: 12
-                        }}
-                    >
-                        <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6 text-xs sm:text-sm font-semibold text-purple-200 bg-purple-900/40 backdrop-blur-sm rounded-full border border-purple-500/30">
-                            Fundamentos da Fé
-                        </span>
-                    </motion.div>
+
 
                     <motion.h1
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 md:mb-8 tracking-tight"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white mb-4 sm:mb-6 md:mb-8 tracking-tight"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.7 }}
@@ -81,7 +68,7 @@ export default function NossaCrencaPage() {
                         <span className="relative inline-block">
                             Crença
                             <motion.span
-                                className="absolute -bottom-2 left-0 w-full h-1 sm:h-2 bg-purple-400 rounded-full"
+                                className="absolute -bottom-2 left-0 w-full h-1 sm:h-2 bg-blue rounded-full"
                                 initial={{ width: 0 }}
                                 animate={{ width: "100%" }}
                                 transition={{
@@ -94,7 +81,7 @@ export default function NossaCrencaPage() {
                     </motion.h1>
 
                     <motion.p
-                        className="text-base sm:text-lg md:text-xl lg:text-2xl text-purple-100 font-light leading-relaxed max-w-3xl mx-auto px-2"
+                        className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 font-light leading-relaxed max-w-3xl mx-auto px-2"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.8, duration: 0.8 }}
@@ -102,20 +89,6 @@ export default function NossaCrencaPage() {
                         Nossa fé é fundamentada na Palavra de Deus, revelando Seu plano eterno desde a criação
                         até a gloriosa volta de Cristo.
                     </motion.p>
-
-                    {/* Scroll Indicator */}
-                    <motion.div
-                        className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2"
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{
-                            repeat: Infinity,
-                            duration: 2,
-                            ease: "easeInOut",
-                            type: "tween"
-                        }}
-                    >
-
-                    </motion.div>
                 </motion.div>
             </header>
 
@@ -134,7 +107,7 @@ export default function NossaCrencaPage() {
             >
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.span
-                        className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm mb-3 sm:mb-4 block"
+                        className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm mb-3 sm:mb-4 block"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3, margin: "-30px" }}
@@ -149,7 +122,7 @@ export default function NossaCrencaPage() {
                     </motion.span>
 
                     <motion.h2
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 md:mb-8"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-title mb-4 sm:mb-6 md:mb-8"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3, margin: "-30px" }}
@@ -167,7 +140,7 @@ export default function NossaCrencaPage() {
                     </motion.h2>
 
                     <motion.div
-                        className="w-16 sm:w-20 md:w-24 h-1 bg-purple-600 mx-auto mb-6 sm:mb-8"
+                        className="w-16 sm:w-20 md:w-24 h-1 bg-blue mx-auto mb-6 sm:mb-8"
                         initial={{ width: 0, opacity: 0 }}
                         whileInView={{ width: 96, opacity: 1 }}
                         viewport={{ once: true, amount: 0.5, margin: "-20px" }}
@@ -180,7 +153,7 @@ export default function NossaCrencaPage() {
                     />
 
                     <motion.p
-                        className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed"
+                        className="text-base sm:text-lg md:text-xl text-body leading-relaxed"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3, margin: "-30px" }}
@@ -230,7 +203,7 @@ export default function NossaCrencaPage() {
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                                 priority
                             />
-                            <div className="absolute inset-0 bg-linear-to-t from-slate-900/90  to-slate-900/50" />
+                            <div className="absolute inset-0 bg-linear-to-t from-blue/90 to-blue/50" />
                         </motion.div>
 
                         {/* Conteúdo Trindade */}
@@ -248,7 +221,7 @@ export default function NossaCrencaPage() {
                             className="space-y-4 sm:space-y-5 md:space-y-6"
                         >
                             <motion.span
-                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm block"
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -257,11 +230,11 @@ export default function NossaCrencaPage() {
                                 Um Deus em Três Pessoas
                             </motion.span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title relative">
                                 <span className="relative inline-block">
                                     A Trindade
                                     <motion.span
-                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        className="absolute -bottom-2 left-0 h-1 bg-blue rounded-full"
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "33.33%" }}
                                         viewport={{ once: true }}
@@ -276,22 +249,22 @@ export default function NossaCrencaPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
-                                    Cremos em um Deus único, mas triúno: <strong className="text-gray-800">Deus Pai, Deus Filho (Jesus Cristo) e Deus Espírito Santo</strong>.
+                                <p className="text-base sm:text-lg text-body mb-4">
+                                    Cremos em um Deus único, mas triúno: <strong className="text-title">Deus Pai, Deus Filho (Jesus Cristo) e Deus Espírito Santo</strong>.
                                     Cada um desempenha um papel distinto, mas todos são iguais em essência, divindade e poder.
                                     A Trindade é um mistério maravilhoso, mas é essencial para compreender a plenitude de Deus
                                     e a Sua ação no mundo desde a criação.
                                 </p>
 
                                 <motion.blockquote
-                                    className="border-l-4 border-purple-500 pl-4 italic text-gray-500 text-sm sm:text-base"
+                                    className="border-l-4 border-blue pl-4 italic text-body text-sm sm:text-base"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.5, duration: 0.5 }}
                                 >
                                     "Portanto, vão e façam discípulos de todas as nações, batizando-os em nome do Pai e do Filho e do Espírito Santo."
-                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-gray-400">— Mateus 28:19</footer>
+                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-body/60">— Mateus 28:19</footer>
                                 </motion.blockquote>
                             </motion.div>
                         </motion.div>
@@ -299,7 +272,7 @@ export default function NossaCrencaPage() {
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-blue/30 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -310,7 +283,7 @@ export default function NossaCrencaPage() {
 
             {/* SEÇÃO 2: A CRIAÇÃO */}
             <motion.section
-                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-purple-50/50"
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-blue/5"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -318,7 +291,7 @@ export default function NossaCrencaPage() {
             >
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
-                        {/* Conteúdo Criação (primeiro no mobile, segundo no desktop) */}
+                        {/* Conteúdo Criação */}
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -333,7 +306,7 @@ export default function NossaCrencaPage() {
                             className="space-y-4 sm:space-y-5 md:space-y-6 order-2 md:order-1"
                         >
                             <motion.span
-                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm block"
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -342,11 +315,11 @@ export default function NossaCrencaPage() {
                                 O Propósito Original de Deus
                             </motion.span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title relative">
                                 <span className="relative inline-block">
                                     A Criação
                                     <motion.span
-                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        className="absolute -bottom-2 left-0 h-1 bg-blue rounded-full"
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "33.33%" }}
                                         viewport={{ once: true }}
@@ -361,23 +334,23 @@ export default function NossaCrencaPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
-                                    Cremos que <strong className="text-gray-800">Deus é o Criador de todas as coisas</strong>, visíveis e invisíveis.
+                                <p className="text-base sm:text-lg text-body mb-4">
+                                    Cremos que <strong className="text-title">Deus é o Criador de todas as coisas</strong>, visíveis e invisíveis.
                                     Em seis dias, Ele criou os céus, a terra, os mares e tudo o que neles há, e viu que tudo era bom.
                                 </p>
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <p className="text-base sm:text-lg text-body mb-4">
                                     A criação revela a glória, o poder e a sabedoria de Deus. Toda a natureza proclama a grandeza do Criador.
                                 </p>
 
                                 <motion.blockquote
-                                    className="border-l-4 border-purple-500 pl-4 italic text-gray-500 text-sm sm:text-base"
+                                    className="border-l-4 border-blue pl-4 italic text-body text-sm sm:text-base"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.5, duration: 0.5 }}
                                 >
                                     "No princípio, Deus criou os céus e a terra. E Deus viu tudo o que havia feito, e tudo havia ficado muito bom."
-                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-gray-400">— Gênesis 1:1,31</footer>
+                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-body/60">— Gênesis 1:1,31</footer>
                                 </motion.blockquote>
                             </motion.div>
                         </motion.div>
@@ -403,13 +376,13 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-blue/40 via-transparent to-transparent" />
                         </motion.div>
                     </div>
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-blue/30 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -449,7 +422,7 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-blue/40 via-transparent to-transparent" />
                         </motion.div>
 
                         {/* Conteúdo Jesus */}
@@ -467,7 +440,7 @@ export default function NossaCrencaPage() {
                             className="space-y-4 sm:space-y-5 md:space-y-6"
                         >
                             <motion.span
-                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm block"
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -476,11 +449,11 @@ export default function NossaCrencaPage() {
                                 Nosso Salvador e Senhor
                             </motion.span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title relative">
                                 <span className="relative inline-block">
                                     Jesus Cristo
                                     <motion.span
-                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        className="absolute -bottom-2 left-0 h-1 bg-blue rounded-full"
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "33.33%" }}
                                         viewport={{ once: true }}
@@ -495,24 +468,24 @@ export default function NossaCrencaPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
-                                    Acreditamos que <strong className="text-gray-800">Jesus Cristo é o Filho de Deus</strong>, que veio ao mundo para salvar a humanidade
+                                <p className="text-base sm:text-lg text-body mb-4">
+                                    Acreditamos que <strong className="text-title">Jesus Cristo é o Filho de Deus</strong>, que veio ao mundo para salvar a humanidade
                                     da condenação eterna.
                                 </p>
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <p className="text-base sm:text-lg text-body mb-4">
                                     Por meio de Sua morte na cruz, Jesus expiou nossos pecados, e por Sua ressurreição,
                                     Ele garantiu a vitória sobre a morte e o pecado.
                                 </p>
 
                                 <motion.blockquote
-                                    className="border-l-4 border-purple-500 pl-4 italic text-gray-500 text-sm sm:text-base"
+                                    className="border-l-4 border-blue pl-4 italic text-body text-sm sm:text-base"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.5, duration: 0.5 }}
                                 >
                                     "Porque Deus tanto amou o mundo que deu o seu Filho Unigênito, para que todo o que nele crer não pereça, mas tenha a vida eterna."
-                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-gray-400">— João 3:16</footer>
+                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-body/60">— João 3:16</footer>
                                 </motion.blockquote>
                             </motion.div>
                         </motion.div>
@@ -520,7 +493,7 @@ export default function NossaCrencaPage() {
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-blue/30 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -531,7 +504,7 @@ export default function NossaCrencaPage() {
 
             {/* SEÇÃO 4: NATUREZA DO HOMEM */}
             <motion.section
-                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-purple-50/50"
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-blue/5"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -554,7 +527,7 @@ export default function NossaCrencaPage() {
                             className="space-y-4 sm:space-y-5 md:space-y-6 order-2 md:order-1"
                         >
                             <motion.span
-                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm block"
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -563,11 +536,11 @@ export default function NossaCrencaPage() {
                                 Criado à Imagem de Deus
                             </motion.span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title relative">
                                 <span className="relative inline-block">
                                     A Natureza do Homem
                                     <motion.span
-                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        className="absolute -bottom-2 left-0 h-1 bg-blue rounded-full"
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "33.33%" }}
                                         viewport={{ once: true }}
@@ -582,24 +555,24 @@ export default function NossaCrencaPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
-                                    Cremos que o <strong className="text-gray-800">ser humano foi criado à imagem e semelhança de Deus</strong>, dotado de dignidade,
+                                <p className="text-base sm:text-lg text-body mb-4">
+                                    Cremos que o <strong className="text-title">ser humano foi criado à imagem e semelhança de Deus</strong>, dotado de dignidade,
                                     liberdade e responsabilidade moral.
                                 </p>
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <p className="text-base sm:text-lg text-body mb-4">
                                     Porém, com a queda no Éden, o pecado entrou no mundo, corrompendo a natureza humana.
                                     Todo ser humano necessita da graça redentora de Cristo.
                                 </p>
 
                                 <motion.blockquote
-                                    className="border-l-4 border-purple-500 pl-4 italic text-gray-500 text-sm sm:text-base"
+                                    className="border-l-4 border-blue pl-4 italic text-body text-sm sm:text-base"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.5, duration: 0.5 }}
                                 >
                                     "Criou Deus o homem à sua imagem... Portanto, assim como por meio de um só homem o pecado entrou no mundo..."
-                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-gray-400">— Gênesis 1:27; Romanos 5:12</footer>
+                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-body/60">— Gênesis 1:27; Romanos 5:12</footer>
                                 </motion.blockquote>
                             </motion.div>
                         </motion.div>
@@ -625,13 +598,13 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-blue/40 via-transparent to-transparent" />
                         </motion.div>
                     </div>
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-blue/30 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -671,7 +644,7 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-blue/40 via-transparent to-transparent" />
                         </motion.div>
 
                         {/* Conteúdo Segunda Vinda */}
@@ -689,7 +662,7 @@ export default function NossaCrencaPage() {
                             className="space-y-4 sm:space-y-5 md:space-y-6"
                         >
                             <motion.span
-                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm block"
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -698,11 +671,11 @@ export default function NossaCrencaPage() {
                                 Nossa Esperança Bem-Aventurada
                             </motion.span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title relative">
                                 <span className="relative inline-block">
                                     A Segunda Vinda de Cristo
                                     <motion.span
-                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        className="absolute -bottom-2 left-0 h-1 bg-blue rounded-full"
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "33.33%" }}
                                         viewport={{ once: true }}
@@ -717,23 +690,23 @@ export default function NossaCrencaPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
-                                    Cremos na <strong className="text-gray-800">volta pessoal, visível e gloriosa de Jesus Cristo</strong>. Assim como Ele subiu aos céus,
+                                <p className="text-base sm:text-lg text-body mb-4">
+                                    Cremos na <strong className="text-title">volta pessoal, visível e gloriosa de Jesus Cristo</strong>. Assim como Ele subiu aos céus,
                                     assim voltará para buscar Sua igreja.
                                 </p>
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <p className="text-base sm:text-lg text-body mb-4">
                                     Na Sua segunda vinda, os mortos em Cristo ressuscitarão, e os que estiverem vivos serão transformados.
                                 </p>
 
                                 <motion.blockquote
-                                    className="border-l-4 border-purple-500 pl-4 italic text-gray-500 text-sm sm:text-base"
+                                    className="border-l-4 border-blue pl-4 italic text-body text-sm sm:text-base"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.5, duration: 0.5 }}
                                 >
                                     "O próprio Senhor descerá do céu... e os mortos em Cristo ressuscitarão primeiro..."
-                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-gray-400">— 1 Tessalonicenses 4:16-17</footer>
+                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-body/60">— 1 Tessalonicenses 4:16-17</footer>
                                 </motion.blockquote>
                             </motion.div>
                         </motion.div>
@@ -741,7 +714,7 @@ export default function NossaCrencaPage() {
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-blue/30 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -752,7 +725,7 @@ export default function NossaCrencaPage() {
 
             {/* SEÇÃO 6: O BATISMO */}
             <motion.section
-                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-purple-50/50"
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-blue/5"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -775,7 +748,7 @@ export default function NossaCrencaPage() {
                             className="space-y-4 sm:space-y-5 md:space-y-6 order-2 md:order-1"
                         >
                             <motion.span
-                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm block"
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -784,11 +757,11 @@ export default function NossaCrencaPage() {
                                 Nosso Testemunho Público
                             </motion.span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title relative">
                                 <span className="relative inline-block">
                                     O Batismo
                                     <motion.span
-                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        className="absolute -bottom-2 left-0 h-1 bg-blue rounded-full"
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "33.33%" }}
                                         viewport={{ once: true }}
@@ -803,23 +776,23 @@ export default function NossaCrencaPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <p className="text-base sm:text-lg text-body mb-4">
                                     O batismo é um ato de obediência e simboliza a morte e ressurreição com Cristo.
                                     Acreditamos que o batismo deve ser realizado por imersão.
                                 </p>
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <p className="text-base sm:text-lg text-body mb-4">
                                     O batismo é uma declaração pública da fé em Cristo e do desejo de viver segundo Seus ensinamentos.
                                 </p>
 
                                 <motion.blockquote
-                                    className="border-l-4 border-purple-500 pl-4 italic text-gray-500 text-sm sm:text-base"
+                                    className="border-l-4 border-blue pl-4 italic text-body text-sm sm:text-base"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.5, duration: 0.5 }}
                                 >
                                     "Fomos, pois, sepultados com ele na morte por meio do batismo, a fim de que... também nós vivamos uma vida nova."
-                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-gray-400">— Romanos 6:4</footer>
+                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-body/60">— Romanos 6:4</footer>
                                 </motion.blockquote>
                             </motion.div>
                         </motion.div>
@@ -845,13 +818,13 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-blue/40 via-transparent to-transparent" />
                         </motion.div>
                     </div>
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-blue/30 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -891,7 +864,7 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-blue/40 via-transparent to-transparent" />
                         </motion.div>
 
                         {/* Conteúdo Santidade */}
@@ -909,7 +882,7 @@ export default function NossaCrencaPage() {
                             className="space-y-4 sm:space-y-5 md:space-y-6"
                         >
                             <motion.span
-                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm block"
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -918,11 +891,11 @@ export default function NossaCrencaPage() {
                                 Chamados para Ser como Ele
                             </motion.span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title relative">
                                 <span className="relative inline-block">
                                     Santidade
                                     <motion.span
-                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        className="absolute -bottom-2 left-0 h-1 bg-blue rounded-full"
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "33.33%" }}
                                         viewport={{ once: true }}
@@ -937,20 +910,20 @@ export default function NossaCrencaPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <p className="text-base sm:text-lg text-body mb-4">
                                     A santidade é o chamado de todos os cristãos. Como seguidores de Cristo, somos chamados a viver
                                     uma vida separada do pecado e consagrada a Deus.
                                 </p>
 
                                 <motion.blockquote
-                                    className="border-l-4 border-purple-500 pl-4 italic text-gray-500 text-sm sm:text-base"
+                                    className="border-l-4 border-blue pl-4 italic text-body text-sm sm:text-base"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.5, duration: 0.5 }}
                                 >
                                     "Sejam santos, porque eu sou santo."
-                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-gray-400">— 1 Pedro 1:15-16</footer>
+                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-body/60">— 1 Pedro 1:15-16</footer>
                                 </motion.blockquote>
                             </motion.div>
                         </motion.div>
@@ -958,7 +931,7 @@ export default function NossaCrencaPage() {
 
                     {/* Div separadora */}
                     <motion.div
-                        className="w-full h-px bg-linear-to-r from-transparent via-purple-300 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        className="w-full h-px bg-linear-to-r from-transparent via-blue/30 to-transparent mt-16 sm:mt-20 md:mt-24"
                         initial={{ scaleX: 0, opacity: 0 }}
                         whileInView={{ scaleX: 1, opacity: 1 }}
                         viewport={{ once: true }}
@@ -969,7 +942,7 @@ export default function NossaCrencaPage() {
 
             {/* SEÇÃO 8: FAMÍLIA E CASAMENTO */}
             <motion.section
-                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-purple-50/50"
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-blue/5"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -992,7 +965,7 @@ export default function NossaCrencaPage() {
                             className="space-y-4 sm:space-y-5 md:space-y-6 order-2 md:order-1"
                         >
                             <motion.span
-                                className="text-purple-600 font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm block"
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -1001,11 +974,11 @@ export default function NossaCrencaPage() {
                                 Instituições Divinas
                             </motion.span>
 
-                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 relative">
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title relative">
                                 <span className="relative inline-block">
                                     Família e Casamento
                                     <motion.span
-                                        className="absolute -bottom-2 left-0 h-1 bg-purple-600 rounded-full"
+                                        className="absolute -bottom-2 left-0 h-1 bg-blue rounded-full"
                                         initial={{ width: 0 }}
                                         whileInView={{ width: "33.33%" }}
                                         viewport={{ once: true }}
@@ -1020,24 +993,24 @@ export default function NossaCrencaPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4, duration: 0.5 }}
                             >
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <p className="text-base sm:text-lg text-body mb-4">
                                     A família é uma instituição divina, estabelecida por Deus desde a criação.
                                     O casamento é uma aliança sagrada e reflexão do relacionamento de Cristo com a Igreja.
                                 </p>
-                                <p className="text-base sm:text-lg text-gray-600 mb-4">
+                                <p className="text-base sm:text-lg text-body mb-4">
                                     O casamento é a base para uma família saudável e ambiente ideal para criar filhos
                                     no temor e amor a Deus.
                                 </p>
 
                                 <motion.blockquote
-                                    className="border-l-4 border-purple-500 pl-4 italic text-gray-500 text-sm sm:text-base"
+                                    className="border-l-4 border-blue pl-4 italic text-body text-sm sm:text-base"
                                     initial={{ opacity: 0, x: -10 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.5, duration: 0.5 }}
                                 >
                                     "Por isso, o homem deixará pai e mãe e se unirá à sua mulher, e os dois se tornarão uma só carne."
-                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-gray-400">— Efésios 5:31</footer>
+                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-body/60">— Efésios 5:31</footer>
                                 </motion.blockquote>
                             </motion.div>
                         </motion.div>
@@ -1063,17 +1036,16 @@ export default function NossaCrencaPage() {
                                 className="object-cover"
                                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
                             />
-                            <div className="absolute inset-0 bg-linear-to-t from-purple-900/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-blue/40 via-transparent to-transparent" />
                         </motion.div>
                     </div>
-
-                    {/* Div separadora - última, sem necessidade de linha após */}
                 </div>
             </motion.section>
 
             {/* CALL TO ACTION */}
             <motion.section
-                className="py-20 sm:py-24 md:py-32 px-4 sm:px-6 bg-linear-to-br from-purple-900 to-purple-800 text-white"
+                className="py-20 sm:py-24 bg-linear-to-br from-blue-700 to-blue-950 md:py-32 px-4 sm:px-6 text-white"
+
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -1091,7 +1063,7 @@ export default function NossaCrencaPage() {
                     </motion.h2>
 
                     <motion.p
-                        className="text-base sm:text-lg md:text-xl text-purple-100 mb-8 sm:mb-10 md:mb-12 leading-relaxed"
+                        className="text-base sm:text-lg md:text-xl text-white/80 mb-8 sm:mb-10 md:mb-12 leading-relaxed"
                         variants={fadeInUp}
                         initial="initial"
                         whileInView="whileInView"
@@ -1102,19 +1074,9 @@ export default function NossaCrencaPage() {
                         Convidamos você a conhecer mais e caminhar conosco nessa jornada de fé.
                     </motion.p>
 
-                    <motion.div
-                        className="flex flex-wrap gap-3 sm:gap-4 justify-center"
-                        variants={fadeInUp}
-                        initial="initial"
-                        whileInView="whileInView"
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                    >
 
-                    </motion.div>
                 </div>
             </motion.section>
-
         </div>
     );
 }

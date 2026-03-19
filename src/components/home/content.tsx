@@ -2,19 +2,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 import mi from '@/public/img/hands.jpg'
 
-
 export default function Content() {
-
     return (
-        <div className="bg-white">
-            <section className=" md:py-12 bg-white">
-                <div className="relative  mx-auto overflow-hidden shadow-2xl">
-
+        <div className="bg-secondary">
+            {/* SEÇÃO 1 - BEM-VINDO */}
+            <section className="md:py-12 bg-secondary">
+                <div className="relative mx-auto overflow-hidden shadow-2xl">
                     <div className="flex flex-col md:flex-row min-h-122">
-
                         {/* TEXTO */}
-                        <div className="flex flex-col justify-center px-8 md:px-16 py-16 w-full md:w-1/2 bg-linear-to-br from-[#5c046b] to-[#380147] text-white text-center md:text-left">
-
+                        <div className="flex flex-col justify-center px-8 md:px-16 py-16 w-full md:w-1/2 text-white text-center md:text-left"
+                            style={{
+                                background: 'linear-gradient(to bottom right, var(--color-secondary), var(--color-secondary-hover))'
+                            }}>
                             <h1 className="text-3xl md:text-5xl font-bold leading-tight text-center">
                                 Você é <span className="text-red-400">bem-vindo</span>, Amado
                             </h1>
@@ -24,10 +23,12 @@ export default function Content() {
                                 Aqui você encontra amor, comunhão e propósito.
                             </p>
 
-                            <Link href={'/sobre'} className="mt-8 bg-white text-purple-900 font-semibold px-8 py-3 text-center rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 mx-auto md:mx-0">
+                            <Link
+                                href={'/sobre'}
+                                className="button-secondary mt-8 px-8 py-3 text-center rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 mx-auto md:mx-0 font-semibold"
+                            >
                                 Conheça-nos
                             </Link>
-
                         </div>
 
                         {/* IMAGEM */}
@@ -40,17 +41,14 @@ export default function Content() {
                                 className="object-cover object-center"
                                 priority
                             />
-
                             <div className="absolute inset-0 bg-black/30"></div>
                         </div>
-
                     </div>
-
                 </div>
             </section>
 
+            {/* SEÇÃO 2 - NOSSA MISSÃO */}
             <section className="relative w-full min-h-125 flex items-center justify-center text-white">
-
                 {/* Imagem fixa */}
                 <div
                     className="absolute inset-0 bg-fixed bg-center bg-cover"
@@ -59,15 +57,14 @@ export default function Content() {
                     }}
                 />
 
-
-                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute inset-0 bg-black/40"></div>
 
                 <div className="relative z-10 text-center max-w-4xl px-6 py-24 bg-black/30 rounded-lg">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
                         Nossa Missão
                     </h1>
 
-                    <p className="text-lg md:text-xl leading-relaxed">
+                    <p className="text-lg md:text-xl leading-relaxed text-white">
                         Atender ao chamado de Cristo: ir e anunciar o Evangelho a toda criatura.
                         Levar esperança onde há dor, luz onde há escuridão e salvação a todos,
                         formando uma geração transformada pelo poder da Palavra.
@@ -78,13 +75,7 @@ export default function Content() {
                         — Marcos 16:15
                     </p>
                 </div>
-
             </section>
-
-
         </div>
-
-
     );
-
 }

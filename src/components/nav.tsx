@@ -53,8 +53,12 @@ const Navbar = () => {
             id: 'mini',
             label: 'Ministérios',
             dropdown: [
-                { name: 'Células', href: '/celulas' },
+                { name: 'Envagelismo (céclulas)', href: '/celulas' },
                 { name: 'EBD - Infantil', href: '/ebd-infantil' },
+                { name: 'Estudos Bíblicos', href: '/estudo-biblico' },
+                { name: 'Adoração ', href: '/desevolvimento' },
+                { name: 'Juventude', href: '/desevolvimento' },
+                { name: 'Ação  social', href: '/desevolvimento' },
 
 
             ],
@@ -63,10 +67,9 @@ const Navbar = () => {
             id: 'bib',
             label: 'Biblioteca',
             dropdown: [
-                { name: 'Artigos', href: '/midia/artigos' },
-                { name: 'Escrituras', href: '/midia/mulheres' },
-                { name: 'Ajuda Para Vida', href: '/midia/vida' },
-                { name: 'Para Jovens', href: '/midia/jovens' },
+                { name: 'Artigos', href: '/artigos' },
+                { name: 'Ajuda Para Vida', href: '/desevolvimento' },
+                { name: 'Para Jovens', href: '/para-jovens' },
 
 
             ],
@@ -77,7 +80,9 @@ const Navbar = () => {
             dropdown: [
                 { name: 'Cultos', href: '/cultos' },
                 { name: 'Santa Ceia', href: '/santa-ceia' },
-                { name: 'Escola Bíblica', href: '/estudo-biblico' },
+                { name: 'EBD - Infantil', href: '/ebd-infantil' },
+                { name: 'Estudos dos Jovens', href: 'desevolvimento' },
+
             ],
         },
         {
@@ -110,7 +115,7 @@ const Navbar = () => {
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 right-0 z-[100] transition-all  duration-300 ${scrolled
+                className={`fixed top-0 left-0 right-0 z-100 transition-all  duration-300 ${scrolled
                     ? 'bg-white shadow-lg'
                     : 'bg-white shadow-md'
                     }`}
@@ -129,11 +134,11 @@ const Navbar = () => {
                                     <Image width={50} height={50} src={logo} alt="logo" />
                                 </div>
                             </div>
-                            <div className="hidden sm:block">
-                                <p className="font-bold text-red-700 text-sm md:text-lg leading-tight">
+                            <div className="block">
+                                <p className="font-bold text-red-600 text-md md:text-lg ">
                                     IEIA - Filadélfia
                                 </p>
-                                <p className="text-[10px] md:text-xl text-gray-500">
+                                <p className="text-sm text-gray-900 md:text">
                                     Igreja dos Irmãos em Angola
                                 </p>
                             </div>
@@ -151,7 +156,7 @@ const Navbar = () => {
                                             href={item.href!}
                                             className={`relative px-3 xl:px-4 py-2 font-medium text-sm transition-all duration-300 group ${isActive(item.href!)
                                                 ? 'text-red-600'
-                                                : 'text-gray-700 hover:text-red-600'
+                                                : 'text-gray-900 hover:text-red-600'
                                                 }`}
                                         >
                                             {item.label}
@@ -164,7 +169,7 @@ const Navbar = () => {
                                                 onClick={() => toggleDesktopDropdown(item.id)}
                                                 className={`px-3 xl:px-4 py-2 font-medium text-sm cursor-pointer transition-all duration-300 flex items-center gap-1 ${desktopDropdown === item.id
                                                     ? 'text-red-600'
-                                                    : 'text-gray-700 hover:text-red-600'
+                                                    : 'text-gray-900 hover:text-red-600'
                                                     }`}
                                             >
                                                 {item.label}
@@ -187,7 +192,7 @@ const Navbar = () => {
                                                         animate={{ opacity: 1, y: 0 }}
                                                         exit={{ opacity: 0, y: 10 }}
                                                         transition={{ duration: 0.2 }}
-                                                        className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-xl py-2 overflow-hidden border-t-2 border-red-500 z-[200]"
+                                                        className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-xl py-2 overflow-hidden border-t-2 border-red-500 z-200"
                                                     >
                                                         {item.dropdown.map((sub, i) => (
                                                             <Link
@@ -210,7 +215,7 @@ const Navbar = () => {
                             {/* BOTÃO VISITAR */}
                             <Link
                                 href="/admin/login"
-                                className="ml-4 bg-red-500  text-white  px-6 py-2.5 rounded-md font-medium text-sm shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
+                                className="ml-4 bg-red-600  text-white text-md px-6 py-2.5 rounded-md font-medium text-sm shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
                             >
                                 Login
                             </Link>
@@ -219,7 +224,7 @@ const Navbar = () => {
                         {/* MOBILE BUTTON */}
                         <button
                             onClick={() => setMobileOpen(true)}
-                            className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors z-[200]"
+                            className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors z-200"
                             aria-label="Abrir menu"
                         >
                             <div className="space-y-1.5">
@@ -240,7 +245,7 @@ const Navbar = () => {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.2 }}
-                                className="fixed inset-0 bg-black/40 z-[1500]"
+                                className="fixed inset-0 bg-white/60 z-1500"
                                 onClick={closeMobileMenu}
                             />
 
@@ -249,19 +254,17 @@ const Navbar = () => {
                                 animate={{ x: 0 }}
                                 exit={{ x: '100%' }}
                                 transition={{ type: 'tween', duration: 0.2 }}
-                                className="fixed top-0 right-0 h-full w-full bg-white shadow-2xl z-[2000] overflow-y-auto"
+                                className="fixed top-0 right-0 h-full w-[85%] bg-white shadow-2xl z-2000 overflow-y-auto"
                             >
                                 <div className="p-6">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <div className=" w-15 h-15  flex items-center justify-center font-bold text-sm md:text-base ">
-                                            <Image width={60} height={60} src="/img/logo.png" alt="logo" />
-                                        </div>
+                                    <div className="flex items-center justify-between ">
+
                                         <button
                                             onClick={closeMobileMenu}
-                                            className="w-10 h-10 rounded-full flex items-center justify-center bg-black/10 transition-colors"
+                                            className="w-10 h-10 rounded-full flex items-start justify-center transition-colors"
                                             aria-label="Fechar menu"
                                         >
-                                            <svg className="w-6 h-6" fill="none" stroke="red" viewBox="0 0 24 24">
+                                            <svg className="w-6 h-6" fill="none" stroke="black" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                             </svg>
                                         </button>
@@ -342,7 +345,7 @@ const Navbar = () => {
                                         <Link
                                             href="/admin/login"
                                             onClick={closeMobileMenu}
-                                            className="block w-full bg-gradient-to-r from-red-600 to-red-700 text-white text-center py-4 rounded-2xl font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                                            className="block w-full bg-linear-to-r from-red-600 to-red-700 text-white text-center py-4 rounded-2xl font-medium shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
                                         >
                                             login
                                         </Link>

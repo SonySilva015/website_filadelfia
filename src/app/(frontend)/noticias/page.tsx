@@ -7,12 +7,12 @@ export default function Notice() {
     return (
         <section>
 
-            <div className="relative h-60 flex items-center justify-center overflow-hidden bg-linear-to-t from-slate-950 to-slate-800">
+            <div className="relative h-60 flex items-center justify-center overflow-hidden bg-linear-to-t from-slate-800 to-slate-700">
 
 
                 <div className="relative z-10 text-white px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-                        Home / <span className='text-red-700'>Notícias</span>
+                        Home / <span className='text-red-600'>Notícias</span>
                     </h1>
                     <p className="text-lg sm:text-xl max-w-2xl mx-auto">
                         veja aqui as notícias

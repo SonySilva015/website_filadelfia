@@ -18,12 +18,12 @@ export default async function Home() {
     const terciaria = notices.find(n => Number(n.destaque) === 3)
 
     return (
-        <main className="bg-linear-to-b from-gray-50 to-white">
+        <main className="bg-linear-to-b from-tertiary to-secondary-light/20">
 
             <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
                 <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
 
-                    {/* 🔴 PRINCIPAL */}
+                    {/* 🔵 PRINCIPAL */}
                     {principal && (
                         <Link
                             href={`/noticias/${principal.slug}`}
@@ -44,9 +44,8 @@ export default async function Home() {
                             <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent z-20" />
 
                             <div className="absolute bottom-0 p-6 sm:p-8 text-white z-30">
-
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    <span className="bg-purple-700 px-3 py-1 text-sm rounded-full font-medium shadow-lg">
+                                    <span className="bg-blue-800 px-3 py-1 text-sm rounded-full font-medium shadow-lg">
                                         {principal.tipo}
                                     </span>
 
@@ -55,7 +54,7 @@ export default async function Home() {
                                         {principal.data
                                             ? new Date(principal.data).toLocaleDateString("pt-BR", {
                                                 day: "numeric",
-                                                month: "short",
+                                                month: "long",
                                                 year: "numeric",
                                             })
                                             : "Sem data"}
@@ -66,7 +65,7 @@ export default async function Home() {
                                     {principal.titulo}
                                 </h1>
 
-                                <span className="bg-purple-700 px-6 py-2.5 rounded-md mt-2 font-semibold">
+                                <span className="bg-blue-800 px-6 py-2.5 rounded-md mt-2 font-semibold hover:bg-secondary-hover transition">
                                     Ler mais
                                 </span>
                             </div>
@@ -74,15 +73,13 @@ export default async function Home() {
                     )}
 
                     {/* 🔵 LATERAIS */}
-
                     <div className="space-y-4">
-
                         {[secundaria, terciaria].map((item) =>
                             item ? (
                                 <Link
                                     key={item.id}
                                     href={`/noticias/${item.slug}`}
-                                    className="relative group block h-45 rounded-xl overflow-hidden shadow-sm hover:shadow-lg border border-gray-100 transition"
+                                    className="relative group block h-45 rounded-xl overflow-hidden shadow-sm hover:shadow-lg border border-secondary/10 transition"
                                 >
                                     {/* 📸 Imagem de fundo */}
                                     <div className="absolute inset-0">
@@ -112,17 +109,14 @@ export default async function Home() {
                                             </span>
                                         </div>
 
-                                        <h3 className="font-semibold text-lg group-hover:text-blue-300 transition line-clamp-2">
+                                        <h3 className="font-semibold text-lg group-hover:text-secondary-light transition line-clamp-2">
                                             {item.titulo}
                                         </h3>
-
                                     </div>
                                 </Link>
                             ) : null
                         )}
-
                     </div>
-
                 </div>
             </section>
         </main>
