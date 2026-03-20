@@ -69,7 +69,7 @@ const Navbar = () => {
             dropdown: [
                 { name: 'Artigos', href: '/artigos' },
                 { name: 'Ajuda Para Vida', href: '/desevolvimento' },
-                { name: 'Para Jovens', href: '/para-jovens' },
+                { name: 'Para Jovens', href: '/desevolvimento' },
 
 
             ],
