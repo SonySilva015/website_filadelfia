@@ -58,7 +58,7 @@ export default function EbdInfantil() {
         <div className="bg-primary font-sans min-h-screen">
 
             {/* --- HERO SECTION --- */}
-            <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center text-center overflow-hidden">
+            <section className="relative h-[60vh] min-h-125 flex items-center justify-center text-center overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
                         src={hero}
@@ -150,9 +150,7 @@ export default function EbdInfantil() {
             <section className="py-24 px-6 bg-primary overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16 flex flex-col items-center">
-                        <div className="bg-primary-light p-4 rounded-full mb-4">
-                            <Camera className="text-primary w-8 h-8" />
-                        </div>
+
                         <h2 className="text-4xl md:text-5xl font-bold text-title mb-4">
                             Nossos <span className="text-primary">Momentos</span>
                         </h2>

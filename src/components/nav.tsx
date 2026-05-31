@@ -53,11 +53,13 @@ const Navbar = () => {
             id: 'mini',
             label: 'Ministérios',
             dropdown: [
-                { name: 'Envagelismo (céclulas)', href: '/celulas' },
+                { name: 'Evangelismo', href: '/celulas' },
                 { name: 'EBD - Infantil', href: '/ebd-infantil' },
-                { name: 'Estudos Bíblicos', href: '/estudo-biblico' },
-                { name: 'Adoração ', href: '/desevolvimento' },
+                { name: 'Estudos Bíblicos', href: '/desevolvimento' },
+                { name: 'Adoração e louvores ', href: '/desevolvimento' },
                 { name: 'Juventude', href: '/desevolvimento' },
+                { name: 'Oração', href: '/desevolvimento' },
+                { name: 'Dos Casais', href: '/desevolvimento' },
                 { name: 'Ação  social', href: '/desevolvimento' },
 
 
@@ -68,8 +70,10 @@ const Navbar = () => {
             label: 'Biblioteca',
             dropdown: [
                 { name: 'Artigos', href: '/artigos' },
-                { name: 'Ajuda Para Vida', href: '/desevolvimento' },
-                { name: 'Para Jovens', href: '/desevolvimento' },
+                { name: 'Ajuda Para Vida', href: '/media/para-vida' },
+                { name: 'Para Jovens', href: '/media/para-jovens' },
+                { name: 'Crescimento Social', href: '/desevolvimento' },
+                { name: 'Galeria', href: '/desevolvimento' },
 
 
             ],
@@ -80,8 +84,6 @@ const Navbar = () => {
             dropdown: [
                 { name: 'Cultos', href: '/cultos' },
                 { name: 'Santa Ceia', href: '/santa-ceia' },
-                { name: 'EBD - Infantil', href: '/ebd-infantil' },
-                { name: 'Estudos dos Jovens', href: 'desevolvimento' },
 
             ],
         },
@@ -213,6 +215,7 @@ const Navbar = () => {
                             ))}
 
                             {/* BOTÃO VISITAR */}
+
                             <Link
                                 href="/admin/login"
                                 className="ml-4 bg-red-600  text-white text-md px-6 py-2.5 rounded-md font-medium text-sm shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
