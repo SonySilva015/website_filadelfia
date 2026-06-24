@@ -53,7 +53,7 @@ const Navbar = () => {
             id: 'mini',
             label: 'Ministérios',
             dropdown: [
-                { name: 'Evangelismo', href: '/celulas' },
+                { name: 'Evangelismo', href: '/evangelismo' },
                 { name: 'EBD - Infantil', href: '/ebd-infantil' },
                 { name: 'Estudos Bíblicos', href: '/desevolvimento' },
                 { name: 'Adoração e louvores ', href: '/desevolvimento' },

@@ -92,3 +92,38 @@
     background-color: var(--color-secondary-light);
   }
 }
+
+/* Botões */
+.swiper-button-prev,
+.swiper-button-next {
+    width: 56px !important;
+    height: 56px !important;
+    background: #ffffff;
+    border-radius: 9999px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+    color: #2563eb !important;
+    transition: .3s;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background: #2563eb;
+    color: white !important;
+}
+
+/* Ícones */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 22px !important;
+    font-weight: 900;
+}
+
+/* Distância das bordas */
+.swiper-button-prev {
+    left: -10px;
+}
+
+.swiper-button-next {
+    right: -10px;
+}
