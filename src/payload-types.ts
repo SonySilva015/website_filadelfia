@@ -284,7 +284,7 @@ export interface Noticia {
 export interface Celula {
   id: number;
   nome: string;
-  Capa: number | Media;
+  capa: number | Media;
   descricao: string;
   horarios: string;
   membros: number;
@@ -319,6 +319,10 @@ export interface Celula {
           }
       )[]
     | null;
+  lider: {
+    foto: number | Media;
+    nome: string;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -523,7 +527,7 @@ export interface NoticiasSelect<T extends boolean = true> {
  */
 export interface CelulasSelect<T extends boolean = true> {
   nome?: T;
-  Capa?: T;
+  capa?: T;
   descricao?: T;
   horarios?: T;
   membros?: T;
@@ -545,6 +549,12 @@ export interface CelulasSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+      };
+  lider?:
+    | T
+    | {
+        foto?: T;
+        nome?: T;
       };
   updatedAt?: T;
   createdAt?: T;

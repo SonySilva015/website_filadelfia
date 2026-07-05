@@ -115,7 +115,7 @@ const EstudosBiblicos = () => {
                     {/* BOTÃO */}
                     <div className="mt-16">
                         <Link
-                            href={''}
+                            href={'/celulas'}
                             className="button-primary px-8 py-4 rounded-lg shadow-lg transition duration-300 hover:scale-105 font-semibold"
                         >
                             Ver mais Células

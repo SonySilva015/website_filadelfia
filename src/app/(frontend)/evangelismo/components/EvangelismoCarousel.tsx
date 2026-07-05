@@ -22,11 +22,63 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { celulas } from '../../celulas/data';
+// Tipo baseado no schema do Payload (Celulas collection)
+type Media = {
+    url?: string | null;
+    alt?: string | null;
+} | string | null;
 
-export default function Evangelismo() {
+type Celula = {
+    id: string;
+    nome: string;
+    capa: Media;
+    descricao: string;
+    horarios: string;
+    membros: number;
+    lider?: {
+        nome?: string;
+        foto?: Media;
+    };
+};
+
+interface EvangelismoCarouselProps {
+    celulas: Celula[];
+}
+
+function getMediaUrl(media: Celula['capa']): string {
+    if (!media) return '/placeholder.jpg';
+    if (typeof media === 'string') return media;
+    return media.url ?? '/placeholder.jpg';
+}
+
+export default function EvangelismoCarousel({ celulas }: any) {
     const [selectedCell, setSelectedCell] = useState('');
     const swiperRef = useRef<SwiperType | null>(null);
+
+    if (!celulas || celulas.length === 0) {
+        return (
+            <div className="max-w-6xl mx-auto px-4 py-8">
+                <div className="mb-10">
+                    <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-3 flex items-center gap-3">
+                        <Users className="w-6 h-6 text-gray-400" />
+                        Nossas Células
+                    </h2>
+
+                    <div className="w-12 h-0.5 bg-gray-300 mb-6"></div>
+
+                    <p className="text-gray-500 font-light max-w-3xl leading-7">
+                        As células são o coração da nossa igreja. É nelas que a comunhão,
+                        o discipulado e o cuidado acontecem de forma mais próxima.
+                        Encontre uma célula perto de você, conheça novos irmãos e faça
+                        parte desta grande família em Cristo.
+                    </p>
+                </div>
+                <div className="max-w-6xl bg-gray-300 h-95 flex justify-center items-center mx-auto px-4 py-8 text-center text-gray-500">
+                    <h1 className="text-2xl font-semibold"> Nenhuma célula cadastrada no momento.</h1>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-8">
@@ -91,21 +143,17 @@ export default function Evangelismo() {
                 }}
                 className="pb-14"
             >
-                {celulas.map((celula) => (
+                {celulas.map((celula: any) => (
                     <SwiperSlide key={celula.id}>
                         <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100 h-full mb-8">
 
                             <div className="relative h-52 overflow-hidden">
 
                                 <img
-                                    src={celula.imagemCapa}
+                                    src={celula.capa?.url || '/placeholder.jpg'}
                                     alt={celula.nome}
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
-
-                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-medium text-gray-700">
-                                    {celula.tag}
-                                </div>
 
                                 <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
 
@@ -120,7 +168,7 @@ export default function Evangelismo() {
                             <div className="p-5">
 
                                 <p className="text-gray-500 text-sm leading-6 mb-5">
-                                    {celula.desc}
+                                    {celula.descricao}
                                 </p>
 
                                 <div className="space-y-3 text-sm">
@@ -131,7 +179,7 @@ export default function Evangelismo() {
                                             Líder:
                                         </span>
                                         <span className="text-gray-600">
-                                            {celula.lider}
+                                            {celula.lider?.nome ?? '—'}
                                         </span>
                                     </div>
 
@@ -141,17 +189,7 @@ export default function Evangelismo() {
                                             Horário:
                                         </span>
                                         <span className="text-gray-600">
-                                            {celula.horario}
-                                        </span>
-                                    </div>
-
-                                    <div className="flex items-center gap-3">
-                                        <MapPin className="w-4 h-4 text-red-600" />
-                                        <span className="font-medium">
-                                            Local:
-                                        </span>
-                                        <span className="text-gray-600">
-                                            {celula.local}
+                                            {celula.horarios}
                                         </span>
                                     </div>
 
@@ -161,25 +199,9 @@ export default function Evangelismo() {
                                             Membros:
                                         </span>
                                         <span className="text-gray-600">
-                                            {celula.numeroMembros}
+                                            {celula.membros}
                                         </span>
                                     </div>
-
-                                </div>
-
-                                <div className="flex flex-wrap gap-2 mt-6">
-
-                                    <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs">
-                                        {celula.idade}
-                                    </span>
-
-                                    <span className="px-3 py-1 rounded-full bg-green-50 text-green-700 text-xs">
-                                        {celula.genero}
-                                    </span>
-
-                                    <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">
-                                        Desde {celula.fundacao}
-                                    </span>
 
                                 </div>
 
@@ -220,7 +242,6 @@ export default function Evangelismo() {
             <div className='mt-10 text-center'>
                 <Link href="/células" className="inline-block bg-red-600 hover:bg-red-0 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300">
                     Ver todas as células
-
                 </Link>
             </div>
         </div>

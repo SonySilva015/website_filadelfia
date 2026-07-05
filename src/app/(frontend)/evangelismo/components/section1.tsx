@@ -13,7 +13,7 @@ export default function Section1() {
 
                     {/* ESQUERDA */}
 
-                    <div className="p-8 md:p-12">
+                    <div className="p-8 md:p-12 ">
 
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-700 border border-red-200 text-sm font-medium mb-6">
                             ✝ Igreja Evangélica IEIA Filadélfia
@@ -52,7 +52,6 @@ export default function Section1() {
 
                     </div>
 
-                    {/* DIREITA */}
 
                     <div className="bg-linear-to-br from-red-50 via-white to-red-100 p-8 md:p-12">
 
@@ -64,7 +63,7 @@ export default function Section1() {
 
                             <div className="flex gap-5">
 
-                                <div className="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center">
+                                <div className="w-14 h-14 rounded-xl  flex items-center justify-center">
                                     <Home className="text-red-700" />
                                 </div>
 
@@ -87,7 +86,7 @@ export default function Section1() {
 
                             <div className="flex gap-5">
 
-                                <div className="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center">
+                                <div className="w-14 h-14 rounded-xl  flex items-center justify-center">
                                     <Users className="text-red-700" />
                                 </div>
 
@@ -110,7 +109,7 @@ export default function Section1() {
 
                             <div className="flex gap-5">
 
-                                <div className="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center">
+                                <div className="w-14 h-14 rounded-full flex items-center justify-center">
                                     <HeartHandshake className="text-red-700" />
                                 </div>
 
@@ -133,7 +132,7 @@ export default function Section1() {
 
                             <div className="flex gap-5">
 
-                                <div className="w-14 h-14 rounded-xl bg-red-100 flex items-center justify-center">
+                                <div className="w-14 h-14 rounded-xl  flex items-center justify-center">
                                     <Church className="text-red-700" />
                                 </div>
 
@@ -160,59 +159,11 @@ export default function Section1() {
 
                 </div>
 
-                {/* RODAPÉ */}
-
-                <div className="border-t border-gray-200 bg-gray-50 p-10">
-
-                    <div className="grid md:grid-cols-3 gap-8 text-center">
-
-                        <div>
-
-                            <h3 className="text-5xl font-bold text-red-700">
-                                {totalCelulas}
-                            </h3>
-
-                            <p className="text-gray-600 mt-2">
-                                Células espalhadas pela cidade
-                            </p>
-
-                        </div>
-
-                        <div>
-
-                            <h3 className="text-5xl font-bold text-red-700">
-                                Semanal
-                            </h3>
-
-                            <p className="text-gray-600 mt-2">
-                                Encontros de comunhão, oração e estudo bíblico
-                            </p>
-
-                        </div>
-
-                        <div>
-
-                            <h3 className="text-5xl font-bold text-red-700">
-                                Todos
-                            </h3>
-
-                            <p className="text-gray-600 mt-2">
-                                São bem-vindos, independentemente da sua caminhada
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
 
             </div>
 
 
-
-
-
-            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+            <div className="md:p-5 mt-8">
                 <h3 className="text-xl font-light text-gray-900 mb-6 flex items-center gap-3">
                     Palavras de Vida
                 </h3>

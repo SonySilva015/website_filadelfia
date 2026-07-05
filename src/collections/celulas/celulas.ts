@@ -5,12 +5,14 @@ import { isAdminOuEditor } from '../access/isAdminEditor'
 
 export const Celulas: CollectionConfig = {
     slug: 'celulas',
+
     access: {
-        read: () => true, // qualquer um pode ler células
+        read: () => true,
         create: isAdminOuEditor,
         update: isAdminOuEditor,
         delete: isAdminOuEditor,
     },
+
     admin: {
         useAsTitle: 'nome',
     },
@@ -23,7 +25,7 @@ export const Celulas: CollectionConfig = {
             required: true,
         },
         {
-            name: 'Capa',
+            name: 'capa',
             type: 'upload',
             relationTo: 'media',
             label: 'Capa',
@@ -53,10 +55,30 @@ export const Celulas: CollectionConfig = {
             label: 'Conteúdo',
             blocks: [
                 TextBlock,
-                ImageBlock
+                ImageBlock,
             ],
         },
 
+        // Líder
+        {
+            name: 'lider',
+            type: 'group',
+            label: 'Líder',
+            fields: [
+                {
+                    name: 'foto',
+                    type: 'upload',
+                    relationTo: 'media',
+                    label: 'Foto',
+                    required: true,
+                },
+                {
+                    name: 'nome',
+                    type: 'text',
+                    label: 'Nome',
+                    required: true,
+                },
+            ],
+        },
     ],
-
 }

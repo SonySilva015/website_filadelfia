@@ -6,12 +6,18 @@ import {
 import Image from "next/image";
 
 import Section1 from './components/section1';
-import Celulas from './components/celulas';
+import CelulasServer from './components/celulasServer';
 import Actividades from './components/actividades';
 import Action from './components/action';
+import Bastimal from './components/bastimal'
 import mg from '@/public/img/homemEvang.jpg';
+import { GetCelulas } from '@/collections/celulas/fetcher';
 
-export default function Page() {
+
+export default async function Page() {
+    // Fetch feito no servidor (Server Component)
+    const data = await GetCelulas();
+    const celulas = data.notices || [];
 
     return (
         <>
@@ -89,9 +95,9 @@ export default function Page() {
                 </div>
 
             </section>
-
             <Section1 />
-            <Celulas />
+            <Bastimal />
+            <CelulasServer />
             <Actividades />
             <Action />
 

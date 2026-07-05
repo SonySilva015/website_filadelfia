@@ -47,7 +47,7 @@ const Navbar = () => {
 
     const navItems = [
         { id: 'inicio', label: 'Início', href: '/' },
-        { id: 'noticia', label: 'Notćias', href: '/noticias' },
+        { id: 'noticia', label: 'Noticias', href: '/noticias' },
 
         {
             id: 'mini',
@@ -55,11 +55,11 @@ const Navbar = () => {
             dropdown: [
                 { name: 'Evangelismo', href: '/evangelismo' },
                 { name: 'EBD - Infantil', href: '/ebd-infantil' },
-                { name: 'Estudos Bíblicos', href: '/desevolvimento' },
+                { name: 'Estudos Bíblicos', href: '/estudo-biblico' },
                 { name: 'Adoração e louvores ', href: '/desevolvimento' },
-                { name: 'Juventude', href: '/desevolvimento' },
-                { name: 'Oração', href: '/desevolvimento' },
-                { name: 'Dos Casais', href: '/desevolvimento' },
+                { name: 'Juventude', href: '/juventude' },
+                { name: 'Oração', href: '/ministerio_de_oracao' },
+                { name: 'Dos Casais', href: '/ministerios_casais' },
                 { name: 'Ação  social', href: '/desevolvimento' },
 
 
