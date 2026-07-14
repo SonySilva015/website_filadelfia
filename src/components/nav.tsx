@@ -56,11 +56,11 @@ const Navbar = () => {
                 { name: 'Evangelismo', href: '/evangelismo' },
                 { name: 'EBD - Infantil', href: '/ebd-infantil' },
                 { name: 'Estudos Bíblicos', href: '/estudo-biblico' },
-                { name: 'Adoração e louvores ', href: '/desevolvimento' },
+                //  { name: 'Adoração e louvores ', href: '/desevolvimento' },
                 { name: 'Juventude', href: '/juventude' },
-                { name: 'Oração', href: '/ministerio_de_oracao' },
+                //   { name: 'Oração', href: '/ministerio_de_oracao' },
                 { name: 'Dos Casais', href: '/ministerios_casais' },
-                { name: 'Ação  social', href: '/desevolvimento' },
+                //   { name: 'Ação  social', href: '/desevolvimento' },
 
 
             ],

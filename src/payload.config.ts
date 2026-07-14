@@ -12,6 +12,7 @@ import { env } from './lib/env'
 import { Celulas } from './collections/celulas/celulas'
 import { Professores } from './collections/professores'
 import { Noticias } from './collections/notice/noticias'
+import { Lideres } from '@/collections/lideres/lideres'
 import { cloudinaryStorage } from 'payload-cloudinary'
 
 const filename = fileURLToPath(import.meta.url)
@@ -30,7 +31,7 @@ export default buildConfig({
         },
 
     },
-    collections: [Users, Media, Noticias, Celulas, Professores],
+    collections: [Users, Media, Noticias, Celulas, Professores, Lideres],
     editor: lexicalEditor({
         features: ({ defaultFeatures }) => [...defaultFeatures, FixedToolbarFeature()],
     }),

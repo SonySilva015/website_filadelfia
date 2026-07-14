@@ -72,6 +72,7 @@ export interface Config {
     noticias: Noticia;
     celulas: Celula;
     professores: Professore;
+    lideres: Lidere;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -84,6 +85,7 @@ export interface Config {
     noticias: NoticiasSelect<false> | NoticiasSelect<true>;
     celulas: CelulasSelect<false> | CelulasSelect<true>;
     professores: ProfessoresSelect<false> | ProfessoresSelect<true>;
+    lideres: LideresSelect<false> | LideresSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -340,6 +342,21 @@ export interface Professore {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lideres".
+ */
+export interface Lidere {
+  id: number;
+  nome: string;
+  cargo: 'presbitero' | 'diacono' | 'departamento';
+  departamento?: string | null;
+  descricao?: string | null;
+  foto?: (number | null) | Media;
+  ordem?: number | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -381,6 +398,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'professores';
         value: number | Professore;
+      } | null)
+    | ({
+        relationTo: 'lideres';
+        value: number | Lidere;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -567,6 +588,20 @@ export interface ProfessoresSelect<T extends boolean = true> {
   nome?: T;
   avatar?: T;
   Cargo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "lideres_select".
+ */
+export interface LideresSelect<T extends boolean = true> {
+  nome?: T;
+  cargo?: T;
+  departamento?: T;
+  descricao?: T;
+  foto?: T;
+  ordem?: T;
   updatedAt?: T;
   createdAt?: T;
 }
