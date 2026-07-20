@@ -13,6 +13,7 @@ import ob3 from "@/public/livros/ob3.jpg"
 import ob4 from "@/public/livros/ob4.jpg"
 import ob5 from "@/public/livros/ob5.jpg"
 import ob6 from "@/public/livros/ob6.jpg"
+import estudo from '@/public/img/esrudo.jpg'
 
 const objetivos = [
     {
@@ -72,63 +73,37 @@ const livrosNoviciados = [
 const livrosObreiros = [
     {
         titulo: "Seja um Obreiro Aprovado 1",
-        categoria: "Formação de Obreiros",
+        categoria: "formação de lideres",
         img: ob1
     },
     {
         titulo: "Seja um Obreiro Aprovado 2",
-        categoria: "Formação de Obreiros",
+        categoria: "formação de lideres",
         img: ob2
     },
     {
         titulo: "Seja um Obreiro Aprovado 3",
-        categoria: "Formação de Obreiros",
+        categoria: "formação de lideres",
         img: ob3
     },
     {
         titulo: "Seja um Obreiro Aprovado 4",
-        categoria: "Formação de Obreiros",
+        categoria: "formação de lideres",
         img: ob4
     },
     {
         titulo: "Seja um Obreiro Aprovado 5",
-        categoria: "Formação de Obreiros",
+        categoria: "formação de lideres",
         img: ob5
     },
     {
         titulo: "Seja um Obreiro Aprovado 6",
-        categoria: "Formação de Obreiros",
+        categoria: "formação de lideres",
         img: ob6
     }
 ];
 
-// ===== ESTUDO DOMINICAL PARA ADULTOS =====
-const estudosDominical = [
-    {
-        titulo: "A Jornada da Fé",
-        desc: "Estudo sobre os patriarcas e a aliança de Deus com Abraão, Isaque e Jacó.",
-        vagas: 25,
-        horario: "Domingos - 09:00h"
-    },
-    {
-        titulo: "As Cartas de Paulo",
-        desc: "Uma análise profunda das epístolas paulinas e sua aplicação para a igreja atual.",
-        vagas: 30,
-        horario: "Domingos - 10:30h"
-    },
-    {
-        titulo: "Apocalipse: Esperança Viva",
-        desc: "Desvendando as profecias do Apocalipse com foco na esperança e vitória em Cristo.",
-        vagas: 20,
-        horario: "Domingos - 19:00h"
-    },
-    {
-        titulo: "Vida em Comunidade",
-        desc: "Estudo prático sobre os princípios de comunhão, serviço e amor fraternal na igreja.",
-        vagas: 35,
-        horario: "Domingos - 08:00h"
-    }
-];
+
 
 export default function EstudoBiblicoPage() {
     return (
@@ -155,7 +130,7 @@ export default function EstudoBiblicoPage() {
                             A Palavra como <br />
                             <span className="font-medium">fundamento vivo.</span>
                         </h1>
-                        <p className="text-xl text-slate-100 font-light leading-relaxed max-w-2xl">
+                        <p className="text-xl text-slate-100 leading-relaxed max-w-2xl">
                             O ensino da Palavra de Deus é um dos pilares da nossa igreja. Através dos estudos bíblicos buscamos formar discípulos maduros, fortalecer a fé, desenvolver líderes e conduzir cada cristão a um relacionamento mais profundo com Cristo.
                         </p>
                     </motion.div>
@@ -233,7 +208,7 @@ export default function EstudoBiblicoPage() {
                                 transition={{ delay: i * 0.05 }}
                                 className="group cursor-pointer"
                             >
-                                <div className="aspect-3/4 relative overflow-hidden rounded-md shadow-sm border-2 border-emerald-200 hover:border-emerald-400 transition-colors">
+                                <div className="aspect-3/4 relative overflow-hidden rounded-md shadow-sm  transition-colors">
                                     {livro.img ? (
                                         <Image
                                             src={livro.img}
@@ -284,7 +259,7 @@ export default function EstudoBiblicoPage() {
                                 transition={{ delay: i * 0.05 }}
                                 className="group cursor-pointer"
                             >
-                                <div className="aspect-3/4 relative overflow-hidden rounded-md shadow-sm border-2 border-amber-700/40 hover:border-amber-500 transition-colors">
+                                <div className="aspect-3/4 relative overflow-hidden rounded-md shadow-sm transition-colors">
                                     {livro.img ? (
                                         <Image
                                             src={livro.img}
@@ -313,71 +288,58 @@ export default function EstudoBiblicoPage() {
             {/* ============================================================ */}
             {/* ===== ESTUDO BÍBLICO DOMINICAL PARA ADULTOS ===== */}
             {/* ============================================================ */}
-            <section className="py-24 bg-white border-t border-slate-200">
-                <div className="max-w-6xl mx-auto px-6">
-                    <div className="text-center mb-16">
+            <section
+                className="relative py-24 border-t border-slate-200 bg-cover bg-center bg-no-repeat"
+                style={{
+                    backgroundImage: `url(${estudo.src})`,
+                }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/85"></div>
 
-                        <h2 className="text-4xl md:text-5xl text-slate-900 mb-4">
+                <div className="relative max-w-5xl mx-auto px-6">
+                    <div className="text-center">
+
+                        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
                             Estudo Bíblico Dominical <br />
-                            <span className="text-blue-600 font-light">para Adultos</span>
+                            <span className="text-blue-400">para Adultos</span>
                         </h2>
-                        <p className="text-slate-500 font-light max-w-xl mx-auto">
-                            Aulas presenciais todos os domingos, com temas relevantes para a vida cristã adulta.
-                            Participe e cresça em comunidade!
+
+                        <p className="text-lg text-slate-200 leading-8 max-w-3xl mx-auto">
+                            A Escola Bíblica Dominical (EBD) é um momento dedicado ao ensino
+                            sistemático da Palavra de Deus, realizado todos os domingos.
+                            Nosso objetivo é proporcionar um estudo aprofundado das Escrituras,
+                            fortalecer a fé e incentivar a aplicação dos princípios bíblicos na
+                            vida diária.
                         </p>
-                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {estudosDominical.map((estudo, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.08 }}
-                                className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-shadow duration-300 hover:border-blue-200 group"
-                            >
-                                <div className="flex items-start justify-between mb-4">
-                                    <div className="bg-blue-100 p-2.5 rounded-xl text-blue-600 group-hover:bg-blue-200 transition-colors">
-                                        <Church size={20} />
-                                    </div>
-                                    <span className="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-                                        {estudo.vagas} vagas
-                                    </span>
-                                </div>
+                        <div className="mt-10 max-w-2xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 p-8 text-left">
+                            <h3 className="text-xl font-semibold text-white mb-5">
+                                O que você encontrará nas aulas?
+                            </h3>
 
-                                <h4 className="text-xl font-bold text-slate-900 mb-2">
-                                    {estudo.titulo}
-                                </h4>
-                                <p className="text-slate-500 text-sm leading-relaxed mb-4">
-                                    {estudo.desc}
-                                </p>
+                            <ul className="space-y-4 text-slate-200">
+                                <li className="flex items-start gap-3">
+                                    <span className="text-blue-400 text-xl">✓</span>
+                                    <span>Estudos organizados por temas e passagens bíblicas.</span>
+                                </li>
 
-                                <div className="flex items-center gap-2 text-sm text-slate-400 font-medium border-t border-slate-200 pt-4 mt-2">
-                                    <Calendar size={16} />
-                                    <span>{estudo.horario}</span>
-                                </div>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-blue-400 text-xl">✓</span>
+                                    <span>Classes direcionadas ao público adulto, jovens e adolescentes.</span>
+                                </li>
 
-                                <button className="mt-4 w-full py-2.5 rounded-xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 group">
-                                    Quero participar
-                                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                                </button>
-                            </motion.div>
-                        ))}
-                    </div>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-blue-400 text-xl">✓</span>
+                                    <span>Momentos para perguntas, participação e debates edificantes.</span>
+                                </li>
 
-                    {/* Chamada extra para inscrição */}
-                    <div className="mt-16 text-center bg-linear-to-r from-blue-50 to-indigo-50 rounded-3xl p-10 border border-blue-100">
-                        <UsersRound size={40} className="text-blue-600 mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                            Faça parte da nossa comunidade
-                        </h3>
-                        <p className="text-slate-600 max-w-lg mx-auto">
-                            Inscreva-se em um dos estudos e venha crescer na graça e no conhecimento do Senhor Jesus Cristo.
-                        </p>
-                        <button className="mt-6 px-8 py-3 bg-blue-700 text-white rounded-full font-semibold hover:bg-blue-800 transition-colors shadow-lg shadow-blue-200">
-                            Ver todas as turmas
-                        </button>
+                                <li className="flex items-start gap-3">
+                                    <span className="text-blue-400 text-xl">✓</span>
+                                    <span>Ensino fundamentado na Bíblia, com aplicações práticas para o dia a dia.</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>

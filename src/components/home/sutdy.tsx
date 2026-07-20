@@ -1,213 +1,206 @@
-// components/EstudosBiblicos.js
 'use client'
 
-import React from 'react';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import Link from 'next/link';
-import damas from '@/public/img/damas.jpg'
-import damos from '@/public/img/jovensf.jpg'
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import {
+    Autoplay,
+    Pagination,
+    Navigation,
+    EffectCoverflow,
+} from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-coverflow'
+
+import {
+    ChevronLeft,
+    ChevronRight,
+    CheckCircle2,
+} from 'lucide-react'
+
 import ebd1 from '@/public/img/ebd1.jpeg'
 import ebd2 from '@/public/img/ebd2.jpeg'
 import ebd3 from '@/public/img/ebd3.jpeg'
 import ebd4 from '@/public/img/ebd4.jpeg'
 import ebd5 from '@/public/img/ebd5.jpeg'
 import ebd6 from '@/public/img/ebd6.jpeg'
-import divina from '@/public/img/divina.avif'
-import manacial from '@/public/img/manacial.avif'
 
-const grupos = [
-    {
-        id: 1,
-        title: "Mensagem Divina",
-        description: "Grupo de jovens masculinos, compreendida dos 16 a 26 anos",
-        horas: "todas as sextas feiras às 16h",
-        link: "/celulas",
-        image: divina,
-    },
-    {
-        id: 2,
-        title: "Manancial de Amor",
-        description: "Grupo de jovens femininos, compreendida dos 16 a 26 anos",
-        horas: "todas as sextas feiras às 16h",
-        link: "/celulas",
-        image: manacial,
-    },
-    {
-        id: 3,
-        title: "Nova Aliança",
-        description: "Grupo de jovens femininos (casadas), compreendida dos 27 a 34 anos",
-        horas: "todas as sextas feiras às 16h",
-        link: "/celulas",
-        image: damas,
-    },
-    {
-        id: 4,
-        title: "Geração Eleita",
-        description: "Grupo de jovens masculinos (Casados), compreendida dos 27 a 34 anos",
-        horas: "todas as sextas feiras às 16h",
-        link: "/celulas",
-        image: damos,
-    }
-];
+const imagensInfantil = [ebd1, ebd2, ebd3, ebd4, ebd5, ebd6]
 
-const imagensInfantil = [
-    ebd1,
-    ebd2,
-    ebd3,
-    ebd4,
-    ebd5,
-    ebd6,
-];
-
-const EstudosBiblicos = () => {
+export default function EstudosBiblicos() {
     return (
-        <div className='bg-tertiary'>
-            {/* SEÇÃO CÉLULAS */}
-            <section className="relative py-24 px-6">
-                <div className="absolute inset-0"></div>
+        <section
+            className="py-24"
+            style={{
+                background:
+                    'linear-gradient(to right, var(--color-secondary), var(--color-secondary-hover))',
+            }}
+        >
+            <div className="max-w-7xl mx-auto px-6">
 
-                <div className="relative z-10 max-w-7xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-title">
-                        Conheça Nossas <span className="secondary">Células</span>
+                <div className="text-center mb-16">
+
+                    <h2 className="mt-3 text-4xl md:text-5xl font-bold text-white">
+                        Estudo Bíblico
+                        <span className="text-primary-light"> Infantil</span>
                     </h2>
 
-                    <p className="text-lg text-body mb-14 max-w-2xl mx-auto">
-                        Grupos de jovens que se reúnem toda semana para fortalecer a comunhão
-                    </p>
-
-                    {/* GRID GRUPOS */}
-                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                        {grupos.map((grupo) => (
-                            <div
-                                key={grupo.id}
-                                className="group relative h-105 rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:scale-105"
-                            >
-                                <Image
-                                    src={grupo.image}
-                                    fill
-                                    alt={grupo.title}
-                                    className="absolute inset-0 w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition"></div>
-
-                                <div className="relative z-10 h-full flex flex-col justify-end p-8 text-left">
-                                    <h3 className="text-2xl font-bold text-secondary-light mb-3">
-                                        {grupo.title}
-                                    </h3>
-                                    <p className="text-gray-200 text-sm">
-                                        {grupo.description}
-                                    </p>
-
-
-                                </div>
-                                <div className='bg-white/10 backdrop-blur-md z-10 absolute top-6 left-4 p-2 rounded-full'>
-                                    <p className='text-secondary-light'>{grupo.horas}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* BOTÃO */}
-                    <div className="mt-16">
-                        <Link
-                            href={'/celulas'}
-                            className="button-primary px-8 py-4 rounded-lg shadow-lg transition duration-300 hover:scale-105 font-semibold"
-                        >
-                            Ver mais Células
-                        </Link>
-                    </div>
                 </div>
-            </section>
 
-            {/* SEÇÃO INFANTIL COM CAROUSEL */}
-            <section className="py-24 px-6 text-white"
-                style={{
-                    background: 'linear-gradient(to right, var(--color-secondary), var(--color-secondary-hover))'
-                }}
-            >
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-center">
-                    Estudo Bíblico Dominical
-                    <span className="text-primary-light"> Infantil</span>
-                </h2>
-                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                    {/* CAROUSEL IMAGENS */}
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+                    {/* CAROUSEL */}
+
+                    <div className="relative">
+
                         <Swiper
-                            modules={[Autoplay, Pagination, Navigation]}
-                            autoplay={{ delay: 3000 }}
-                            pagination={{ clickable: true }}
-                            navigation={true}
+                            modules={[
+                                Autoplay,
+                                Pagination,
+                                Navigation,
+                                EffectCoverflow,
+                            ]}
+                            effect="coverflow"
+                            grabCursor
+                            centeredSlides
+                            loop
                             slidesPerView={1}
+                            speed={900}
+                            autoplay={{
+                                delay: 3500,
+                                disableOnInteraction: false,
+                            }}
+                            coverflowEffect={{
+                                rotate: 0,
+                                stretch: 0,
+                                depth: 180,
+                                modifier: 1,
+                                scale: 0.95,
+                                slideShadows: false,
+                            }}
+                            pagination={{
+                                clickable: true,
+                                dynamicBullets: true,
+                            }}
+                            navigation={{
+                                nextEl: '.next-slide',
+                                prevEl: '.prev-slide',
+                            }}
+                            className="rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,.45)]"
                         >
                             {imagensInfantil.map((img, index) => (
                                 <SwiperSlide key={index}>
-                                    <Image
-                                        src={img}
-                                        alt="Estudo Bíblico Infantil"
-                                        className="w-full h-100 object-cover"
-                                    />
+                                    <div className="relative h-75 md:h-520px">
+
+                                        <Image
+                                            src={img}
+                                            alt={`Estudo Bíblico Infantil ${index + 1}`}
+                                            fill
+                                            priority={index === 0}
+                                            className="object-cover"
+                                        />
+
+                                        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
+
+                                    </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
-                    </div>
-
-                    {/* TEXTO */}
-                    <div>
-                        <p className="text-lg mb-6 text-gray-200">
-                            Um espaço preparado com muito carinho para nossas crianças aprenderem a Palavra de Deus
-                            de forma divertida, segura e interativa.
-                        </p>
-
-                        <ul className="space-y-4 text-gray-100 mb-8">
-                            <li className="flex items-center gap-2">
-                                <span className="text-primary-light">✓</span> Muitas brincadeiras e diversão
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-primary-light">✓</span> Histórias bíblicas criativas
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-primary-light">✓</span> Prêmios e atividades especiais
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-primary-light">✓</span> Desenvolvimento de valores cristãos
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-primary-light">✓</span> Ambiente seguro e acolhedor
-                            </li>
-                        </ul>
-
-                        {/* VERSÍCULOS */}
-                        <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl mb-8 border border-white/20">
-                            <p className="italic text-orange-400 mb-3">
-                                “Deixai vir a mim os pequeninos, não os impeçais; porque dos tais é o Reino de Deus.”
-                            </p>
-                            <p className="text-sm text-gray-200 mb-4">— Marcos 10:14</p>
-
-                            <p className="italic text-orange-400 mb-3">
-                                “Ensina a criança no caminho em que deve andar, e ainda quando for velho não se desviará dele.”
-                            </p>
-                            <p className="text-sm text-gray-200">— Provérbios 22:6</p>
-                        </div>
 
                         {/* BOTÕES */}
-                        <div className="flex flex-wrap gap-4">
-                            <Link
-                                href="./ebd-infantil"
-                                className="button-secondary px-6 py-3 rounded-lg shadow transition-all duration-300 font-semibold border border-secondary hover:bg-secondary-light"
-                            >
-                                Ler mais
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
-};
 
-export default EstudosBiblicos;
+                        <button className="prev-slide absolute left-5 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 hover:bg-white/30 transition">
+                            <ChevronLeft className="mx-auto text-white" />
+                        </button>
+
+                        <button className="next-slide absolute right-5 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 hover:bg-white/30 transition">
+                            <ChevronRight className="mx-auto text-white" />
+                        </button>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <h3 className="text-3xl font-bold text-white mb-6">
+                            Aprendendo a Palavra de Deus desde cedo
+                        </h3>
+
+                        <p className="text-lg text-gray-200 leading-8 mb-8">
+                            Nosso Estudo Bíblico Infantil proporciona uma experiência
+                            enriquecedora para crianças de todas as idades, ensinando os
+                            princípios cristãos através de histórias bíblicas, músicas,
+                            dinâmicas, atividades educativas e momentos de oração.
+                        </p>
+
+                        <div className="space-y-5 mb-10">
+
+                            {[
+                                'Histórias bíblicas ilustradas',
+                                'Brincadeiras educativas',
+                                'Louvor infantil',
+                                'Atividades criativas',
+                                'Prêmios e desafios',
+                                'Professores preparados',
+                                'Ambiente seguro',
+                            ].map((item) => (
+                                <div
+                                    key={item}
+                                    className="flex items-center gap-3"
+                                >
+                                    <CheckCircle2
+                                        size={22}
+                                        className="text-primary-light shrink-0"
+                                    />
+
+                                    <span className="text-gray-100">
+                                        {item}
+                                    </span>
+                                </div>
+                            ))}
+
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-7 mb-10">
+
+                            <blockquote className="italic text-orange-400 text-lg">
+                                "Deixai vir a mim os pequeninos, não os impeçais;
+                                porque dos tais é o Reino de Deus."
+                            </blockquote>
+
+                            <p className="text-gray-300 mt-2 mb-6">
+                                Marcos 10:14
+                            </p>
+
+                            <blockquote className="italic text-orange-400 text-lg">
+                                "Ensina a criança no caminho em que deve andar, e
+                                ainda quando for velho não se desviará dele."
+                            </blockquote>
+
+                            <p className="text-gray-300 mt-2">
+                                Provérbios 22:6
+                            </p>
+
+                        </div>
+
+                        <Link
+                            href="/ebd-infantil"
+                            className="inline-flex items-center rounded-xl button-secondary px-8 py-4 font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+                        >
+                            Conheça a EBD Infantil
+                        </Link>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    )
+}

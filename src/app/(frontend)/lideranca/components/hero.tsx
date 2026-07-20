@@ -2,11 +2,11 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import fundoIgreja from '@/public/img/IMG-20250831-WA0043.jpg'
+import fundoIgreja from '@/public/img/capa_lider.png'
 
 export default function Hero() {
     return (
-        <header className="relative h-90 min-h-700px flex items-center justify-center overflow-hidden">
+        <header className="relative h-110 min-h-700px flex items-center justify-center overflow-hidden">
 
             <div className="absolute inset-0">
                 <Image

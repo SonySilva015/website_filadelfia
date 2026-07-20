@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import mi from '@/public/img/hands.jpg'
+import fundo from '@/public/img/caminhada.png'
 
 export default function Content() {
     return (
@@ -53,11 +54,11 @@ export default function Content() {
                 <div
                     className="absolute inset-0 bg-fixed bg-center bg-cover"
                     style={{
-                        backgroundImage: "url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=773&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                        backgroundImage: `url(${fundo.src})`,
                     }}
                 />
 
-                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute inset-0 bg-black/80"></div>
 
                 <div className="relative z-10 text-center max-w-4xl px-6 py-24 bg-black/30 rounded-lg">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">

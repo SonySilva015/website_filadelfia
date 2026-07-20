@@ -43,20 +43,20 @@ const programacoes = [
 
 const Culto = () => {
     return (
-        <div className="bg-slate-100">
-            <section id="cultos" className="bg-linear-to-b from-white to-gray-400/60 py-10">
+        <div className="bg-slate-300">
+            <section id="cultos" className="bg-gray-200 py-10">
                 <div className="max-w-7xl mx-auto px-6">
                     {/* Cabeçalho */}
                     <div className="text-center mb-10">
-                        <h2 className="text-2xl md:text-4xl font-bold text-title mb-6">
+                        <h2 className="text-2xl md:text-4xl font-bold text-white text-title mb-6">
                             Nosso Programa
                         </h2>
-                        <p className="text-lg text-body max-w-2xl mx-auto">
+                        <p className="text-lg text-body max-w-2xl text-white mx-auto">
                             Momentos especiais preparados para fortalecer sua fé e comunhão.
                         </p>
                     </div>
 
-                    {/* Cards */}
+
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 pb-10">
                         {programacoes.map((item) => (
                             <div

@@ -9,11 +9,7 @@ import { getNoticebySlug } from "@/collections/notice/fetcher"
 import RichTextRenderer from "@/components/RichTextRenderer"
 
 export const dynamic = 'force-dynamic'
-export default async function NoticiaPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+export default async function NoticiaPage({ params, }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const noticia = await getNoticebySlug(slug)
 

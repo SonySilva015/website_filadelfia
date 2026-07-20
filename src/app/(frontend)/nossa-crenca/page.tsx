@@ -15,6 +15,7 @@ import segundaVindaImage from '@/public/img/vinda.jpg';
 import batismoImage from '@/public/img/batismo.jpeg';
 import santidadeImage from '@/public/img/santidade.jpg';
 import familiaCasamentoImage from '@/public/img/ICONESTUDIO-180.jpg'
+import espirito from '@/public/img/esp_esti.jpg'
 
 // Animações com todas as propriedades motion
 const fadeInUp = {
@@ -723,6 +724,127 @@ export default function NossaCrencaPage() {
                 </div>
             </motion.section>
 
+
+
+
+
+
+            <motion.section
+                className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8 }}
+            >
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+                        {/* Imagem Jesus */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{
+                                duration: 0.7,
+                                ease: "easeOut",
+                                type: "spring",
+                                stiffness: 100,
+                                damping: 15
+                            }}
+                            className="relative h-75 sm:h-87 md:h-100 rounded-xl overflow-hidden shadow-lg"
+                        >
+                            <Image
+                                src={espirito}
+                                alt="esperito"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 50vw"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-blue/40 via-transparent to-transparent" />
+                        </motion.div>
+
+                        {/* Conteúdo Jesus */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{
+                                duration: 0.7,
+                                ease: "easeOut",
+                                type: "spring",
+                                stiffness: 100,
+                                damping: 15
+                            }}
+                            className="space-y-4 sm:space-y-5 md:space-y-6"
+                        >
+                            <motion.span
+                                className="text-blue font-semibold tracking-wider uppercase text-xs sm:text-sm block"
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1, duration: 0.4 }}
+                            >
+
+                            </motion.span>
+
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-title relative">
+                                <span className="relative inline-block">
+                                    Espírito Santo
+                                    <motion.span
+                                        className="absolute -bottom-2 left-0 h-1 bg-blue rounded-full"
+                                        initial={{ width: 0 }}
+                                        whileInView={{ width: "33.33%" }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.3, duration: 0.6 }}
+                                    />
+                                </span>
+                            </h2>
+
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.4, duration: 0.5 }}
+                            >
+                                <p className="text-base sm:text-lg text-body mb-4">
+                                    O Espírito Santo é a <strong className="text-title">terceira pessoa da Santíssima Trindade</strong>, Ele é
+                                    o guia e santificador dos fiéis, responsável por inspirar as escrituras, habitar nos corações, transformar vidas e capacitar a Igreja para a sua missão.
+                                </p>
+                                <p className="text-base sm:text-lg text-body mb-4">
+                                    Essa crença fundamental estabelece que, embora seja uma pessoa distinta, o Espírito Santo compartilha da mesma essência divina.
+                                    A sua atuação manifesta-se em nossas vidas de várias formas, como:  <strong className="text-title"> Consolo e Direção, Dons Espirituais, Fruto do Espírito, A alma da Igreja.</strong>
+                                </p>
+
+                                <motion.blockquote
+                                    className="border-l-4 border-blue pl-4 italic text-body text-sm sm:text-base"
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.5, duration: 0.5 }}
+                                >
+                                    "Mas o Consolador, o Espírito Santo, a quem o Pai enviará em meu nome, esse vos ensinará todas as coisas e vos fará lembrar de tudo quanto vos tenho dito."
+                                    <footer className="text-xs sm:text-sm mt-1 sm:mt-2 text-body/60">— João 14:26</footer>
+                                </motion.blockquote>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+
+                    {/* Div separadora */}
+                    <motion.div
+                        className="w-full h-px bg-linear-to-r from-transparent via-blue/30 to-transparent mt-16 sm:mt-20 md:mt-24"
+                        initial={{ scaleX: 0, opacity: 0 }}
+                        whileInView={{ scaleX: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    />
+                </div>
+            </motion.section>
+
+
+
+
+
+
+
             {/* SEÇÃO 6: O BATISMO */}
             <motion.section
                 className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-blue/5"
@@ -939,6 +1061,8 @@ export default function NossaCrencaPage() {
                     />
                 </div>
             </motion.section>
+
+
 
             {/* SEÇÃO 8: FAMÍLIA E CASAMENTO */}
             <motion.section

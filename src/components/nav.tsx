@@ -59,7 +59,7 @@ const Navbar = () => {
                 //  { name: 'Adoração e louvores ', href: '/desevolvimento' },
                 { name: 'Juventude', href: '/juventude' },
                 //   { name: 'Oração', href: '/ministerio_de_oracao' },
-                { name: 'Dos Casais', href: '/ministerios_casais' },
+                { name: 'Ministério dos Casais', href: '/ministerios_casais' },
                 //   { name: 'Ação  social', href: '/desevolvimento' },
 
 
@@ -70,10 +70,9 @@ const Navbar = () => {
             label: 'Biblioteca',
             dropdown: [
                 { name: 'Artigos', href: '/artigos' },
-                { name: 'Ajuda Para Vida', href: '/media/para-vida' },
-                { name: 'Para Jovens', href: '/media/para-jovens' },
-                { name: 'Crescimento Social', href: '/desevolvimento' },
-                { name: 'Galeria', href: '/desevolvimento' },
+                { name: 'Ajuda Para Vida', href: '/desevolvimento' },
+                { name: 'Para Jovens', href: '/desevolvimento' },
+
 
 
             ],

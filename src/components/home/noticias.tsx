@@ -131,9 +131,9 @@ export default async function NoticyHome({ noticias }: any) {
                         </div>
 
                         <div className="flex justify-center items-center mt-12">
-                            <button className="button-primary hover:bg-red-800   rounded-md px-10 py-3 font-medium transition-all hover:scale-105 active:scale-95 shadow-lg duration-300">
+                            <Link href={'/noticias'} className="button-primary cursor-pointer hover:bg-red-800   rounded-md px-10 py-3 font-medium transition-all hover:scale-105 active:scale-95 shadow-lg duration-300">
                                 Ver Mais Notícias
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -145,7 +145,7 @@ export default async function NoticyHome({ noticias }: any) {
                             <div className="flex flex-1 flex-col gap-2">
 
                                 <div className="p-4 rounded shadow ">
-                                    <Link href="/#" className="text-lg font-semibold text-link mb-2">Nossos cultos</Link>
+                                    <Link href="/cultos" className="text-lg font-semibold text-link mb-2">Nossos cultos</Link>
                                     <p className="text-gray-700 text-sm">
                                         <span className="font-bold">Todos os domingos</span>
                                     </p>
@@ -153,7 +153,7 @@ export default async function NoticyHome({ noticias }: any) {
 
 
                                 <div className="p-4 rounded shadow">
-                                    <Link href="/#" className="text-lg font-semibold text-link mb-2">Estudos biblicos dominical</Link>
+                                    <Link href="/estudo-biblico" className="text-lg font-semibold text-link mb-2">Estudos biblicos dominical</Link>
                                     <p className="text-gray-700 text-sm">
                                         <span className="font-bold">Adultos Jovens e crianças</span>
                                     </p>
@@ -161,20 +161,20 @@ export default async function NoticyHome({ noticias }: any) {
 
 
                                 <div className="p-4 rounded shadow">
-                                    <Link href="/#" className="text-lg font-semibold text-link mb-2">Artigos</Link>
+                                    <Link href="/ministerio_de_casal" className="text-lg font-semibold text-link mb-2">Ministério de Casal</Link>
                                     <p className="text-gray-700 text-sm">
 
                                     </p>
                                 </div>
                                 <div className="p-4 rounded shadow">
-                                    <Link href="/#" className="text-lg font-semibold text-link mb-2">Santa ceia</Link>
+                                    <Link href="/juventude" className="text-lg font-semibold text-link mb-2">Juventude</Link>
                                     <p className="text-gray-700 text-sm">
                                         <span className="font-bold"></span>
                                     </p>
                                 </div>
 
                                 <div className="p-4 rounded shadow">
-                                    <Link href="/#" className="text-lg font-semibold text-link mb-2">Obras Sociais</Link>
+                                    <Link href="/obras-sociais" className="text-lg font-semibold text-link mb-2">Obras Sociais</Link>
                                     <p className="text-gray-700 text-sm">
                                         <span className="font-bold">Cultos de Adoração</span>
                                     </p>

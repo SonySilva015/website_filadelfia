@@ -3,6 +3,12 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import type { Lidere } from "@/payload-types";
+import {
+    User,
+    Briefcase,
+    Calendar,
+    MapPin
+} from 'lucide-react'
 
 interface Media {
     url?: string

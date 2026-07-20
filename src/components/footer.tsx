@@ -24,12 +24,13 @@ const navItems = [
         id: 'mini',
         label: 'Ministérios',
         dropdown: [
-            { name: 'Evangelismo (células)', href: '/celulas' },
+            { name: 'Evangelismo', href: '/celulas' },
             { name: 'EBD - Infantil', href: '/ebd-infantil' },
             { name: 'Estudos Bíblicos', href: '/estudo-biblico' },
-            { name: 'Adoração', href: '/adoracao' },
-            { name: 'Juventude', href: '/ebd-infantil' },
-            { name: 'Ação Social', href: '/#' },
+            { name: 'Juventude', href: '/juventude' },
+            { name: 'Ministério dos Casais', href: '/ministerios_casais' },
+            //   { name: 'Adoração', href: '/adoracao' },
+            // { name: 'Ação Social', href: '/#' },
         ],
     },
     {
@@ -37,8 +38,8 @@ const navItems = [
         label: 'Biblioteca',
         dropdown: [
             { name: 'Artigos', href: '/artigos' },
-            { name: 'Ajuda Para Vida', href: '/vida' },
-            { name: 'Para Jovens', href: '/para-jovens' },
+            { name: 'Ajuda Para Vida', href: '/desevolvimento' },
+            { name: 'Para Jovens', href: '/desevolvimento' },
         ],
     },
     {
@@ -47,8 +48,6 @@ const navItems = [
         dropdown: [
             { name: 'Cultos', href: '/cultos' },
             { name: 'Santa Ceia', href: '/santa-ceia' },
-            { name: 'EBD - Infantil', href: '/ebd-infantil' },
-            { name: 'Estudos dos Jovens', href: '/#' },
         ],
     },
     {
@@ -111,8 +110,9 @@ export default function Footer() {
 
     const contatos = [
         { icone: MapPin, texto: "Centralidade - Luena, Angola" },
-        { icone: Phone, texto: "+244 999 999 999" },
-        { icone: Mail, texto: "contato@ieia.ao" },
+        { icone: Phone, texto: " +244 934 028 046  " },
+        { icone: Phone, texto: " +244 924 266 075  " },
+        { icone: Mail, texto: "ieia.filadelfia@gmail.com" },
     ];
 
     const redesSociais = [
@@ -293,21 +293,7 @@ export default function Footer() {
                         </FooterSection>
 
                         {/* Card */}
-                        <div className="bg-linear-to-br from-secondary to-secondary-hover rounded-2xl p-6 text-white">
-                            <h3 className="font-semibold text-lg mb-3">
-                                Horário Especial
-                            </h3>
-                            <p className="text-sm text-white/80 mb-4">
-                                Confira nossa programação especial de eventos.
-                            </p>
-                            <Link
-                                href="#programacao"
-                                className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg text-sm transition-all"
-                            >
-                                Ver programação
-                                <ChevronRight className="w-4 h-4" />
-                            </Link>
-                        </div>
+
                     </div>
                 </div>
             </div>

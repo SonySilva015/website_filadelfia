@@ -71,7 +71,7 @@ export interface Config {
     media: Media;
     noticias: Noticia;
     celulas: Celula;
-    professores: Professore;
+    turmas: Turma;
     lideres: Lidere;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -84,7 +84,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     noticias: NoticiasSelect<false> | NoticiasSelect<true>;
     celulas: CelulasSelect<false> | CelulasSelect<true>;
-    professores: ProfessoresSelect<false> | ProfessoresSelect<true>;
+    turmas: TurmasSelect<false> | TurmasSelect<true>;
     lideres: LideresSelect<false> | LideresSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -286,8 +286,13 @@ export interface Noticia {
 export interface Celula {
   id: number;
   nome: string;
+  /**
+   * URL amigável gerada automaticamente a partir do nome
+   */
+  slug: string;
   capa: number | Media;
   descricao: string;
+  local: string;
   horarios: string;
   membros: number;
   conteudo?:
@@ -324,19 +329,30 @@ export interface Celula {
   lider: {
     foto: number | Media;
     nome: string;
+    numero: string;
   };
   updatedAt: string;
   createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "professores".
+ * via the `definition` "turmas".
  */
-export interface Professore {
+export interface Turma {
   id: number;
   nome: string;
-  avatar: number | Media;
-  Cargo?: string | null;
+  descricao: string;
+  /**
+   * Ex.: 6-8 anos, 9-12 anos, Adultos
+   */
+  anos: string;
+  /**
+   * Ex.: Domingo às 08:00
+   */
+  horario: string;
+  professor: string;
+  fotoProfessor: number | Media;
+  contacto: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -396,8 +412,8 @@ export interface PayloadLockedDocument {
         value: number | Celula;
       } | null)
     | ({
-        relationTo: 'professores';
-        value: number | Professore;
+        relationTo: 'turmas';
+        value: number | Turma;
       } | null)
     | ({
         relationTo: 'lideres';
@@ -548,8 +564,10 @@ export interface NoticiasSelect<T extends boolean = true> {
  */
 export interface CelulasSelect<T extends boolean = true> {
   nome?: T;
+  slug?: T;
   capa?: T;
   descricao?: T;
+  local?: T;
   horarios?: T;
   membros?: T;
   conteudo?:
@@ -576,18 +594,23 @@ export interface CelulasSelect<T extends boolean = true> {
     | {
         foto?: T;
         nome?: T;
+        numero?: T;
       };
   updatedAt?: T;
   createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "professores_select".
+ * via the `definition` "turmas_select".
  */
-export interface ProfessoresSelect<T extends boolean = true> {
+export interface TurmasSelect<T extends boolean = true> {
   nome?: T;
-  avatar?: T;
-  Cargo?: T;
+  descricao?: T;
+  anos?: T;
+  horario?: T;
+  professor?: T;
+  fotoProfessor?: T;
+  contacto?: T;
   updatedAt?: T;
   createdAt?: T;
 }

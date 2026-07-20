@@ -414,17 +414,7 @@ export default function CasaisPage() {
                         Junte-se ao Ministério dos Casais e fortaleça o seu casamento através da comunhão, da Palavra de Deus e do apoio mútuo entre famílias cristãs.
                     </p>
 
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <Link
-                            href="/contato"
-                            className="inline-flex items-center gap-2 bg-white hover:bg-rose-50 text-rose-700 px-8 py-4 rounded-xl font-bold transition shadow-xl"
-                        >
-                            Participar Agora
-                            <ArrowRight size={18} />
-                        </Link>
 
-
-                    </div>
 
                 </div>
             </section>

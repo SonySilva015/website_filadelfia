@@ -4,49 +4,11 @@ import { Autoplay, EffectFade } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import Link from 'next/link'
-import m1 from '@/public/img/batismo.jpeg'
-import m2 from '@/public/img/lamb_lost.png'
-import m3 from '@/public/img/retirada.png'
-import m4 from '@/public/adora/jovens.png'
+import { GetNoticeLimit } from "@/collections/notice/fetcher";
 
 import Image from 'next/image'
 
-export default function HeroSwiper() {
-
-    const slides = [
-        {
-            title: "Receber Jesus",
-            text: "Entregue sua vida a Cristo e experimente o verdadeiro perdão, a paz e a esperança que somente Ele pode oferecer. Hoje pode ser o começo de uma nova caminhada com Deus.",
-            ref: "Mateus 11:28",
-            img: m1,
-            what: "Ver mais",
-            link: "/evangelismo"
-        },
-        {
-            title: "Jesus é o Caminho",
-            text: "Jesus é o único caminho para a salvação. Nele encontramos a verdade que transforma vidas e a vida eterna preparada por Deus para todos os que creem.",
-            ref: "João 14:6",
-            img: m2,
-            what: "",
-            link: ""
-        },
-        {
-            title: "Avivamento para os Jovens",
-            text: "Uma geração apaixonada por Cristo pode transformar o mundo. Participe dos cultos de jovens, retiros, momentos de comunhão e descubra o propósito de Deus para a sua vida.",
-            ref: "1 Timóteo 4:12",
-            img: m3,
-            what: "Saber mais",
-            link: "/juventude"
-        },
-        {
-            title: "Cultos de Adoração",
-            text: "Venha adorar ao Senhor conosco em um ambiente de fé, comunhão e transformação. Venha adorar o Senhor porque é dgno de toda honra, glória e louvor",
-            ref: "Salmos 95:6",
-            img: m4,
-            what: "",
-            link: ""
-        }
-    ]
+export default function HeroSwiper({ slides }: any) {
 
     return (
         <>
@@ -89,14 +51,14 @@ export default function HeroSwiper() {
                     loop
                     speed={1200}
                     autoplay={{
-                        delay: 10000,
+                        delay: 8000,
                         disableOnInteraction: false,
                         pauseOnMouseEnter: false,
                     }}
                     allowTouchMove={false}
                     className="w-full h-full"
                 >
-                    {slides.map((item, index) => (
+                    {slides.map((item: any, index: any) => (
                         <SwiperSlide key={index} className="relative w-full h-full flex items-center justify-center">
 
                             {/* IMAGEM DE FUNDO */}
@@ -112,10 +74,10 @@ export default function HeroSwiper() {
                                 <div className="absolute inset-0 bg-linear-to-t from-gray-950 via-gray-900/50 to-gray-900/80" />
                             </div>
 
-
+                            {/* CONTEÚDO CENTRAL */}
                             <div className='p-2 '>
                                 <div
-                                    className="absolute z-20 max-w-6xl  bottom-10 rounded-r-lg   md:left-40 slide-content  p-5 md:p-10 "
+                                    className="absolute z-20 max-w-6xl  bottom-10 rounded-r-lg   md:left-40 slide-content md:bg-black/30 p-5 md:p-10 "
                                 >
                                     <h1 className="text-xl md:text-3xl font-bold mb-6" >
                                         {item.title}
@@ -129,7 +91,7 @@ export default function HeroSwiper() {
                                         — {item.ref}
                                     </p>
                                     <div className='mt-8 border-t border-white/30 pt-8'>
-                                        <Link className='bg-red-500 p-2 rounded-md text-amber-50' href={item.link}> {item.what} </Link>
+                                        <Link className='bg-red-500 p-2 rounded-md text-amber-50' rel="stylesheet" href={item.link}>{item.what}</Link>
 
                                     </div>
                                 </div>
@@ -140,6 +102,7 @@ export default function HeroSwiper() {
                 </Swiper>
 
             </section>
+
         </>
     )
 }

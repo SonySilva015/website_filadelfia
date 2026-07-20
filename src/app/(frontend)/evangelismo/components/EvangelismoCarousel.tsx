@@ -17,6 +17,7 @@ import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import Image from 'next/image';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -149,9 +150,10 @@ export default function EvangelismoCarousel({ celulas }: any) {
 
                             <div className="relative h-52 overflow-hidden">
 
-                                <img
+                                <Image
                                     src={celula.capa?.url || '/placeholder.jpg'}
                                     alt={celula.nome}
+                                    fill
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                                 />
 
@@ -205,13 +207,13 @@ export default function EvangelismoCarousel({ celulas }: any) {
 
                                 </div>
 
-                                <button
-                                    onClick={() => setSelectedCell(celula.nome)}
+                                <Link
+                                    href={`/celulas/${celula.slug}`}
                                     className="mt-6 w-full bg-gray-900 hover:bg-blue-700 transition-all duration-300 text-white rounded-lg py-3 flex items-center justify-center gap-2 font-medium"
                                 >
                                     Visitar esta célula
                                     <ArrowRight size={18} />
-                                </button>
+                                </Link>
 
                             </div>
 
@@ -240,7 +242,7 @@ export default function EvangelismoCarousel({ celulas }: any) {
     }
 `}</style>
             <div className='mt-10 text-center'>
-                <Link href="/células" className="inline-block bg-red-600 hover:bg-red-0 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300">
+                <Link href="/celulas" className="inline-block bg-red-600 hover:bg-red-0 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300">
                     Ver todas as células
                 </Link>
             </div>

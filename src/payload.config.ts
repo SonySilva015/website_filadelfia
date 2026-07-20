@@ -10,7 +10,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media/config'
 import { env } from './lib/env'
 import { Celulas } from './collections/celulas/celulas'
-import { Professores } from './collections/professores'
+import { Turmas } from './collections/turma/turma'
 import { Noticias } from './collections/notice/noticias'
 import { Lideres } from '@/collections/lideres/lideres'
 import { cloudinaryStorage } from 'payload-cloudinary'
@@ -31,7 +31,7 @@ export default buildConfig({
         },
 
     },
-    collections: [Users, Media, Noticias, Celulas, Professores, Lideres],
+    collections: [Users, Media, Noticias, Celulas, Turmas, Lideres],
     editor: lexicalEditor({
         features: ({ defaultFeatures }) => [...defaultFeatures, FixedToolbarFeature()],
     }),

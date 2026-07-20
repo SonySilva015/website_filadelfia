@@ -17,7 +17,7 @@ import { GetCelulas } from '@/collections/celulas/fetcher';
 export default async function Page() {
     // Fetch feito no servidor (Server Component)
     const data = await GetCelulas();
-    const celulas = data.notices || [];
+    const celulas = data.celulas || [];
 
     return (
         <>
@@ -73,13 +73,7 @@ export default async function Page() {
 
                             <div className="mt-10 flex flex-wrap gap-5">
 
-                                <button className="bg-red-800 hover:bg-red-600 text-white px-8 py-4 rounded-xl font-bold transition flex items-center gap-2 shadow-xl">
 
-                                    Quero conhecer Jesus
-
-                                    <ArrowRight size={20} />
-
-                                </button>
 
 
 

@@ -2,6 +2,7 @@ import { CollectionConfig } from 'payload'
 import { TextBlock } from '../../blocks/textblocks'
 import { ImageBlock } from '../../blocks/ImageBlock'
 import { isAdminOuEditor } from '../access/isAdminEditor'
+import slugify from 'slugify'
 
 export const Celulas: CollectionConfig = {
     slug: 'celulas',
@@ -17,12 +18,48 @@ export const Celulas: CollectionConfig = {
         useAsTitle: 'nome',
     },
 
+    hooks: {
+        beforeValidate: [
+            ({ data, req }) => {
+                if (!data) return data
+
+                // CORRIGIDO: usar 'nome' em vez de 'titulo'
+                if (data?.nome) {
+                    data.slug = slugify(data.nome, {
+                        lower: true,
+                        strict: true,
+                        remove: /[*+~.()'"!:@]/g // Remove caracteres especiais
+                    })
+                }
+
+                // definir autor automaticamente (se houver campo autor)
+                if (req.user && data) {
+                    data.autor = req.user.id
+                }
+
+                return data
+            },
+        ],
+    },
+
     fields: [
         {
             name: 'nome',
             type: 'text',
             label: 'Nome',
             required: true,
+        },
+        {
+            name: 'slug',
+            type: 'text',
+            label: 'Slug',
+            required: true,
+            unique: true, // Importante: garantir que seja único
+            admin: {
+                position: 'sidebar',
+                description: 'URL amigável gerada automaticamente a partir do nome',
+                readOnly: true, // Impede edição manual para manter consistência
+            },
         },
         {
             name: 'capa',
@@ -35,6 +72,12 @@ export const Celulas: CollectionConfig = {
             name: 'descricao',
             type: 'textarea',
             label: 'Descrição',
+            required: true,
+        },
+        {
+            name: 'local',
+            type: 'text',
+            label: 'Local de reunião',
             required: true,
         },
         {
@@ -76,6 +119,12 @@ export const Celulas: CollectionConfig = {
                     name: 'nome',
                     type: 'text',
                     label: 'Nome',
+                    required: true,
+                },
+                {
+                    name: 'numero',
+                    type: 'text',
+                    label: 'Número',
                     required: true,
                 },
             ],
