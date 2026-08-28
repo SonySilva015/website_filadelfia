@@ -35,29 +35,25 @@ const imagensInfantil = [ebd1, ebd2, ebd3, ebd4, ebd5, ebd6]
 export default function EstudosBiblicos() {
     return (
         <section
-            className="py-24"
+            className="py-24 w-full overflow-hidden"
             style={{
                 background:
                     'linear-gradient(to right, var(--color-secondary), var(--color-secondary-hover))',
             }}
         >
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-6 w-full">
 
                 <div className="text-center mb-16">
-
                     <h2 className="mt-3 text-4xl md:text-5xl font-bold text-white">
                         Estudo Bíblico
                         <span className="text-primary-light"> Infantil</span>
                     </h2>
-
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
 
-                    {/* CAROUSEL */}
-
-                    <div className="relative">
-
+                    {/* CAROUSEL CONTAINER (min-w-0 impede o Swiper de quebrar o grid) */}
+                    <div className="relative w-full min-w-0">
                         <Swiper
                             modules={[
                                 Autoplay,
@@ -91,12 +87,11 @@ export default function EstudosBiblicos() {
                                 nextEl: '.next-slide',
                                 prevEl: '.prev-slide',
                             }}
-                            className="rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,.45)]"
+                            className="rounded-3xl overflow-hidden shadow-[0_25px_70px_rgba(0,0,0,.45)] w-full"
                         >
                             {imagensInfantil.map((img, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="relative h-75 md:h-520px">
-
+                                <SwiperSlide key={index} className="w-full">
+                                    <div className="relative h-[320px] md:h-[400px] w-full">
                                         <Image
                                             src={img}
                                             alt={`Estudo Bíblico Infantil ${index + 1}`}
@@ -104,30 +99,32 @@ export default function EstudosBiblicos() {
                                             priority={index === 0}
                                             className="object-cover"
                                         />
-
-                                        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
-
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                                     </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
 
-                        {/* BOTÕES */}
-
-                        <button className="prev-slide absolute left-5 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 hover:bg-white/30 transition">
-                            <ChevronLeft className="mx-auto text-white" />
+                        {/* BOTÕES DE NAVEGAÇÃO */}
+                        <button
+                            type="button"
+                            aria-label="Slide anterior"
+                            className="prev-slide absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-20 h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-lg border border-white/30 hover:bg-white/30 transition"
+                        >
+                            <ChevronLeft className="text-white" />
                         </button>
 
-                        <button className="next-slide absolute right-5 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 hover:bg-white/30 transition">
-                            <ChevronRight className="mx-auto text-white" />
+                        <button
+                            type="button"
+                            aria-label="Próximo slide"
+                            className="next-slide absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-20 h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-lg border border-white/30 hover:bg-white/30 transition"
+                        >
+                            <ChevronRight className="text-white" />
                         </button>
-
                     </div>
 
-
-
-                    <div>
-
+                    {/* CONTEÚDO TEXTUAL */}
+                    <div className="w-full min-w-0">
                         <h3 className="text-3xl font-bold text-white mb-6">
                             Aprendendo a Palavra de Deus desde cedo
                         </h3>
@@ -140,7 +137,6 @@ export default function EstudosBiblicos() {
                         </p>
 
                         <div className="space-y-5 mb-10">
-
                             {[
                                 'Histórias bíblicas ilustradas',
                                 'Brincadeiras educativas',
@@ -158,22 +154,18 @@ export default function EstudosBiblicos() {
                                         size={22}
                                         className="text-primary-light shrink-0"
                                     />
-
                                     <span className="text-gray-100">
                                         {item}
                                     </span>
                                 </div>
                             ))}
-
                         </div>
 
                         <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-7 mb-10">
-
                             <blockquote className="italic text-orange-400 text-lg">
                                 "Deixai vir a mim os pequeninos, não os impeçais;
                                 porque dos tais é o Reino de Deus."
                             </blockquote>
-
                             <p className="text-gray-300 mt-2 mb-6">
                                 Marcos 10:14
                             </p>
@@ -182,11 +174,9 @@ export default function EstudosBiblicos() {
                                 "Ensina a criança no caminho em que deve andar, e
                                 ainda quando for velho não se desviará dele."
                             </blockquote>
-
                             <p className="text-gray-300 mt-2">
                                 Provérbios 22:6
                             </p>
-
                         </div>
 
                         <Link
@@ -195,7 +185,6 @@ export default function EstudosBiblicos() {
                         >
                             Conheça a EBD Infantil
                         </Link>
-
                     </div>
 
                 </div>
