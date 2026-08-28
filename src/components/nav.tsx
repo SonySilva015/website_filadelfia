@@ -65,18 +65,18 @@ const Navbar = () => {
 
             ],
         },
-        {
-            id: 'bib',
-            label: 'Biblioteca',
-            dropdown: [
-                { name: 'Artigos', href: '/artigos' },
-                { name: 'Ajuda Para Vida', href: '/desevolvimento' },
-                { name: 'Para Jovens', href: '/desevolvimento' },
-
-
-
-            ],
-        },
+        /* {
+             id: 'bib',
+             label: 'Biblioteca',
+             dropdown: [
+                 { name: 'Artigos', href: '/artigos' },
+                 { name: 'Ajuda Para Vida', href: '/desevolvimento' },
+                 { name: 'Para Jovens', href: '/desevolvimento' },
+ 
+ 
+ 
+             ],
+         },*/
         {
             id: 'programacao',
             label: 'Programações',
