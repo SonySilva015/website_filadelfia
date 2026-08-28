@@ -705,8 +705,8 @@ export default function SobreIgrejaPage() {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-title mb-1">Telefone</h4>
-                                        <p className="text-body mb-1">+244 xxx xxx xxx</p>
-                                        <p className="text-body">+244 xxx xxx xxx</p>
+                                        <p className="text-body mb-1">+244 934 028 046</p>
+                                        <p className="text-body">+244 924 266 075</p>
                                     </div>
                                 </motion.div>
 
@@ -723,7 +723,7 @@ export default function SobreIgrejaPage() {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-title mb-1">Email</h4>
-                                        <p className="text-link mb-1">contato@filadelfiaieia.com</p>
+                                        <p className="text-link mb-1">ieia.filadelfia@gmail.com</p>
                                     </div>
                                 </motion.div>
 
@@ -769,7 +769,7 @@ export default function SobreIgrejaPage() {
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="max-w-4xl mx-auto text-center">
+                <div className="max-w-4xl bg-slate-200 mx-auto text-center">
                     <motion.h2
                         className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8"
                         initial={{ opacity: 0, y: 20 }}

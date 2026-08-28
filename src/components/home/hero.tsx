@@ -128,6 +128,7 @@ export default function HeroSwiper() {
                                     <p className="text-gray-300 text-lg md:text-xl">
                                         — {item.ref}
                                     </p>
+
                                     <div className='mt-8 border-t border-white/30 pt-8'>
                                         <Link className='bg-red-500 p-2 rounded-md text-amber-50' href={item.link}> {item.what} </Link>
 
