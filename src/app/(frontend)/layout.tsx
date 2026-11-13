@@ -11,12 +11,12 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const siteUrl = "https://www.SEU-DOMINIO.com"; // troque pelo domínio real
+const siteUrl = "https://ieia-filadelfia.vercel.app"; // troque pelo domínio real
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "IEIA Filadélfia | Igreja no Luena, Moxico, Angola",
+    default: "IEIA Filadélfia ",
     template: "%s | IEIA Filadélfia",
   },
   description:
