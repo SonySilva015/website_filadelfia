@@ -52,6 +52,13 @@ export const metadata: Metadata = {
   verification: {
     google: "CODIGO_DO_GOOGLE_SEARCH_CONSOLE",
   },
+  icons: {
+    icon: [
+      { url: logo.src },
+      { url: logo.src, sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/apple-icon.png",
+  },
 };
 
 const jsonLd = {
