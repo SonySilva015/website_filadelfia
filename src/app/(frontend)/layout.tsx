@@ -28,6 +28,8 @@ export const metadata: Metadata = {
     "igreja em Angola",
     "cultos no Luena",
     "bairro Social da Juventude",
+    "ieia", "IEIA", "igreja evangélica", "ministérios", "eventos da igreja", "notícias da igreja", "juventude da igreja", "liderança da igreja", "ministerios de casais",
+    "filadélfia", "luena"
   ],
   alternates: { canonical: "/" },
   openGraph: {
