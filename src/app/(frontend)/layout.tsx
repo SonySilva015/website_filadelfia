@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   verification: {
-    google: "CODIGO_DO_GOOGLE_SEARCH_CONSOLE",
+    google: "EiZLUX-QLVj1-uFncqBduxnF7BQEftfL-nSNDsxMBAw",
   },
   icons: {
     icon: [
