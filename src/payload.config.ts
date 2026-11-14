@@ -45,6 +45,11 @@ export default buildConfig({
         },
     }),
     sharp,
+    upload: {
+        limits: {
+            fileSize: 2_000_000, // 5 MB
+        },
+    },
     plugins: [
         cloudinaryStorage({
             config: {
