@@ -1,0 +1,358 @@
+/* ==========================================================================
+   Painel administrativo: tema personalizado
+   Para mudar a identidade visual, altere só a secção "Paleta".
+   ========================================================================== */
+
+/* ---------- Paleta ---------- */
+:root {
+  --brand-500: #1d4ed8;
+  --brand-600: #1e40af;
+  --brand-50: #eff6ff;
+
+  --radius: 8px;
+  --shadow-card: 0 10px 30px -12px rgba(15, 23, 42, 0.25);
+
+  --theme-success-500: #16a34a;
+}
+
+/* ---------- Modo claro ---------- */
+html[data-theme='light'] {
+  --theme-bg: #f8fafc;
+  --theme-elevation-0: #ffffff;
+  --theme-elevation-50: #f1f5f9;
+  --theme-elevation-100: #e2e8f0;
+  --theme-text: #0f172a;
+}
+
+/* ---------- Modo escuro ---------- */
+html[data-theme='dark'] {
+  --theme-bg: #0b0f1a;
+  --theme-elevation-0: #111827;
+  --theme-elevation-50: #1a2233;
+  --theme-text: #e5e7eb;
+  --brand-500: #3b82f6;
+  --brand-600: #60a5fa;
+}
+
+/* ---------- Botões ---------- */
+.btn--style-primary {
+  background: var(--brand-500);
+  border-color: var(--brand-500);
+  color: #ffffff;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    background: var(--brand-600);
+    border-color: var(--brand-600);
+    box-shadow: 0 4px 12px -4px rgba(29, 78, 216, 0.5);
+  }
+}
+
+.btn--style-secondary,
+.btn--style-icon-label {
+  border-radius: var(--radius);
+}
+
+/* ---------- Campos e acessibilidade ---------- */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+/* ---------- Ecrã de login ---------- */
+.template-minimal {
+  padding: 24px;
+}
+
+html[data-theme='light'] .template-minimal {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+}
+
+html[data-theme='dark'] .template-minimal {
+  background: linear-gradient(135deg, #0b0f1a 0%, #1e293b 100%);
+}
+
+/* Cartão central do login */
+.template-minimal__wrap {
+  background: var(--theme-elevation-0);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  padding: 20px 32px;
+  max-width: 420px;
+  width: 100%;
+}
+
+/* Logo do login */
+.login__brand {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+
+  img,
+  svg {
+    max-width: 200px;
+    height: auto;
+  }
+}
+
+/* ---------- Cartões e tabelas ---------- */
+.card {
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+  }
+}
+
+.table table {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+
+/* ---------- Boas-vindas do dashboard ---------- */
+.dash-welcome {
+  margin-bottom: 32px;
+  padding: 28px 32px;
+  border-radius: 16px;
+  background: var(--theme-elevation-50);
+  border: 1px solid var(--theme-elevation-100);
+  border-left: 4px solid var(--brand-500, #1d4ed8);
+
+  &__eyebrow {
+    margin: 0 0 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-500, #1d4ed8);
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  &__text {
+    margin: 0 0 24px;
+    max-width: 560px;
+    opacity: 0.75;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    background: var(--theme-elevation-0);
+    border: 1px solid var(--theme-elevation-100);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: var(--brand-500, #1d4ed8);
+      box-shadow: 0 8px 20px -10px rgba(15, 23, 42, 0.3);
+    }
+  }
+
+  &__card-title {
+    font-weight: 600;
+  }
+
+  &__card-text {
+    font-size: 13px;
+    opacity: 0.65;
+  }
+}
+
+
+/* ==========================================================================
+   Menu lateral
+   ========================================================================== */
+
+.nav {
+  border-right: 1px solid var(--theme-elevation-100);
+  background: var(--theme-elevation-0);
+}
+
+/* ---------- Marca ---------- */
+.sb-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 4px 20px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--theme-elevation-100);
+
+  &__mark {
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px -6px rgba(29, 78, 216, 0.6);
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    min-width: 0;
+  }
+
+  &__name {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  &__tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+}
+
+/* ---------- Links ---------- */
+.nav__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 2px 0;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
+
+  &:hover {
+    background: var(--theme-elevation-50);
+    padding-left: 16px;
+  }
+}
+
+/* Link activo com barra de acento */
+.nav__link--active,
+.nav__link.active {
+  background: var(--brand-50, #eff6ff);
+  color: var(--brand-500, #1d4ed8);
+  font-weight: 600;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 22%;
+    bottom: 22%;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+    background: var(--brand-500, #1d4ed8);
+  }
+}
+
+html[data-theme='dark'] {
+  .nav__link--active,
+  .nav__link.active {
+    background: rgba(59, 130, 246, 0.14);
+    color: #93c5fd;
+
+    &::before {
+      background: #60a5fa;
+    }
+  }
+}
+
+/* ---------- Grupos ---------- */
+.nav-group {
+  margin-top: 18px;
+}
+
+.nav-group__toggle {
+  padding: 0 12px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* ---------- Barra de scroll discreta ---------- */
+.nav__scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--theme-elevation-150, #cbd5e1) transparent;
+}
+
+/* ---------- Rodapé ---------- */
+.sb-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--theme-elevation-50);
+  border: 1px solid var(--theme-elevation-100);
+
+  &__icon {
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    
+  }
+
+  &__title {
+    margin: 0 0 2px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  &__link {
+    font-size: 12px;
+    color: var(--brand-500, #1d4ed8);
+    text-decoration: none;
+    word-break: break-all;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+html[data-theme='dark'] .sb-footer__icon {
+  background: rgba(59, 130, 246, 0.16);
+  color: #93c5fd;
+}

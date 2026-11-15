@@ -29,6 +29,17 @@ export default buildConfig({
             titleSuffix: '- Filadelfia',
 
         },
+        components: {
+            graphics: {
+                Logo: '/components/graphics/Logo#default',
+                Icon: '/components/graphics/Icon#default',
+            },
+            beforeLogin: ['/components/BeforeLogin#default'],
+            afterLogin: ['/components/AfterLogin#default'],
+            beforeDashboard: ['/components/BeforeDashboard#default'],
+            beforeNavLinks: ['/components/SidebarBrand#default'],
+            afterNavLinks: ['/components/SidebarFooter#default'],
+        },
 
     },
     collections: [Users, Media, Noticias, Celulas, Turmas, Lideres],
@@ -42,6 +53,7 @@ export default buildConfig({
     db: postgresAdapter({
         pool: {
             connectionString: process.env.DATABASE_URI || '',
+            ssl: { rejectUnauthorized: false }
         },
     }),
     sharp,
@@ -66,4 +78,6 @@ export default buildConfig({
             enabled: true // Optional, defaults to true
         })
     ],
+
+
 })
