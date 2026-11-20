@@ -11,7 +11,7 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const siteUrl = "https://ieia-filadelfia.vercel.app"; // troque pelo domínio real
+const siteUrl = "https://www.ieia-filadelfia.org/"; // troque pelo domínio real
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   verification: {
-    google: "EiZLUX-QLVj1-uFncqBduxnF7BQEftfL-nSNDsxMBAw",
+    google: "kaPYyOAOQ3-ULTgL1LSCtBqJJH32X602-nzFtxHpqT0",
   },
   icons: {
     icon: [
