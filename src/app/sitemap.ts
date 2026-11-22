@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         "/nossa-crenca",
         "/eventos",
         "/noticias",
-        "/juventude", "/lideranca", "/ministerios_casais"]; // ajuste às suas rotas
+        "/juventude", "/lideranca", "/ministerios_casais", "cultos", "/evangelismo"]; // ajuste às suas rotas
     return paginas.map((rota) => ({
         url: `${siteUrl}${rota}`,
         lastModified: new Date(),
