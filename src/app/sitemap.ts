@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://ieia-filadelfia.org/";
+const siteUrl = "https://www.ieia-filadelfia.org/";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const paginas = ["",
